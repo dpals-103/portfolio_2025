@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Montserrat", sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat", sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat", sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Old Standard TT", serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Old+Standard+TT:ital@1&display=swap');
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'pretendard', sans-serif;
+    src: url(font/Pretendard-Medium.subset.woff) format('woff'),
+        url(font/Pretendard-Medium.subset.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pretendard', sans-serif;
+    src: url(font/Pretendard-Bold.subset.woff) format('woff'),
+        url(font/Pretendard-Bold.subset.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    font-size: 1.6rem;
+    letter-spacing: -0.003%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
