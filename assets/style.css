@@ -21,6 +21,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -102,4 +103,21 @@ html {
   letter-spacing: -0.003%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+  padding: 8rem 12rem;
+}
+.wrap .sec01 .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrap .sec01 .top span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
