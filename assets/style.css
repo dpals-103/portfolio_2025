@@ -2,6 +2,10 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Old+Standard+TT:ital@1&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,30 +63,6 @@ a {
 }
 
 @font-face {
-  font-family: "Montserrat", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Old Standard TT", serif;
-  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Old+Standard+TT:ital@1&display=swap");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
   font-family: "pretendard", sans-serif;
   src: url(font/Pretendard-Medium.subset.woff) format("woff"), url(font/Pretendard-Medium.subset.woff2) format("woff2");
   font-weight: 500;
@@ -120,4 +100,64 @@ html {
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   font-weight: 500;
+  color: #2d2d2d;
+}
+.wrap .sec01 .body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrap .sec01 .body .txt-box h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4.8rem;
+  font-weight: 500;
+  color: #2d2d2d;
+  line-height: normal;
+  letter-spacing: -0.05%;
+}
+.wrap .sec01 .body .txt-box h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: normal;
+  letter-spacing: -0.05%;
+}
+.wrap .sec01 .body .img-group {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 17.8rem);
+  position: relative;
+  border: 1px solid red;
+  width: 30rem;
+}
+.wrap .sec01 .body .img-group img {
+  width: 100%;
+  position: absolute;
+}
+.wrap .sec01 .body .img-group img.fire {
+  transform: rotate(7.7deg);
+  right: -5rem;
+  top: -2.8rem;
+}
+.wrap .sec01 .body .img-group img.heart {
+  width: 90%;
+  transform: rotate(-24.79deg) translateY(-50%);
+  top: 50%;
+  z-index: 1;
+}
+.wrap .sec01 .body .img-group img.key {
+  transform: rotate(-17.89deg);
+  bottom: 0;
+}
+.wrap .sec01 .body .italic {
+  padding-top: 5rem;
+}
+.wrap .sec01 .body .italic h1 {
+  font-family: "Old Standard TT", serif;
+  font-size: 15rem;
+  font-weight: 400;
+  color: #2d2d2d;
+  letter-spacing: -0.03%;
+  font-style: italic;
 }

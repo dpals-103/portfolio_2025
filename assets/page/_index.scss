@@ -12,6 +12,68 @@
                 font-family: 'Montserrat',sans-serif;
                 font-size: 1.8rem;
                 font-weight: 500;
+                color: $text-color-bolder;
+            }
+        }
+        .body{
+            @include flex-align-center;
+            justify-content: space-between;
+            .txt-box{
+                h4{
+                    font-family: 'Montserrat',sans-serif;
+                    font-size: 4.8rem;
+                    font-weight: 500;
+                    color: $text-color-bolder;
+                    line-height: normal;
+                    letter-spacing: -0.05%;
+                }
+                h1{
+                    font-family: 'Montserrat',sans-serif;
+                    font-size: 8rem;
+                    font-weight: 700;
+                    color: $text-color-bolder;
+                    line-height: normal;
+                    letter-spacing: -0.05%;
+                }
+            }
+            .img-group{
+                display: flex;
+                flex-direction: column;
+                height: calc(100vh - 17.8rem);
+                position: relative;
+                border: 1px solid red;
+                width: 30rem;
+                img{
+                    width: 100%;
+                    position: absolute;
+
+                    &.fire{
+                        transform: rotate(7.7deg);
+                        right: -5rem;
+                        top: -2.8rem;
+                    }
+                    &.heart{
+                        width: 90%;
+                        transform: rotate(-24.79deg) translateY(-50%);
+                        top: 50%;
+                        z-index: 1;
+                    }
+                    &.key{
+                        transform: rotate(-17.89deg);
+                        bottom: 0;
+                    }
+                }
+            }
+            .italic{
+                padding-top: 5rem;
+                h1{
+                    font-family: 'Old Standard TT', serif;
+                    font-size: 15rem;
+                    font-weight: 400;
+                    color: $text-color-bolder;
+                    letter-spacing: -0.03%;
+                    font-style: italic;
+                }
             }
         }
     }
