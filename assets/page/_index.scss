@@ -1,81 +1,206 @@
-.wrap{
+.wrap {
     width: 100%;
     height: 100vh;
-    background: $background;
-    padding: 8rem 12rem;
 
-    .sec01{
-        .top{
-            @include flex-align-center;
+    // common
+    section {
+        background: $background;
+        padding: 8rem 12rem;
+        width: 100%;
+        height: 100vh;
+    }
+
+    // Cover
+    .sec01 {
+        display: grid;
+        grid-template-rows: 8rem auto 8rem;
+        height: 100%;
+
+        .top {
+            display: flex;
+            align-items: flex-start;
             justify-content: space-between;
-            span{
-                font-family: 'Montserrat',sans-serif;
+
+            span {
+                font-family: 'Montserrat', sans-serif;
                 font-size: 1.8rem;
                 font-weight: 500;
                 color: $text-color-bolder;
             }
         }
-        .body{
+
+        .body {
             @include flex-align-center;
             justify-content: space-between;
-            .txt-box{
-                h4{
-                    font-family: 'Montserrat',sans-serif;
+            height: 100%;
+
+            .txt-box {
+                transform: translateY(-50%);
+
+                h4 {
+                    font-family: 'Montserrat', sans-serif;
                     font-size: 4.8rem;
                     font-weight: 500;
                     color: $text-color-bolder;
                     line-height: normal;
-                    letter-spacing: -0.05%;
+                    letter-spacing: -0.05em;
                 }
-                h1{
-                    font-family: 'Montserrat',sans-serif;
+
+                h1 {
+                    font-family: 'Montserrat', sans-serif;
                     font-size: 8rem;
                     font-weight: 700;
                     color: $text-color-bolder;
                     line-height: normal;
-                    letter-spacing: -0.05%;
+                    letter-spacing: -0.05em;
                 }
             }
-            .img-group{
+
+            .img-group {
                 display: flex;
                 flex-direction: column;
-                height: calc(100vh - 17.8rem);
+                height: 100%;
                 position: relative;
-                border: 1px solid red;
+                //border: 1px solid red;
                 width: 30rem;
-                img{
+
+                img {
                     width: 100%;
                     position: absolute;
 
-                    &.fire{
+                    &.fire {
                         transform: rotate(7.7deg);
                         right: -5rem;
-                        top: -2.8rem;
+                        top: -8rem;
                     }
-                    &.heart{
-                        width: 90%;
+
+                    &.heart {
+                        width: 95%;
                         transform: rotate(-24.79deg) translateY(-50%);
                         top: 50%;
                         z-index: 1;
                     }
-                    &.key{
+
+                    &.key {
                         transform: rotate(-17.89deg);
-                        bottom: 0;
+                        bottom: -2rem;
+                        right: -6rem;
                     }
                 }
             }
-            .italic{
-                padding-top: 5rem;
-                h1{
+
+            .italic {
+                transform: translateY(-25%);
+
+                h1 {
                     font-family: 'Old Standard TT', serif;
                     font-size: 15rem;
                     font-weight: 400;
                     color: $text-color-bolder;
-                    letter-spacing: -0.03%;
+                    letter-spacing: -0.03em;
                     font-style: italic;
                 }
             }
         }
+
+        .bottom {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            h5 {
+                font-size: $num-40;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                letter-spacing: -0.05em;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: $num-24;
+
+                li {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: $num-18;
+                    text-align: right;
+                    color: $text-color-basic;
+                }
+            }
+        }
     }
-   
+
+    //About
+    .sec02 {
+        display: grid;
+        grid-template-rows: 80px auto;
+        gap: $num-40;
+        height: 100%;
+        .top{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between; 
+
+            h6,span{
+                font-family: 'Montserrat', sans-serif;
+                color: $text-color-bolder;
+                letter-spacing: -0.05em;
+            }
+            h6{
+                font-size: $num-24;
+                font-weight: 700;
+            }
+
+            span{
+                font-size: $num-18;
+            }
+        }
+
+        .resume{
+            padding: 0 5rem;
+            height: 100%;
+            .grid-container{
+                border: 1px solid red;
+                margin: 0 auto;
+                display: grid;
+                grid-template-rows: repeat(7, 1fr);
+                grid-template-columns: repeat(11, 1fr);
+                column-gap: $num-40;
+                row-gap: $num-40;
+                height : 100%;
+                
+                >li{
+                    border-radius: 1.3rem;
+                    background: var(--gray-0);
+                    box-shadow: $num-4 $num-8 $num-20 0px rgba(122, 150, 191, 0.10);
+                    padding: $num-56 $num-48 $num-40 $num-48;
+
+                    &:last-child{
+                        padding: $num-32 $num-28;
+                    }
+
+                    &.row-span-7{
+                        grid-row: span 7;
+                    }
+
+                    &.row-span-5{
+                        grid-row: span 5;
+                    }
+
+                    &.row-span-2{
+                        grid-row: span 2;
+                    }
+
+                    &.col-span-3{
+                        grid-column: span 3;
+                    }
+
+                    &.col-span-5{
+                        grid-column: span 5;
+                    }
+                }
+            }
+           
+        }
+    }
 }
