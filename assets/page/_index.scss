@@ -136,71 +136,275 @@
         grid-template-rows: 80px auto;
         gap: $num-40;
         height: 100%;
-        .top{
+
+        .top {
             display: flex;
             align-items: flex-start;
-            justify-content: space-between; 
+            justify-content: space-between;
 
-            h6,span{
+            h6,
+            span {
                 font-family: 'Montserrat', sans-serif;
                 color: $text-color-bolder;
                 letter-spacing: -0.05em;
             }
-            h6{
-                font-size: $num-24;
-                font-weight: 700;
-            }
 
-            span{
+            span {
                 font-size: $num-18;
             }
         }
 
-        .resume{
+        .resume {
             padding: 0 5rem;
             height: 100%;
-            .grid-container{
-                border: 1px solid red;
+
+            .grid-container {
+                //border: 1px solid red;
                 margin: 0 auto;
                 display: grid;
                 grid-template-rows: repeat(7, 1fr);
                 grid-template-columns: repeat(11, 1fr);
                 column-gap: $num-40;
                 row-gap: $num-40;
-                height : 100%;
-                
-                >li{
+                height: 100%;
+
+                >li {
                     border-radius: 1.3rem;
-                    background: var(--gray-0);
+                    background-color: $gray-0;
                     box-shadow: $num-4 $num-8 $num-20 0px rgba(122, 150, 191, 0.10);
                     padding: $num-56 $num-48 $num-40 $num-48;
 
-                    &:last-child{
+                    &:last-child {
                         padding: $num-32 $num-28;
                     }
 
-                    &.row-span-7{
+                    &.row-span-7 {
                         grid-row: span 7;
                     }
 
-                    &.row-span-5{
+                    &.row-span-5 {
                         grid-row: span 5;
                     }
 
-                    &.row-span-2{
+                    &.row-span-2 {
                         grid-row: span 2;
                     }
 
-                    &.col-span-3{
+                    &.col-span-3 {
                         grid-column: span 3;
                     }
 
-                    &.col-span-5{
+                    &.col-span-5 {
                         grid-column: span 5;
                     }
                 }
+
+                li.left {
+                    display: flex;
+                    flex-direction: column;
+                    // 프로필
+                    >.profile {
+                        @include flex-align-center;
+                        gap: $num-24;
+
+                        >.img-box {
+                            width: 8rem;
+                            aspect-ratio: 1 / 1;
+                            border-radius: 100px;
+                            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+                            background: url(images/img_profile.png) no-repeat;
+                            background-size: cover;
+                        }
+
+                        >.txt-box {
+                            h6 {
+                                font-family: 'pretendard', sans-serif;
+                                color: $text-color-bolder;
+                                line-height: 1;
+                            }
+
+                            span {
+                                display: block;
+                                padding-top: $num-16;
+                                font-size: $num-16;
+                                color: $text-color-caption;
+                                line-height: 1;
+                            }
+                        }
+
+                    }
+
+                    //소개글
+                    >.introduce {
+                        >.img-box{
+                            width: 100%;
+                            height: 23rem;
+                            text-align: right;
+                            margin-bottom: $num-40;
+                            position: relative;
+                            img{
+                                height: 140%;
+                                aspect-ratio: 1 / 1;
+                                position: absolute;
+                                right: -6rem;
+                                top: -1rem;
+                            }
+                        }
+                        >span {
+                            font-size: $num-30;
+                            line-height: 1.5;
+                            display: block;
+                            font-weight: 500;
+                            color: $text-color-bolder;
+                        }
+
+                        >p {
+                            padding-top: $num-40;
+                            font-size: $num-14;
+                            color: $text-color-basic;
+                        }
+                    }
+
+                    >.hashtag {
+                        @include flex-align-center;
+                        flex-wrap: wrap;
+                        gap: $num-8;
+                        margin-top: auto;
+                        >li {
+                            font-size: $num-12;
+                            line-height: 2;
+                            color: $text-color-caption;
+                            border: 1px solid $gray-50;
+                            padding: 0 $num-16;
+                            border-radius: $round-13;
+                            display: inline-block;
+                        }
+                    }
+                }
+
+                li.center{
+                    >h6{
+                        padding-bottom: $num-56;
+                    }
+                    >ul{
+                        width: 100%;
+                        >li{
+                            &:not(:last-child){
+                                margin-bottom: $num-16;
+                            }
+                            .company-info{
+                                width: 100%;
+                                @include flex-align-center;
+                                gap: $num-8;
+                                margin-bottom: $num-12;
+                                b,span{
+                                    font-size: $num-14;
+                                }
+                                b{
+                                    font-weight: 600;
+                                    color: $text-color-bolder;
+                                    @include flex-align-center;
+                                    gap: $num-8;
+                                    &::after{
+                                        content: '';
+                                        display: inline-block;
+                                        width: 1px;
+                                        height: 1.2rem;
+                                        background-color : $text-color-basic;                                }
+                                }
+                                small{
+                                    font-size: $num-12;
+                                    color: $text-color-caption;
+                                    margin-left: auto;
+                                }
+                            }
+    
+                            .main-work{
+                                width: 100%;
+                                background-color: $bg-secondary;
+                                padding: $num-16 $num-14;
+                                display: flex;
+                                flex-direction: column;
+                                gap: $num-4;
+                                
+                                >li{
+                                    font-size: $num-13;
+                                    line-height: 2.1rem;
+                                    color: $text-color-basic;
+                                }
+                            }
+                        }
+                     
+                    }
+                }
+
+                li.right{
+                    h6{
+                        padding-bottom: $num-56;
+                    }
+                    &.skill{
+                        ul{
+                            width: 100%;
+                            @include flex-align-center;
+                            justify-content: space-between;
+
+                            > li{
+                                display: flex;
+                                flex-direction: column;
+                                gap: $num-32;
+
+                              >div{
+                                @include flex-align-center;
+                                gap: $num-16;
+
+                                i{
+                                    width: $num-40;
+                                    aspect-ratio: 1 / 1;
+                                    img{
+                                        width: 100%;
+                                        transform: translateY(0.5rem);
+                                    }
+                                }
+
+                                >div{
+                                    span{
+                                        display: block;
+                                        font-size: $num-13;
+                                        padding-bottom: $num-8;
+                                        color: $text-color-basic;
+                                        line-height: 1;
+                                    }
+
+                                    .bar{
+                                        width: 6.4rem;
+                                        height: 1rem;
+                                        position: relative;
+                                        background-color: $gray-10;
+                                        .bar-val{
+                                            width: 100%;
+                                            height: 100%;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                        }
+                                    }
+                                }
+
+                                // bar value gradiant
+                                &.html{
+                                    .bar-val{
+                                        background: linear-gradient(90deg, #FFBD71 0%, #EA714C 100%);
+                                    }
+                                }
+                              }  
+
+
+                            }
+                        }
+                    }
+                }
             }
-           
+
         }
     }
 }
