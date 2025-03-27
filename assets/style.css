@@ -25,6 +25,8 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -86,7 +88,7 @@ html {
   font-size: 62.5%;
 }
 
-* {
+body {
   font-family: "Montserrat", "pretendard", sans-serif;
   font-size: 1.6rem;
   letter-spacing: -0.03em;
@@ -102,42 +104,47 @@ h6 {
   letter-spacing: -0.03em;
 }
 
-.wrap {
-  width: 100%;
-  height: 100vh;
-}
-.wrap section {
-  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
-  padding: 8rem 12rem;
-  width: 100%;
-  height: 100vh;
-}
-.wrap .sec01 {
-  display: grid;
-  grid-template-rows: 8rem auto 8rem;
-  height: 100%;
-}
-.wrap .sec01 .top {
+header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  height: 8rem;
+  margin-bottom: 4rem;
 }
-.wrap .sec01 .top span {
+header > span, header a {
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   font-weight: 500;
   color: #2d2d2d;
 }
-.wrap .sec01 .body {
+header nav {
+  display: flex;
+  gap: 4rem;
+}
+header nav a {
+  color: #555;
+  display: inline-block;
+}
+header nav a:hover, header nav a.active {
+  color: #2d2d2d;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.main .body {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
 }
-.wrap .sec01 .body .txt-box {
+.main .body .txt-box {
   transform: translateY(-50%);
 }
-.wrap .sec01 .body .txt-box h4 {
+.main .body .txt-box h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 4.8rem;
   font-weight: 500;
@@ -145,99 +152,83 @@ h6 {
   line-height: normal;
   letter-spacing: -0.05em;
 }
-.wrap .sec01 .body .txt-box h1 {
+.main .body .txt-box h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 700;
   color: #2d2d2d;
   line-height: normal;
   letter-spacing: -0.05em;
 }
-.wrap .sec01 .body .img-group {
+.main .body .img-group {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   width: 30rem;
+  aspect-ratio: 1/1;
 }
-.wrap .sec01 .body .img-group img {
+.main .body .img-group img {
   width: 100%;
   position: absolute;
 }
-.wrap .sec01 .body .img-group img.fire {
+.main .body .img-group img.fire {
   transform: rotate(7.7deg);
-  right: -5rem;
-  top: -8rem;
+  right: -6rem;
+  top: -26rem;
 }
-.wrap .sec01 .body .img-group img.heart {
+.main .body .img-group img.heart {
   width: 95%;
   transform: rotate(-24.79deg) translateY(-50%);
   top: 50%;
   z-index: 1;
 }
-.wrap .sec01 .body .img-group img.key {
+.main .body .img-group img.key {
   transform: rotate(-17.89deg);
-  bottom: -2rem;
+  bottom: -19rem;
   right: -6rem;
 }
-.wrap .sec01 .body .italic {
+.main .body .italic {
   transform: translateY(-25%);
 }
-.wrap .sec01 .body .italic h1 {
+.main .body .italic h1 {
   font-family: "Old Standard TT", serif;
-  font-size: 15rem;
+  font-size: 14rem;
   font-weight: 400;
   color: #2d2d2d;
   letter-spacing: -0.03em;
   font-style: italic;
 }
-.wrap .sec01 .bottom {
+.main .bottom {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 }
-.wrap .sec01 .bottom h5 {
+.main .bottom h5 {
   font-size: 4rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   letter-spacing: -0.05em;
 }
-.wrap .sec01 .bottom ul {
+.main .bottom ul {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
-.wrap .sec01 .bottom ul li {
+.main .bottom ul li {
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   text-align: right;
   color: #555;
+  line-height: 1;
 }
-.wrap .sec02 {
-  display: grid;
-  grid-template-rows: 80px auto;
-  gap: 4rem;
+
+.about .resume {
+  padding: 0 7rem;
   height: 100%;
 }
-.wrap .sec02 .top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.wrap .sec02 .top h6,
-.wrap .sec02 .top span {
-  font-family: "Montserrat", sans-serif;
-  color: #2d2d2d;
-  letter-spacing: -0.05em;
-}
-.wrap .sec02 .top span {
-  font-size: 1.8rem;
-}
-.wrap .sec02 .resume {
-  padding: 0 5rem;
-  height: 100%;
-}
-.wrap .sec02 .resume .grid-container {
+.about .resume .grid-container {
   margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(7, 1fr);
@@ -246,40 +237,45 @@ h6 {
   row-gap: 4rem;
   height: 100%;
 }
-.wrap .sec02 .resume .grid-container > li {
+.about .resume .grid-container > li {
   border-radius: 1.3rem;
   background-color: #fff;
   box-shadow: 0.4rem 0.8rem 2rem 0px rgba(122, 150, 191, 0.1);
   padding: 5.6rem 4.8rem 4rem 4.8rem;
 }
-.wrap .sec02 .resume .grid-container > li:last-child {
+.about .resume .grid-container > li:last-child {
   padding: 3rem 2.8rem;
 }
-.wrap .sec02 .resume .grid-container > li.row-span-7 {
+.about .resume .grid-container > li.row-span-7 {
   grid-row: span 7;
 }
-.wrap .sec02 .resume .grid-container > li.row-span-5 {
+.about .resume .grid-container > li.row-span-5 {
   grid-row: span 5;
 }
-.wrap .sec02 .resume .grid-container > li.row-span-2 {
+.about .resume .grid-container > li.row-span-2 {
   grid-row: span 2;
 }
-.wrap .sec02 .resume .grid-container > li.col-span-3 {
+.about .resume .grid-container > li.col-span-3 {
   grid-column: span 3;
 }
-.wrap .sec02 .resume .grid-container > li.col-span-5 {
+.about .resume .grid-container > li.col-span-5 {
   grid-column: span 5;
 }
-.wrap .sec02 .resume .grid-container li.left {
+@media (max-height: 1000px) {
+  .about .resume .grid-container > li {
+    padding: 4rem 4.8rem 4rem 4.8rem;
+  }
+}
+.about .resume .grid-container li.left {
   display: flex;
   flex-direction: column;
 }
-.wrap .sec02 .resume .grid-container li.left > .profile {
+.about .resume .grid-container li.left > .profile {
   display: flex;
   align-items: center;
   gap: 2.4rem;
 }
-.wrap .sec02 .resume .grid-container li.left > .profile > .img-box {
+.about .resume .grid-container li.left > .profile > .img-box {
   width: 8rem;
   aspect-ratio: 1/1;
   border-radius: 100px;
@@ -287,52 +283,57 @@ h6 {
   background: url(images/img_profile.png) no-repeat;
   background-size: cover;
 }
-.wrap .sec02 .resume .grid-container li.left > .profile > .txt-box h6 {
+.about .resume .grid-container li.left > .profile > .txt-box h6 {
   font-family: "pretendard", sans-serif;
   color: #2d2d2d;
   line-height: 1;
 }
-.wrap .sec02 .resume .grid-container li.left > .profile > .txt-box span {
+.about .resume .grid-container li.left > .profile > .txt-box span {
   display: block;
   padding-top: 1.6rem;
   font-size: 1.6rem;
   color: #8e8e8e;
   line-height: 1;
 }
-.wrap .sec02 .resume .grid-container li.left > .introduce > .img-box {
+.about .resume .grid-container li.left > .introduce > .img-box {
   width: 100%;
   height: 23rem;
   text-align: right;
   margin-bottom: 4rem;
   position: relative;
 }
-.wrap .sec02 .resume .grid-container li.left > .introduce > .img-box img {
+.about .resume .grid-container li.left > .introduce > .img-box img {
   height: 140%;
   aspect-ratio: 1/1;
   position: absolute;
   right: -6rem;
   top: -1rem;
 }
-.wrap .sec02 .resume .grid-container li.left > .introduce > span {
+@media (max-height: 1000px) {
+  .about .resume .grid-container li.left > .introduce > .img-box {
+    height: 20rem;
+  }
+}
+.about .resume .grid-container li.left > .introduce > span {
   font-size: 3rem;
   line-height: 1.5;
   display: block;
   font-weight: 500;
   color: #2d2d2d;
 }
-.wrap .sec02 .resume .grid-container li.left > .introduce > p {
+.about .resume .grid-container li.left > .introduce > p {
   padding-top: 4rem;
   font-size: 1.4rem;
   color: #555;
 }
-.wrap .sec02 .resume .grid-container li.left > .hashtag {
+.about .resume .grid-container li.left > .hashtag {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: auto;
 }
-.wrap .sec02 .resume .grid-container li.left > .hashtag > li {
+.about .resume .grid-container li.left > .hashtag > li {
   font-size: 1.2rem;
   line-height: 2;
   color: #8e8e8e;
@@ -341,45 +342,50 @@ h6 {
   border-radius: 1.3rem;
   display: inline-block;
 }
-.wrap .sec02 .resume .grid-container li.center > h6 {
+.about .resume .grid-container li.center > h6 {
   padding-bottom: 5.6rem;
 }
-.wrap .sec02 .resume .grid-container li.center > ul {
+@media (max-height: 1000px) {
+  .about .resume .grid-container li.center > h6 {
+    padding-bottom: 2.8rem;
+  }
+}
+.about .resume .grid-container li.center > ul {
   width: 100%;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li:not(:last-child) {
+.about .resume .grid-container li.center > ul > li:not(:last-child) {
   margin-bottom: 1.6rem;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li .company-info {
+.about .resume .grid-container li.center > ul > li .company-info {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1.2rem;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li .company-info b, .wrap .sec02 .resume .grid-container li.center > ul > li .company-info span {
+.about .resume .grid-container li.center > ul > li .company-info b, .about .resume .grid-container li.center > ul > li .company-info span {
   font-size: 1.4rem;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li .company-info b {
+.about .resume .grid-container li.center > ul > li .company-info b {
   font-weight: 600;
   color: #2d2d2d;
   display: flex;
   align-items: center;
   gap: 0.8rem;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li .company-info b::after {
+.about .resume .grid-container li.center > ul > li .company-info b::after {
   content: "";
   display: inline-block;
   width: 1px;
   height: 1.2rem;
   background-color: #555;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li .company-info small {
+.about .resume .grid-container li.center > ul > li .company-info small {
   font-size: 1.2rem;
   color: #8e8e8e;
   margin-left: auto;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li .main-work {
+.about .resume .grid-container li.center > ul > li .main-work {
   width: 100%;
   background-color: #F7FAFF;
   padding: 1.6rem 1.4rem;
@@ -387,58 +393,141 @@ h6 {
   flex-direction: column;
   gap: 0.4rem;
 }
-.wrap .sec02 .resume .grid-container li.center > ul > li .main-work > li {
+.about .resume .grid-container li.center > ul > li .main-work > li {
   font-size: 1.3rem;
   line-height: 2.1rem;
   color: #555;
 }
-.wrap .sec02 .resume .grid-container li.right h6 {
+.about .resume .grid-container li.right h6 {
   padding-bottom: 5.6rem;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul {
+@media (max-height: 1000px) {
+  .about .resume .grid-container li.right h6 {
+    padding-bottom: 2.8rem;
+  }
+}
+.about .resume .grid-container li.right.skill .main-skill {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li {
+.about .resume .grid-container li.right.skill .main-skill > li {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li > div {
+.about .resume .grid-container li.right.skill .main-skill > li > div {
   display: flex;
   align-items: center;
   gap: 1.6rem;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li > div i {
+.about .resume .grid-container li.right.skill .main-skill > li > div i {
   width: 4rem;
   aspect-ratio: 1/1;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li > div i img {
+.about .resume .grid-container li.right.skill .main-skill > li > div i img {
   width: 100%;
-  transform: translateY(0.5rem);
+  transform: translate(0.8rem, 0.5rem);
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li > div > div span {
+.about .resume .grid-container li.right.skill .main-skill > li > div > div span {
   display: block;
   font-size: 1.3rem;
   padding-bottom: 0.8rem;
   color: #555;
   line-height: 1;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li > div > div .bar {
+.about .resume .grid-container li.right.skill .main-skill > li > div > div .bar {
   width: 6.4rem;
   height: 1rem;
   position: relative;
   background-color: #f0f0f0;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li > div > div .bar .bar-val {
+.about .resume .grid-container li.right.skill .main-skill > li > div > div .bar .bar-val {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-.wrap .sec02 .resume .grid-container li.right.skill ul > li > div.html .bar-val {
+.about .resume .grid-container li.right.skill .main-skill > li > div.html .bar-val {
   background: linear-gradient(90deg, #FFBD71 0%, #EA714C 100%);
+}
+.about .resume .grid-container li.right.skill .main-skill > li > div.css .bar-val {
+  background: linear-gradient(90deg, #42C5FF 0%, #1492D7 100%);
+}
+.about .resume .grid-container li.right.skill .main-skill > li > div.sass .bar-val {
+  background: linear-gradient(90deg, #F153B6 0%, #69244F 100%);
+}
+.about .resume .grid-container li.right.skill .main-skill > li > div.jquery .bar-val {
+  background: linear-gradient(90deg, #2C8FD9 0%, #04355A 100%);
+}
+.about .resume .grid-container li.right.skill .main-skill > li > div.figma .bar-val {
+  background: linear-gradient(90deg, #7B7B7B 0%, #161616 100%);
+}
+.about .resume .grid-container li.right.skill .main-skill > li > div.xd .bar-val {
+  background: linear-gradient(90deg, #FB5FF2 0%, #953890 100%);
+}
+.about .resume .grid-container li.right.skill .main-skill > li > div.photoshop .bar-val {
+  background: linear-gradient(90deg, #30A7FF 0%, #0079FF 100%);
+}
+.about .resume .grid-container li.right.skill .main-skill > li > div.illu .bar-val {
+  background: linear-gradient(90deg, #FD9A01 0%, #C67800 100%);
+}
+@media (max-height: 1000px) {
+  .about .resume .grid-container li.right.skill .main-skill > li {
+    gap: 2.4rem;
+  }
+}
+.about .resume .grid-container li.right.skill .etc-tool {
+  padding: 1.6rem 1.4rem;
+  margin-top: 3rem;
+  background-color: #F7FAFF;
+}
+.about .resume .grid-container li.right.skill .etc-tool > span {
+  color: #8e8e8e;
+  font-size: 1.3rem;
+}
+.about .resume .grid-container li.right.skill .etc-tool > ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.about .resume .grid-container li.right.skill .etc-tool > ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about .resume .grid-container li.right.skill .etc-tool > ul li img {
+  width: 28px;
+  aspect-ratio: 1/1;
+}
+.about .resume .grid-container li.right.skill .etc-tool > ul li span {
+  font-size: 1.3rem;
+  color: #555;
+}
+@media (max-height: 1000px) {
+  .about .resume .grid-container li.right.skill .etc-tool {
+    margin-top: 3rem;
+  }
+}
+
+.wrap {
+  width: 100%;
+  min-width: 170rem;
+  height: 100vh;
+  height: 100dvh;
+  padding: 8rem 12rem;
+  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+  display: flex;
+  flex-direction: column;
+}
+@media (max-height: 1000px) {
+  .wrap {
+    padding: 4rem 12rem;
+  }
+}
+.wrap section {
+  width: 100%;
+  height: 100%;
 }

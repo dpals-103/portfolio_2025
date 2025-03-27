@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 8rem;
+    margin-bottom: 4rem;
+
+    > span, a{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $text-color-bolder;
+    }
+
+    nav{
+        display: flex;
+        gap: $num-40;
+        a{
+            color: $text-color-basic;   
+            display: inline-block;            
+
+            &:hover, &.active{
+                color: $text-color-bolder
+            }
+        }
+    }
+}
