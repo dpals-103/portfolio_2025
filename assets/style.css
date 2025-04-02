@@ -104,29 +104,52 @@ h6 {
   letter-spacing: -0.03em;
 }
 
-header {
+custom-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   height: 8rem;
-  margin-bottom: 4rem;
+  padding-bottom: 5.6rem;
 }
-header > span, header a {
+custom-header > span, custom-header a {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #2d2d2d;
 }
-header nav {
+custom-header nav {
   display: flex;
   gap: 4rem;
 }
-header nav a {
+custom-header nav a {
   color: #555;
   display: inline-block;
+  width: 6rem;
+  text-align: center;
+  height: 2.4rem;
 }
-header nav a:hover, header nav a.active {
+custom-header nav a:hover, custom-header nav a.active {
+  font-weight: 600;
   color: #2d2d2d;
+}
+
+.wrap {
+  width: 100%;
+  min-width: 170rem;
+  height: 100vh;
+  height: 100dvh;
+  padding: 8rem 12rem;
+  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+  display: flex;
+  flex-direction: column;
+}
+@media (max-height: 1000px) {
+  .wrap {
+    padding: 4rem 12rem;
+  }
+}
+.wrap section {
+  width: 100%;
 }
 
 .main {
@@ -165,6 +188,7 @@ header nav a:hover, header nav a.active {
   flex-direction: column;
   position: absolute;
   left: 50%;
+  top: 35%;
   transform: translateX(-50%);
   width: 30rem;
   aspect-ratio: 1/1;
@@ -224,6 +248,9 @@ header nav a:hover, header nav a.active {
   line-height: 1;
 }
 
+.about {
+  height: calc(100% - 8rem);
+}
 .about .resume {
   padding: 0 7rem;
   height: 100%;
@@ -236,6 +263,12 @@ header nav a:hover, header nav a.active {
   column-gap: 4rem;
   row-gap: 4rem;
   height: 100%;
+}
+@media (max-height: 1000px) {
+  .about .resume .grid-container {
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
 }
 .about .resume .grid-container > li {
   border-radius: 1.3rem;
@@ -511,23 +544,25 @@ header nav a:hover, header nav a.active {
     margin-top: 3rem;
   }
 }
-
-.wrap {
-  width: 100%;
-  min-width: 170rem;
-  height: 100vh;
-  height: 100dvh;
-  padding: 8rem 12rem;
-  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+.about .resume .grid-container li.right.edu {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
-@media (max-height: 1000px) {
-  .wrap {
-    padding: 4rem 12rem;
-  }
+.about .resume .grid-container li.right.edu > div > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
 }
-.wrap section {
-  width: 100%;
-  height: 100%;
+.about .resume .grid-container li.right.edu > div > ul > li {
+  margin-bottom: 0.8rem;
+}
+.about .resume .grid-container li.right.edu > div > ul > li span {
+  font-size: 1.3rem;
+  color: #555;
+  display: block;
+}
+.about .resume .grid-container li.right.edu > div > ul > li small {
+  font-size: 1.2rem;
+  color: #8e8e8e;
 }

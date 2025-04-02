@@ -1,8 +1,9 @@
 
 //About
 .about {
+    height: calc(100% - 8rem);
     .resume {
-        padding: 0 7rem;
+        padding: 0 7rem;        
         height: 100%;
 
         .grid-container {
@@ -13,6 +14,11 @@
             column-gap: $num-40;
             row-gap: $num-40;
             height: 100%;
+
+            @media (max-height : 1000px) {
+                column-gap: $num-30;
+                row-gap: $num-30;
+            }
 
             >li {
                 border-radius: 1.3rem;
@@ -347,6 +353,38 @@
                         @media (max-height:1000px) {
                             &{
                                 margin-top: $num-32;
+                            }
+                        }
+                    }
+                }
+
+                &.edu{
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    >div{
+                        >p{
+                            font-size: $num-15;
+                            font-weight: 600;
+                            margin-bottom: $num-24;
+
+                            // @media (max-height : 1000px) {
+                            //     margin-bottom: $num-16;
+                            // }
+                        }
+
+                        >ul{
+                            >li{
+                                margin-bottom: $num-8;
+                                span{
+                                    font-size: $num-13;
+                                    color: $text-color-basic;
+                                    display: block;
+                                }
+                                small{
+                                    font-size: $num-12;
+                                    color: $text-color-caption;
+                                }
                             }
                         }
                     }

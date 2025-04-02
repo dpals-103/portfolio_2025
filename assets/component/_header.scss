@@ -1,13 +1,13 @@
-header{
+custom-header{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     height: 8rem;
-    margin-bottom: 4rem;
+    padding-bottom: $num-56;
 
     > span, a{
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 500;
         color: $text-color-bolder;
     }
@@ -17,9 +17,13 @@ header{
         gap: $num-40;
         a{
             color: $text-color-basic;   
-            display: inline-block;            
+            display: inline-block;       
+            width: 6rem;
+            text-align: center;
+            height: $num-24;     
 
             &:hover, &.active{
+                font-weight: 600;
                 color: $text-color-bolder
             }
         }
