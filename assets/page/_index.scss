@@ -1,9 +1,10 @@
-  // Cover
+
   .main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    background: $bg-blue-gradient;
     
     .body {
         @include flex-align-center;

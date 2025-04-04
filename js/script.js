@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="about.html">About</a>
                 <a href="works.html">Works</a>
                 <a href="contact.html">Contact</a>
-                <button><i class="fa-solid fa-moon"></i></button>
+                <button alt="어두운테마로 변경" title="Change Dark mode!"><i class="fa-solid fa-moon"></i></button>
             </nav>
            `
         }

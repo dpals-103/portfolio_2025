@@ -27,5 +27,14 @@ custom-header{
                 color: $text-color-bolder
             }
         }
+
+        button{
+            background: none;
+            border: 0;
+            cursor: pointer;
+            i{
+                font-size: 1.6rem;
+            }
+        }
     }
 }

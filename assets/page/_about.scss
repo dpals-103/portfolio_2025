@@ -1,396 +1,433 @@
-
-//About
 .about {
-    height: calc(100% - 8rem);
-    .resume {
-        padding: 0 7rem;        
-        height: 100%;
+    background-color: $bg-secondary;
 
-        .grid-container {
-            margin: 0 auto;
-            display: grid;
-            grid-template-rows: repeat(7, 1fr);
-            grid-template-columns: repeat(11, 1fr);
-            column-gap: $num-40;
-            row-gap: $num-40;
+    main {
+        height: calc(100% - 8rem);
+
+        .resume {
+            padding: 0 7rem;
             height: 100%;
 
-            @media (max-height : 1000px) {
-                column-gap: $num-30;
-                row-gap: $num-30;
-            }
+            .grid-container {
+                margin: 0 auto;
+                display: grid;
+                grid-template-rows: repeat(7, 1fr);
+                grid-template-columns: repeat(11, 1fr);
+                column-gap: $num-40;
+                row-gap: $num-40;
+                height: 100%;
 
-            >li {
-                border-radius: 1.3rem;
-                background-color: $gray-0;
-                box-shadow: $num-4 $num-8 $num-20 0px rgba(122, 150, 191, 0.10);
-                padding: $num-56 $num-48 $num-40 $num-48;
-
-                &:last-child {
-                    padding: $num-32 $num-28;
+                @media (max-height : 1000px) {
+                    column-gap: $num-30;
+                    row-gap: $num-30;
                 }
 
-                &.row-span-7 {
-                    grid-row: span 7;
-                }
+                >li {
+                    border-radius: $num-10;
+                    background-color: $gray-0;
+                    box-shadow: 0px 8px 25px 0px rgba(94, 94, 94, 0.20);
+                    padding: $num-56 $num-48 $num-40 $num-48;
 
-                &.row-span-5 {
-                    grid-row: span 5;
-                }
-
-                &.row-span-2 {
-                    grid-row: span 2;
-                }
-
-                &.col-span-3 {
-                    grid-column: span 3;
-                }
-
-                &.col-span-5 {
-                    grid-column: span 5;
-                }
-
-                @media (max-height:1000px) {
-                    &{
-                        padding: $num-40 $num-48 $num-40 $num-48;
-                    }
-                }
-            }
-
-            li.left {
-                display: flex;
-                flex-direction: column;
-                
-                // 프로필
-                >.profile {
-                    @include flex-align-center;
-                    gap: $num-24;
-
-                    >.img-box {
-                        width: 8rem;
-                        aspect-ratio: 1 / 1;
-                        border-radius: 100px;
-                        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-                        background: url(images/img_profile.png) no-repeat;
-                        background-size: cover;
+                    &:last-child {
+                        padding: $num-32 $num-28;
                     }
 
-                    >.txt-box {
-                        h6 {
-                            font-family: 'pretendard', sans-serif;
-                            color: $text-color-bolder;
-                            line-height: 1;
-                        }
+                    &.row-span-7 {
+                        grid-row: span 7;
+                    }
 
-                        span {
-                            display: block;
-                            padding-top: $num-16;
-                            font-size: $num-16;
-                            color: $text-color-caption;
-                            line-height: 1;
+                    &.row-span-5 {
+                        grid-row: span 5;
+                    }
+
+                    &.row-span-2 {
+                        grid-row: span 2;
+                    }
+
+                    &.col-span-3 {
+                        grid-column: span 3;
+                    }
+
+                    &.col-span-5 {
+                        grid-column: span 5;
+                    }
+
+                    @media (max-height:1000px) {
+                        & {
+                            padding: $num-40 $num-48 $num-40 $num-48;
                         }
                     }
-
                 }
 
-                //소개글
-                >.introduce {
-                    >.img-box{
-                        width: 100%;
-                        height: 23rem;
-                        text-align: right;
-                        margin-bottom: $num-40;
-                        position: relative;
-                        img{
-                            height: 140%;
+                li.left {
+                    display: flex;
+                    flex-direction: column;
+                    background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+                    box-shadow: 0px 8px 25px 0px rgba(33, 41, 80, 0.20);
+
+                    // 프로필
+                    >.profile {
+                        @include flex-align-center;
+                        gap: $num-24;
+
+                        >.img-box {
+                            width: 8rem;
                             aspect-ratio: 1 / 1;
-                            position: absolute;
-                            right: -6rem;
-                            top: -1rem;
+                            border-radius: 100px;
+                            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+                            background: url(images/img_profile.png) no-repeat;
+                            background-size: cover;
                         }
+
+                        >.txt-box {
+                            h6 {
+                                font-family: 'pretendard', sans-serif;
+                                color: $text-color-bolder;
+                                line-height: 1;
+                            }
+
+                            span {
+                                display: block;
+                                padding-top: $num-16;
+                                font-size: $num-16;
+                                color: $text-color-caption;
+                                line-height: 1;
+                            }
+                        }
+
+                    }
+
+                    //소개글
+                    >.introduce {
+                        >.img-box {
+                            width: 100%;
+                            height: 23rem;
+                            text-align: right;
+                            margin-bottom: $num-40;
+                            position: relative;
+
+                            img {
+                                height: 140%;
+                                aspect-ratio: 1 / 1;
+                                position: absolute;
+                                right: -6rem;
+                                top: -1rem;
+                            }
+
+                            @media (max-height:1000px) {
+                                & {
+                                    height: 20rem;
+                                }
+                            }
+                        }
+
+                        >span {
+                            font-size: $num-30;
+                            line-height: 1.5;
+                            display: block;
+                            font-weight: 500;
+                            color: $text-color-bolder;
+                        }
+
+                        >p {
+                            padding-top: $num-40;
+                            font-size: $num-14;
+                            color: $text-color-basic;
+                        }
+                    }
+
+                    >.hashtag {
+                        @include flex-align-center;
+                        flex-wrap: wrap;
+                        gap: $num-8;
+                        margin-top: auto;
+
+                        >li {
+                            font-size: $num-12;
+                            line-height: 2;
+                            color: $text-color-caption;
+                            border: 1px solid $gray-50;
+                            padding: 0 $num-16;
+                            border-radius: $round-13;
+                            display: inline-block;
+                        }
+                    }
+                }
+
+                li.center {
+                    >h6 {
+                        padding-bottom: $num-56;
 
                         @media (max-height:1000px) {
-                            &{
-                                height: 20rem;
+                            & {
+                                padding-bottom: $num-28;
                             }
                         }
                     }
-                    >span {
-                        font-size: $num-30;
-                        line-height: 1.5;
-                        display: block;
-                        font-weight: 500;
-                        color: $text-color-bolder;
-                    }
 
-                    >p {
-                        padding-top: $num-40;
-                        font-size: $num-14;
-                        color: $text-color-basic;
-                    }
-                }
+                    >ul {
+                        width: 100%;
 
-                >.hashtag {
-                    @include flex-align-center;
-                    flex-wrap: wrap;
-                    gap: $num-8;
-                    margin-top: auto;
-                    >li {
-                        font-size: $num-12;
-                        line-height: 2;
-                        color: $text-color-caption;
-                        border: 1px solid $gray-50;
-                        padding: 0 $num-16;
-                        border-radius: $round-13;
-                        display: inline-block;
-                    }
-                }
-            }
-
-            li.center{
-                >h6{
-                    padding-bottom: $num-56;
-                    @media (max-height:1000px) {
-                        &{
-                            padding-bottom: $num-28;
-                        }
-                    }
-                }
-                >ul{
-                    width: 100%;
-                    >li{
-                        &:not(:last-child){
-                            margin-bottom: $num-16;
-                        }
-                        .company-info{
-                            width: 100%;
-                            @include flex-align-center;
-                            gap: $num-8;
-                            margin-bottom: $num-12;
-                            b,span{
-                                font-size: $num-14;
+                        >li {
+                            &:not(:last-child) {
+                                margin-bottom: $num-16;
                             }
-                            b{
-                                font-weight: 600;
-                                color: $text-color-bolder;
+
+                            .company-info {
+                                width: 100%;
                                 @include flex-align-center;
                                 gap: $num-8;
-                                &::after{
-                                    content: '';
-                                    display: inline-block;
-                                    width: 1px;
-                                    height: 1.2rem;
-                                    background-color : $text-color-basic;                                }
-                            }
-                            small{
-                                font-size: $num-12;
-                                color: $text-color-caption;
-                                margin-left: auto;
-                            }
-                        }
+                                margin-bottom: $num-12;
 
-                        .main-work{
-                            width: 100%;
-                            background-color: $bg-secondary;
-                            padding: $num-16 $num-14;
-                            display: flex;
-                            flex-direction: column;
-                            gap: $num-4;
-                            
-                            >li{
-                                font-size: $num-13;
-                                line-height: 2.1rem;
-                                color: $text-color-basic;
-                            }
-                        }
-                    }
-                 
-                }
-            }
+                                b,
+                                span {
+                                    font-size: $num-14;
+                                }
 
-            li.right{
-                h6{
-                    padding-bottom: $num-56;
-                    @media (max-height:1000px) {
-                        &{
-                            padding-bottom: $num-28;
-                        }
-                    }
-                }
-                &.skill{
-                    .main-skill{
-                        width: 100%;
-                        @include flex-align-center;
-                        justify-content: space-between;
+                                b {
+                                    font-weight: 600;
+                                    color: $text-color-bolder;
+                                    @include flex-align-center;
+                                    gap: $num-8;
 
-                        > li{
-                            display: flex;
-                            flex-direction: column;
-                            gap: $num-32;
+                                    &::after {
+                                        content: '';
+                                        display: inline-block;
+                                        width: 1px;
+                                        height: 1.2rem;
+                                        background-color: $text-color-basic;
+                                    }
+                                }
 
-                          >div{
-                            @include flex-align-center;
-                            gap: $num-16;
-
-                            i{
-                                width: $num-40;
-                                aspect-ratio: 1 / 1;
-                                img{
-                                    width: 100%;
-                                    transform: translate(0.8rem, 0.5rem);
+                                small {
+                                    font-size: $num-12;
+                                    color: $text-color-caption;
+                                    margin-left: auto;
                                 }
                             }
 
-                            >div{
-                                span{
-                                    display: block;
+                            .main-work {
+                                width: 100%;
+                                background-color: $gray-5;
+                                padding: $num-16 $num-14;
+                                display: flex;
+                                flex-direction: column;
+                                gap: $num-4;
+
+                                >li {
                                     font-size: $num-13;
-                                    padding-bottom: $num-8;
+                                    line-height: 2.1rem;
                                     color: $text-color-basic;
-                                    line-height: 1;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                li.right {
+                    h6 {
+                        padding-bottom: $num-56;
+
+                        @media (max-height:1000px) {
+                            & {
+                                padding-bottom: $num-28;
+                            }
+                        }
+                    }
+
+                    &.skill {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        flex-grow: 1;
+
+                        .main-skill {
+                            height: 100%;
+                            width: 100%;
+                            @include flex-align-center;
+                            justify-content: space-between;
+
+                            >li {
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+
+                                >div {
+                                    @include flex-align-center;
+                                    gap: $num-16;
+
+                                    i {
+                                        width: $num-40;
+                                        aspect-ratio: 1 / 1;
+
+                                        img {
+                                            width: 100%;
+                                            transform: translate(0.8rem, 0.5rem);
+                                        }
+                                    }
+
+                                    >div {
+                                        span {
+                                            display: block;
+                                            font-size: $num-13;
+                                            padding-bottom: $num-8;
+                                            color: $text-color-basic;
+                                            line-height: 1;
+                                        }
+
+                                        .bar {
+                                            width: 6.4rem;
+                                            height: 1rem;
+                                            position: relative;
+                                            background-color: $gray-10;
+
+                                            .bar-val {
+                                                width: 100%;
+                                                height: 100%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                            }
+                                        }
+                                    }
+
+                                    // bar value gradiant
+                                    &.html {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #FFBD71 0%, #EA714C 100%);
+                                        }
+                                    }
+
+                                    &.css {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #42C5FF 0%, #1492D7 100%);
+                                        }
+                                    }
+
+                                    &.sass {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #F153B6 0%, #69244F 100%);
+                                        }
+                                    }
+
+                                    &.jquery {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #2C8FD9 0%, #04355A 100%);
+                                        }
+                                    }
+
+                                    &.figma {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #7B7B7B 0%, #161616 100%);
+                                        }
+                                    }
+
+                                    &.xd {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #FB5FF2 0%, #953890 100%);
+                                        }
+                                    }
+
+                                    &.photoshop {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #30A7FF 0%, #0079FF 100%);
+                                        }
+                                    }
+
+                                    &.illu {
+                                        .bar-val {
+                                            background: linear-gradient(90deg, #FD9A01 0%, #C67800 100%);
+                                        }
+                                    }
                                 }
 
-                                .bar{
-                                    width: 6.4rem;
-                                    height: 1rem;
-                                    position: relative;
-                                    background-color: $gray-10;
-                                    .bar-val{
-                                        width: 100%;
-                                        height: 100%;
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
+                                @media (max-height:1000px) {
+                                    & {
+                                        gap: $num-24;
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .etc-tool {
+                            padding: $num-16 $num-14;
+                            background-color: $gray-5;
+                            margin-top: $num-32;
+
+                            >span {
+                                color: $text-color-caption;
+                                font-size: $num-13;
+                            }
+
+                            >ul {
+                                @include flex-align-center;
+                                gap: $num-20;
+
+                                li {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+
+                                    img {
+                                        width: 28px;
+                                        aspect-ratio: 1 / 1;
+                                    }
+
+                                    span {
+                                        font-size: $num-13;
+                                        color: $text-color-basic
                                     }
                                 }
                             }
 
-                            // bar value gradiant
-                            &.html{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #FFBD71 0%, #EA714C 100%);
+                            @media (max-height:1000px) {
+                                & {
+                                    margin-top: $num-32;
                                 }
                             }
-
-                            &.css{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #42C5FF 0%, #1492D7 100%);
-                                }
-                            }
-
-                            &.sass{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #F153B6 0%, #69244F 100%);
-                                }
-                            }
-
-                            &.jquery{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #2C8FD9 0%, #04355A 100%);
-                                }
-                            }
-
-                            &.figma{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #7B7B7B 0%, #161616 100%);
-                                }
-                            }
-
-                            &.xd{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #FB5FF2 0%, #953890 100%);
-                                }
-                            }
-
-                            &.photoshop{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #30A7FF 0%, #0079FF 100%);
-                                }
-                            }
-
-                            &.illu{
-                                .bar-val{
-                                    background: linear-gradient(90deg, #FD9A01 0%, #C67800 100%);
-                                }
-                            }
-                          }  
-
-                          @media (max-height:1000px) {
-                            &{
-                               gap: $num-24;
-                            }
-                        }
-
                         }
                     }
 
-                    .etc-tool{
-                        padding: $num-16 $num-14;
-                        margin-top: $num-32;
-                        background-color: $bg-secondary;
-                        >span{
-                            color: $text-color-caption;
-                            font-size: $num-13;
-                        }
-                        >ul{
-                            @include flex-align-center;
-                            gap: $num-20;
-                            li{
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                img{
-                                    width: 28px;
-                                    aspect-ratio: 1 / 1;
-                                }
-                                span{
-                                    font-size: $num-13;
-                                    color: $text-color-basic
-                                }
+                    &.edu {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+                        >div {
+                            >p {
+                                font-size: $num-15;
+                                font-weight: 600;
+                                margin-bottom: $num-24;
+
+                                // @media (max-height : 1000px) {
+                                //     margin-bottom: $num-16;
+                                // }
                             }
-                        }
 
-                        @media (max-height:1000px) {
-                            &{
-                                margin-top: $num-32;
-                            }
-                        }
-                    }
-                }
+                            >ul {
+                                >li {
+                                    margin-bottom: $num-8;
 
-                &.edu{
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: space-between;
-                    >div{
-                        >p{
-                            font-size: $num-15;
-                            font-weight: 600;
-                            margin-bottom: $num-24;
+                                    span {
+                                        font-size: $num-13;
+                                        color: $text-color-basic;
+                                        display: block;
+                                    }
 
-                            // @media (max-height : 1000px) {
-                            //     margin-bottom: $num-16;
-                            // }
-                        }
-
-                        >ul{
-                            >li{
-                                margin-bottom: $num-8;
-                                span{
-                                    font-size: $num-13;
-                                    color: $text-color-basic;
-                                    display: block;
-                                }
-                                small{
-                                    font-size: $num-12;
-                                    color: $text-color-caption;
+                                    small {
+                                        font-size: $num-12;
+                                        color: $text-color-caption;
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
 
+        }
     }
 }

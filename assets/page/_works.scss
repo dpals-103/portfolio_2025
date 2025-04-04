@@ -1,0 +1,34 @@
+.works{
+    background-color: $bg-secondary;
+
+    main{
+        flex-grow: 1;
+        max-width: 139.4rem;
+        width: 139.4rem;
+        margin: 0 auto;
+        height: 100dvh;
+        flex-shrink: 0;
+
+
+        > .grid{
+            width: 100%;
+            height: unset !important;
+            border: 1px solid red;
+
+            .grid-sizer, .grid-item{
+                width: calc((100% - 4rem) / 2);
+
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
