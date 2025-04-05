@@ -1,28 +1,32 @@
 html{
-
     scroll-behavior:  smooth;
-    
-    .wrap{
-        width: 100%;
-        min-width: 170rem;
-        height: 100vh;
-        height: 100dvh;
-        padding: 8rem 12rem;
-        display: flex;
-        flex-direction: column;    
-    
-    
-        @media (max-height : 1000px) {
-            &{
-                padding: 4rem 12rem;
+    body{
+        background-color: $bg-secondary;
+        
+        .wrap{
+            width: 100%;
+            min-width: 170rem;
+            height: 100vh;
+            height: 100dvh;
+            padding: 8rem 12rem;
+            display: flex;
+            flex-direction: column;    
+        
+        
+            @media (max-height : 1000px) {
+                &{
+                    padding: 4rem 12rem;
+                }
+            }
+        
+            // common
+            section {
+                width: 100%;
             }
         }
-    
-        // common
-        section {
-            width: 100%;
-        }
     }
+    
+    
     
     
 }

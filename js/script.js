@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
     const headerYear = document.querySelector('custom-header .year');
     const headerLogo = document.querySelector('custom-header .logo');
+    const header = document.querySelector('custom-header');
 
     if (currentPath.endsWith("index.html") || currentPath === "/") {
         headerLogo.style.display = 'none';
@@ -34,16 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gnbLink.forEach((link) => {
         const linkPath = new URL(link.href, window.location.origin).pathname; // 절대경로 변환
+        
         console.log(linkPath);
         if (linkPath === currentPath) {
             link.classList.add('active');
         } else if (linkPath.includes('work') && currentPath.includes('work')) {
             link.classList.add('active');
+            header.style.display="none"
         }
     });
 
 
 
+    // work 상세페이지 페이지네이션 기능 
     const totalPages = 8; // 전체 프로젝트 개수    
     const prevBtn = document.querySelector(".prev-btn")
     const nextBtn = document.querySelector(".next-btn")
@@ -65,5 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
     } else{
         nextBtn.style.display="none";
     }
+
+
+    // 스크롤 방향에 따라 헤더 숨겼다 보여주기
+    let lastScrollTop = 0;
+    let ticking = false;
+    const headerSection = document.querySelector('custom-header.fixed');
+
+    function onScroll(){
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll - lastScrollTop > 3){
+            headerSection.style.transform = "translateY(-100%)";
+            headerSection.style.opacity = "0";
+        } else if ( lastScrollTop - currentScroll > 10){
+            headerSection.style.transform = "translateY(0)";
+            headerSection.style.opacity = "1";
+        }
+
+        lastScrollTop = currentScroll;
+        ticking = false;
+    }
+
+    window.addEventListener("scroll",function(){
+        if (!ticking){
+            this.requestAnimationFrame(onScroll);
+            ticking = true;
+        }
+    })
 
 });

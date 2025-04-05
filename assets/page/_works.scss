@@ -1,6 +1,9 @@
 .works {
-    background-color: $bg-secondary;
-    height: unset;
+    padding-top: 16rem;
+
+    @media (max-height : 1000px) {
+        padding-top: 12rem;
+    }
 
     main {
         flex-grow: 1;
@@ -115,7 +118,7 @@
                         }
                     }
 
-                    &::before{
+                    &::before {
                         content: '';
                         display: block;
                         width: 100%;
@@ -125,49 +128,49 @@
                         left: 0;
                     }
 
-                    &.work-01{
+                    &.work-01 {
                         &::before {
                             background: linear-gradient(247deg, rgba(75, 109, 151, 0) 36.39%, rgba(75, 109, 151, 0.8) 85.75%);
                         }
                     }
 
-                    &.work-02{
+                    &.work-02 {
                         &::before {
                             background: linear-gradient(247deg, rgba(#545553, 0) 36.39%, rgba(#4B4B4B, 0.8) 85.75%);
                         }
                     }
 
-                    &.work-03{
+                    &.work-03 {
                         &::before {
                             background: linear-gradient(247deg, rgba(#1C1B1A, 0) 36.39%, rgba(#1C1B1A, 0.8) 85.75%);
                         }
                     }
 
-                    &.work-04{
+                    &.work-04 {
                         &::before {
                             background: linear-gradient(247deg, rgba(#1A4F8D, 0) 36.39%, rgba(#1A4F8D, 0.8) 85.75%);
                         }
                     }
 
-                    &.work-05{
+                    &.work-05 {
                         &::before {
                             background: linear-gradient(247deg, rgba(#886F00, 0) 36.39%, rgba(#886F00, 0.7) 85.75%);
                         }
                     }
 
-                    &.work-06{
+                    &.work-06 {
                         &::before {
                             background: linear-gradient(247deg, rgba($black, 0) 36.39%, rgba($black, 0.7) 85.75%);
                         }
                     }
 
-                    &.work-07{
+                    &.work-07 {
                         &::before {
                             background: linear-gradient(247deg, rgba(#2C2922, 0) 36.39%, rgba(#2C2922, 0.8) 85.75%);
                         }
                     }
 
-                    &.work-08{
+                    &.work-08 {
                         &::before {
                             background: linear-gradient(247deg, rgba(#336379, 0) 36.39%, rgba(#336379, 0.8) 85.75%);
                         }
@@ -177,11 +180,12 @@
 
                     &:hover {
                         &::before {
-                            background-color: rgba($black, 0.5);
+                            background-color: rgba($black, 0.6);
                         }
 
-                        .btn-detail{
+                        .btn-detail {
                             opacity: 1;
+
                             &::after {
                                 opacity: 1;
                                 margin-left: $num-8;

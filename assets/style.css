@@ -117,6 +117,21 @@ custom-header {
   justify-content: space-between;
   margin-bottom: 5.6rem;
 }
+custom-header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  padding: 8rem 12rem 5.6rem 12rem;
+  z-index: 2;
+}
+@media (max-height: 1000px) {
+  custom-header.fixed {
+    padding-top: 4rem;
+  }
+}
 custom-header > span, custom-header a {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
@@ -150,7 +165,10 @@ custom-header nav button i {
 html {
   scroll-behavior: smooth;
 }
-html .wrap {
+html body {
+  background-color: #fafafa;
+}
+html body .wrap {
   width: 100%;
   min-width: 170rem;
   height: 100vh;
@@ -160,11 +178,11 @@ html .wrap {
   flex-direction: column;
 }
 @media (max-height: 1000px) {
-  html .wrap {
+  html body .wrap {
     padding: 4rem 12rem;
   }
 }
-html .wrap section {
+html body .wrap section {
   width: 100%;
 }
 
@@ -605,8 +623,12 @@ html .wrap section {
 }
 
 .works {
-  background-color: #fafafa;
-  height: unset;
+  padding-top: 16rem;
+}
+@media (max-height: 1000px) {
+  .works {
+    padding-top: 12rem;
+  }
 }
 .works main {
   flex-grow: 1;
@@ -763,7 +785,7 @@ html .wrap section {
 }
 .works main > .grid .grid-sizer a:hover::before,
 .works main > .grid .grid-item a:hover::before {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .works main > .grid .grid-sizer a:hover .btn-detail,
 .works main > .grid .grid-item a:hover .btn-detail {
