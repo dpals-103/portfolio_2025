@@ -65,6 +65,13 @@ a {
 
 @font-face {
   font-family: "pretendard", sans-serif;
+  src: url(font/Pretendard-Regular.subset.woff) format("woff"), url(font/Pretendard-Regular.subset.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "pretendard", sans-serif;
   src: url(font/Pretendard-Medium.subset.woff) format("woff"), url(font/Pretendard-Medium.subset.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -108,8 +115,7 @@ custom-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 8rem;
-  padding-bottom: 5.6rem;
+  margin-bottom: 5.6rem;
 }
 custom-header > span, custom-header a {
   font-family: "Montserrat", sans-serif;
@@ -141,7 +147,10 @@ custom-header nav button i {
   font-size: 1.6rem;
 }
 
-.wrap {
+html {
+  scroll-behavior: smooth;
+}
+html .wrap {
   width: 100%;
   min-width: 170rem;
   height: 100vh;
@@ -151,31 +160,33 @@ custom-header nav button i {
   flex-direction: column;
 }
 @media (max-height: 1000px) {
-  .wrap {
+  html .wrap {
     padding: 4rem 12rem;
   }
 }
-.wrap section {
+html .wrap section {
   width: 100%;
 }
 
-.main {
+.home {
+  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+}
+.home main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
 }
-.main .body {
+.home main .body {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
 }
-.main .body .txt-box {
+.home main .body .txt-box {
   transform: translateY(-50%);
 }
-.main .body .txt-box h4 {
+.home main .body .txt-box h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 4.8rem;
   font-weight: 500;
@@ -183,7 +194,7 @@ custom-header nav button i {
   line-height: normal;
   letter-spacing: -0.05em;
 }
-.main .body .txt-box h1 {
+.home main .body .txt-box h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 7rem;
   font-weight: 700;
@@ -191,7 +202,7 @@ custom-header nav button i {
   line-height: normal;
   letter-spacing: -0.05em;
 }
-.main .body .img-group {
+.home main .body .img-group {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -201,30 +212,30 @@ custom-header nav button i {
   width: 30rem;
   aspect-ratio: 1/1;
 }
-.main .body .img-group img {
+.home main .body .img-group img {
   width: 100%;
   position: absolute;
 }
-.main .body .img-group img.fire {
+.home main .body .img-group img.fire {
   transform: rotate(7.7deg);
   right: -6rem;
   top: -26rem;
 }
-.main .body .img-group img.heart {
+.home main .body .img-group img.heart {
   width: 95%;
   transform: rotate(-24.79deg) translateY(-50%);
   top: 50%;
   z-index: 1;
 }
-.main .body .img-group img.key {
+.home main .body .img-group img.key {
   transform: rotate(-17.89deg);
   bottom: -19rem;
   right: -6rem;
 }
-.main .body .italic {
+.home main .body .italic {
   transform: translateY(-25%);
 }
-.main .body .italic h1 {
+.home main .body .italic h1 {
   font-family: "Old Standard TT", serif;
   font-size: 14rem;
   font-weight: 400;
@@ -232,23 +243,23 @@ custom-header nav button i {
   letter-spacing: -0.03em;
   font-style: italic;
 }
-.main .bottom {
+.home main .bottom {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 }
-.main .bottom h5 {
+.home main .bottom h5 {
   font-size: 4rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   letter-spacing: -0.05em;
 }
-.main .bottom ul {
+.home main .bottom ul {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
-.main .bottom ul li {
+.home main .bottom ul li {
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   text-align: right;
@@ -263,14 +274,13 @@ custom-header nav button i {
   height: calc(100% - 8rem);
 }
 .about main .resume {
-  padding: 0 7rem;
+  padding: 0 14.3rem;
   height: 100%;
 }
 .about main .resume .grid-container {
-  margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(7, 1fr);
-  grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   column-gap: 4rem;
   row-gap: 4rem;
   height: 100%;
@@ -301,6 +311,9 @@ custom-header nav button i {
 }
 .about main .resume .grid-container > li.col-span-3 {
   grid-column: span 3;
+}
+.about main .resume .grid-container > li.col-span-4 {
+  grid-column: span 4;
 }
 .about main .resume .grid-container > li.col-span-5 {
   grid-column: span 5;
@@ -371,6 +384,7 @@ custom-header nav button i {
   padding-top: 4rem;
   font-size: 1.4rem;
   color: #555;
+  font-weight: 400;
 }
 .about main .resume .grid-container li.left > .hashtag {
   display: flex;
@@ -444,6 +458,7 @@ custom-header nav button i {
   font-size: 1.3rem;
   line-height: 2.1rem;
   color: #555;
+  font-weight: 400;
 }
 .about main .resume .grid-container li.right h6 {
   padding-bottom: 5.6rem;
@@ -591,11 +606,12 @@ custom-header nav button i {
 
 .works {
   background-color: #fafafa;
+  height: unset;
 }
 .works main {
   flex-grow: 1;
   max-width: 139.4rem;
-  width: 139.4rem;
+  width: 100%;
   margin: 0 auto;
   height: 100dvh;
   flex-shrink: 0;
@@ -603,18 +619,252 @@ custom-header nav button i {
 .works main > .grid {
   width: 100%;
   height: unset !important;
-  border: 1px solid red;
 }
-.works main > .grid .grid-sizer, .works main > .grid .grid-item {
+.works main > .grid .grid-sizer,
+.works main > .grid .grid-item {
   width: calc((100% - 4rem) / 2);
+  margin-bottom: 4rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: ease-in 0.2s;
 }
-.works main > .grid .grid-sizer a, .works main > .grid .grid-item a {
+.works main > .grid .grid-sizer a,
+.works main > .grid .grid-item a {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.works main > .grid .grid-sizer a img,
+.works main > .grid .grid-item a img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.works main > .grid .grid-sizer a .title-box,
+.works main > .grid .grid-item a .title-box {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 4rem 4.8rem 4rem;
+}
+.works main > .grid .grid-sizer a .title-box .badge,
+.works main > .grid .grid-item a .title-box .badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+}
+.works main > .grid .grid-sizer a .title-box .badge > li,
+.works main > .grid .grid-item a .title-box .badge > li {
+  font-size: 1.6rem;
+  font-family: "pretendard";
+  font-weight: 500;
+  line-height: 2.7rem;
+  padding: 0 1.2rem;
+  border-radius: 0.4rem;
+  color: #fff;
+}
+.works main > .grid .grid-sizer a .title-box .badge > li.year,
+.works main > .grid .grid-item a .title-box .badge > li.year {
+  border: 1px solid #fff;
+}
+.works main > .grid .grid-sizer a .title-box .badge > li.design,
+.works main > .grid .grid-item a .title-box .badge > li.design {
+  background-color: #A28DFF;
+}
+.works main > .grid .grid-sizer a .title-box .badge > li.publishing,
+.works main > .grid .grid-item a .title-box .badge > li.publishing {
+  background-color: #5D9DFF;
+}
+.works main > .grid .grid-sizer a .title-box .title > *,
+.works main > .grid .grid-item a .title-box .title > * {
+  font-size: 2.4rem;
+  line-height: 1;
+  font-family: "pretendard";
+  color: #fff;
+}
+.works main > .grid .grid-sizer a .title-box .title > p,
+.works main > .grid .grid-item a .title-box .title > p {
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.works main > .grid .grid-sizer a .title-box .title > b,
+.works main > .grid .grid-item a .title-box .title > b {
+  font-weight: 700;
+}
+.works main > .grid .grid-sizer a .title-box .btn-detail,
+.works main > .grid .grid-item a .title-box .btn-detail {
+  position: absolute;
+  bottom: 4.8rem;
+  right: 4rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: "pretendard";
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity ease-in 0.2s;
+}
+.works main > .grid .grid-sizer a .title-box .btn-detail::after,
+.works main > .grid .grid-item a .title-box .btn-detail::after {
+  content: "";
+  display: inline-block;
+  width: 3rem;
+  height: 1rem;
+  background: url(images/ico_arrow_right.svg) no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition: all ease-in 0.2s;
+}
+.works main > .grid .grid-sizer a::before,
+.works main > .grid .grid-item a::before {
+  content: "";
   display: block;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.works main > .grid .grid-sizer a img, .works main > .grid .grid-item a img {
+.works main > .grid .grid-sizer a.work-01::before,
+.works main > .grid .grid-item a.work-01::before {
+  background: linear-gradient(247deg, rgba(75, 109, 151, 0) 36.39%, rgba(75, 109, 151, 0.8) 85.75%);
+}
+.works main > .grid .grid-sizer a.work-02::before,
+.works main > .grid .grid-item a.work-02::before {
+  background: linear-gradient(247deg, rgba(84, 85, 83, 0) 36.39%, rgba(75, 75, 75, 0.8) 85.75%);
+}
+.works main > .grid .grid-sizer a.work-03::before,
+.works main > .grid .grid-item a.work-03::before {
+  background: linear-gradient(247deg, rgba(28, 27, 26, 0) 36.39%, rgba(28, 27, 26, 0.8) 85.75%);
+}
+.works main > .grid .grid-sizer a.work-04::before,
+.works main > .grid .grid-item a.work-04::before {
+  background: linear-gradient(247deg, rgba(26, 79, 141, 0) 36.39%, rgba(26, 79, 141, 0.8) 85.75%);
+}
+.works main > .grid .grid-sizer a.work-05::before,
+.works main > .grid .grid-item a.work-05::before {
+  background: linear-gradient(247deg, rgba(136, 111, 0, 0) 36.39%, rgba(136, 111, 0, 0.7) 85.75%);
+}
+.works main > .grid .grid-sizer a.work-06::before,
+.works main > .grid .grid-item a.work-06::before {
+  background: linear-gradient(247deg, rgba(0, 0, 0, 0) 36.39%, rgba(0, 0, 0, 0.7) 85.75%);
+}
+.works main > .grid .grid-sizer a.work-07::before,
+.works main > .grid .grid-item a.work-07::before {
+  background: linear-gradient(247deg, rgba(44, 41, 34, 0) 36.39%, rgba(44, 41, 34, 0.8) 85.75%);
+}
+.works main > .grid .grid-sizer a.work-08::before,
+.works main > .grid .grid-item a.work-08::before {
+  background: linear-gradient(247deg, rgba(51, 99, 121, 0) 36.39%, rgba(51, 99, 121, 0.8) 85.75%);
+}
+.works main > .grid .grid-sizer a:hover::before,
+.works main > .grid .grid-item a:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.works main > .grid .grid-sizer a:hover .btn-detail,
+.works main > .grid .grid-item a:hover .btn-detail {
+  opacity: 1;
+}
+.works main > .grid .grid-sizer a:hover .btn-detail::after,
+.works main > .grid .grid-item a:hover .btn-detail::after {
+  opacity: 1;
+  margin-left: 0.8rem;
+  transform: translateX(0);
+}
+.works main > .grid .grid-sizer:hover,
+.works main > .grid .grid-item:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
+}
+.works main > .grid .blank {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 6rem;
+}
+
+.work-detail main {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  column-gap: 4rem;
+  row-gap: 4rem;
+  padding: 0 14.3rem 8rem 14.3rem;
+}
+.work-detail main .side {
+  grid-column: span 3;
+  height: fit-content;
+  position: sticky;
+  top: 4rem;
+}
+.work-detail main .side .work-info {
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  padding: 4.8rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.work-detail main .side .work-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.work-detail main .side .work-info > div > span {
+  font-size: 1.4rem;
+  color: #555;
+  line-height: 1;
+}
+.work-detail main .side .work-info > div > p {
+  color: #2d2d2d;
+  line-height: 1.3;
+}
+.work-detail main .side .work-info > div > p.desc-txt {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+}
+.work-detail main .side .work-info > div > ul {
+  display: flex;
+  align-items: flex-end;
+}
+.work-detail main .side .work-info > div > ul > li {
+  width: 3rem;
+  aspect-ratio: 1/1;
+}
+.work-detail main .side .work-info > div > ul > li > img {
+  width: 100%;
+}
+.work-detail main .side .pagenation {
+  height: 4.8rem;
+  border-bottom: 1px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+}
+.work-detail main .side .pagenation > a {
+  font-size: 1.4rem;
+  color: #555;
+}
+.work-detail main .detail {
+  grid-column: span 7;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+.work-detail main .detail picture {
+  display: inline-block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #f0f0f0;
+}
+.work-detail main .detail .detail-desc {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+  font-family: "pretendard";
 }

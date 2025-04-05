@@ -1,33 +1,206 @@
-.works{
+.works {
     background-color: $bg-secondary;
+    height: unset;
 
-    main{
+    main {
         flex-grow: 1;
         max-width: 139.4rem;
-        width: 139.4rem;
+        width: 100%;
         margin: 0 auto;
         height: 100dvh;
         flex-shrink: 0;
 
 
-        > .grid{
+        >.grid {
             width: 100%;
             height: unset !important;
-            border: 1px solid red;
 
-            .grid-sizer, .grid-item{
+            .grid-sizer,
+            .grid-item {
                 width: calc((100% - 4rem) / 2);
+                margin-bottom: $num-40;
+                border-radius: $num-10;
+                overflow: hidden;
+                transition: ease-in 0.2s;
 
-                a{
+                a {
                     display: block;
                     width: 100%;
-                    height: 100%;
-                    img{
+                    height: auto;
+                    position: relative;
+
+                    img {
                         width: 100%;
                         height: 100%;
+                        display: block;
                         object-fit: cover;
                     }
+
+                    .title-box {
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        padding: 0 $num-40 $num-48 $num-40;
+
+                        .badge {
+                            display: flex;
+                            align-items: center;
+                            gap: $num-10;
+                            margin-bottom: $num-24;
+
+                            >li {
+                                font-size: $num-16;
+                                font-family: 'pretendard';
+                                font-weight: 500;
+                                line-height: 2.7rem;
+                                padding: 0 $num-12;
+                                border-radius: $num-4;
+                                color: $white;
+
+                                &.year {
+                                    border: 1px solid $white;
+                                }
+
+                                &.design {
+                                    background-color: #A28DFF;
+                                }
+
+                                &.publishing {
+                                    background-color: #5D9DFF;
+                                }
+                            }
+                        }
+
+                        .title {
+                            >* {
+                                font-size: $num-24;
+                                line-height: 1;
+                                font-family: 'pretendard';
+                                color: $white;
+                            }
+
+                            >p {
+                                font-weight: 500;
+                                margin-bottom: $num-12;
+                            }
+
+                            >b {
+                                font-weight: 700;
+                            }
+                        }
+
+                        .btn-detail {
+                            position: absolute;
+                            bottom: $num-48;
+                            right: $num-40;
+                            color: $white;
+                            font-size: $num-16;
+                            font-family: 'pretendard';
+                            font-weight: 500;
+                            opacity: 0;
+                            transition: opacity ease-in .2s;
+
+                            &::after {
+                                content: '';
+                                display: inline-block;
+                                width: $num-32;
+                                height: $num-10;
+                                background: url(images/ico_arrow_right.svg) no-repeat;
+                                background-size: cover;
+                                opacity: 0;
+                                transform: translateX(-1rem);
+                                transition: all ease-in .2s;
+                            }
+                        }
+                    }
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    &.work-01{
+                        &::before {
+                            background: linear-gradient(247deg, rgba(75, 109, 151, 0) 36.39%, rgba(75, 109, 151, 0.8) 85.75%);
+                        }
+                    }
+
+                    &.work-02{
+                        &::before {
+                            background: linear-gradient(247deg, rgba(#545553, 0) 36.39%, rgba(#4B4B4B, 0.8) 85.75%);
+                        }
+                    }
+
+                    &.work-03{
+                        &::before {
+                            background: linear-gradient(247deg, rgba(#1C1B1A, 0) 36.39%, rgba(#1C1B1A, 0.8) 85.75%);
+                        }
+                    }
+
+                    &.work-04{
+                        &::before {
+                            background: linear-gradient(247deg, rgba(#1A4F8D, 0) 36.39%, rgba(#1A4F8D, 0.8) 85.75%);
+                        }
+                    }
+
+                    &.work-05{
+                        &::before {
+                            background: linear-gradient(247deg, rgba(#886F00, 0) 36.39%, rgba(#886F00, 0.7) 85.75%);
+                        }
+                    }
+
+                    &.work-06{
+                        &::before {
+                            background: linear-gradient(247deg, rgba($black, 0) 36.39%, rgba($black, 0.7) 85.75%);
+                        }
+                    }
+
+                    &.work-07{
+                        &::before {
+                            background: linear-gradient(247deg, rgba(#2C2922, 0) 36.39%, rgba(#2C2922, 0.8) 85.75%);
+                        }
+                    }
+
+                    &.work-08{
+                        &::before {
+                            background: linear-gradient(247deg, rgba(#336379, 0) 36.39%, rgba(#336379, 0.8) 85.75%);
+                        }
+                    }
+
+
+
+                    &:hover {
+                        &::before {
+                            background-color: rgba($black, 0.5);
+                        }
+
+                        .btn-detail{
+                            opacity: 1;
+                            &::after {
+                                opacity: 1;
+                                margin-left: $num-8;
+                                transform: translateX(0);
+                            }
+                        }
+                    }
                 }
+
+                &:hover {
+                    transform: translateY(-0.2rem);
+                    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
+                }
+
+            }
+
+            .blank {
+                width: 100%;
+                height: 6rem;
             }
         }
     }

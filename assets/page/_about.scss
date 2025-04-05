@@ -5,14 +5,13 @@
         height: calc(100% - 8rem);
 
         .resume {
-            padding: 0 7rem;
+            padding: 0 14.3rem;
             height: 100%;
 
             .grid-container {
-                margin: 0 auto;
                 display: grid;
                 grid-template-rows: repeat(7, 1fr);
-                grid-template-columns: repeat(11, 1fr);
+                grid-template-columns: repeat(10, 1fr);
                 column-gap: $num-40;
                 row-gap: $num-40;
                 height: 100%;
@@ -24,7 +23,7 @@
 
                 >li {
                     border-radius: $num-10;
-                    background-color: $gray-0;
+                    background-color: $white;
                     box-shadow: 0px 8px 25px 0px rgba(94, 94, 94, 0.20);
                     padding: $num-56 $num-48 $num-40 $num-48;
 
@@ -46,6 +45,10 @@
 
                     &.col-span-3 {
                         grid-column: span 3;
+                    }
+
+                    &.col-span-4 {
+                        grid-column: span 4;
                     }
 
                     &.col-span-5 {
@@ -133,6 +136,7 @@
                             padding-top: $num-40;
                             font-size: $num-14;
                             color: $text-color-basic;
+                            font-weight: 400
                         }
                     }
 
@@ -218,6 +222,7 @@
                                     font-size: $num-13;
                                     line-height: 2.1rem;
                                     color: $text-color-basic;
+                                    font-weight: 400;
                                 }
                             }
                         }
