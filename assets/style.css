@@ -230,25 +230,108 @@ html body .wrap section {
   width: 30rem;
   aspect-ratio: 1/1;
 }
-.home main .body .img-group img {
+.home main .body .img-group > .img-box img {
   width: 100%;
   position: absolute;
 }
-.home main .body .img-group img.fire {
+.home main .body .img-group > .img-box img.fire {
   transform: rotate(7.7deg);
   right: -6rem;
   top: -26rem;
+  animation: moving1 2s ease-in 0s infinite alternate forwards;
 }
-.home main .body .img-group img.heart {
+@keyframes moving1 {
+  0% {
+    top: -26rem;
+  }
+  100% {
+    top: -28rem;
+  }
+}
+.home main .body .img-group > .img-box img.heart {
   width: 95%;
   transform: rotate(-24.79deg) translateY(-50%);
   top: 50%;
   z-index: 1;
+  animation: moving2 2s ease-in 0s infinite alternate forwards;
 }
-.home main .body .img-group img.key {
+@keyframes moving2 {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 45%;
+  }
+}
+.home main .body .img-group > .img-box img.key {
   transform: rotate(-17.89deg);
   bottom: -19rem;
   right: -6rem;
+  animation: moving3 2s ease-in 0s infinite alternate forwards;
+}
+@keyframes moving3 {
+  0% {
+    bottom: -19rem;
+  }
+  100% {
+    bottom: -17rem;
+  }
+}
+.home main .body .img-group > .img-box::after {
+  content: attr(name);
+  display: block;
+  position: absolute;
+  padding: 1rem 3rem;
+  line-height: 1;
+  font-size: 1.8rem;
+  border: 1px solid #2d2d2d;
+  color: #2d2d2d;
+  z-index: 999;
+  font-weight: 600;
+}
+.home main .body .img-group > .img-box[name=Passion]::after {
+  top: -30%;
+  right: -30%;
+  background-color: #FE8600;
+}
+.home main .body .img-group > .img-box[name=Fellowship]::after {
+  top: 35%;
+  left: -60%;
+  background-color: #FFCEE8;
+}
+.home main .body .img-group > .img-box[name=Adventure]::after {
+  top: 100%;
+  right: -50%;
+  background-color: #6FDDFF;
+}
+.home main .body .img-group .wave-animation {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+}
+.home main .body .img-group .wave-animation > circle {
+  opacity: 0;
+}
+.home main .body .img-group .wave-animation > circle.c-01 {
+  animation: wave 2s ease-in-out 0s infinite alternate forwards;
+}
+.home main .body .img-group .wave-animation > circle.c-02 {
+  animation: wave 2s ease-in-out 1s infinite alternate forwards;
+}
+.home main .body .img-group .wave-animation > circle.c-03 {
+  animation: wave 2s ease-in-out 2s infinite alternate forwards;
+}
+.home main .body .img-group .wave-animation > circle.c-04 {
+  animation: wave 2s ease-in-out 3s infinite alternate forwards;
+}
+@keyframes wave {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .home main .body .italic {
   transform: translateY(-25%);
@@ -310,9 +393,8 @@ html body .wrap section {
   }
 }
 .about main .resume .grid-container > li {
-  border-radius: 1rem;
   background-color: #fff;
-  box-shadow: 0px 8px 25px 0px rgba(94, 94, 94, 0.2);
+  box-shadow: 0px 8px 25px 0px rgba(94, 94, 94, 0.1);
   padding: 5.6rem 4.8rem 4rem 4.8rem;
 }
 .about main .resume .grid-container > li:last-child {
@@ -341,11 +423,18 @@ html body .wrap section {
     padding: 4rem 4.8rem 4rem 4.8rem;
   }
 }
+@media (max-height: 1040px) {
+  .about main .resume .grid-container > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 .about main .resume .grid-container li.left {
   display: flex;
   flex-direction: column;
   background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
-  box-shadow: 0px 8px 25px 0px rgba(33, 41, 80, 0.2);
+  box-shadow: 0px 8px 25px 0px rgba(33, 41, 80, 0.1);
 }
 .about main .resume .grid-container li.left > .profile {
   display: flex;
@@ -420,12 +509,17 @@ html body .wrap section {
   border-radius: 1.3rem;
   display: inline-block;
 }
-.about main .resume .grid-container li.center > h6 {
+.about main .resume .grid-container li.center > h6, .about main .resume .grid-container li.right > h6 {
   padding-bottom: 5.6rem;
 }
 @media (max-height: 1000px) {
-  .about main .resume .grid-container li.center > h6 {
+  .about main .resume .grid-container li.center > h6, .about main .resume .grid-container li.right > h6 {
     padding-bottom: 2.8rem;
+  }
+}
+@media (max-height: 1040px) {
+  .about main .resume .grid-container li.center > h6, .about main .resume .grid-container li.right > h6 {
+    padding-bottom: 1.6rem;
   }
 }
 .about main .resume .grid-container li.center > ul {
@@ -477,14 +571,6 @@ html body .wrap section {
   line-height: 2.1rem;
   color: #555;
   font-weight: 400;
-}
-.about main .resume .grid-container li.right h6 {
-  padding-bottom: 5.6rem;
-}
-@media (max-height: 1000px) {
-  .about main .resume .grid-container li.right h6 {
-    padding-bottom: 2.8rem;
-  }
 }
 .about main .resume .grid-container li.right.skill {
   display: flex;
@@ -603,6 +689,7 @@ html body .wrap section {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-direction: row;
 }
 .about main .resume .grid-container li.right.edu > div > p {
   font-size: 1.5rem;
