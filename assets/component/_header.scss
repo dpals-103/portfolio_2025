@@ -4,15 +4,18 @@ custom-header{
     justify-content: space-between;
     margin-bottom: $num-56;
     
+    
     &.fixed{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         box-sizing: border-box;
-        background-color: $bg-secondary;
+        //background-color: $bg-secondary;
         padding:  8rem 12rem 5.6rem 12rem;
+        margin-bottom: 0;
         z-index: 2;
+        transition: opacity 1s ease, translate 1s ease;
     
         @media (max-height : 1000px) {
             padding-top: 4rem;

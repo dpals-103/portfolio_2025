@@ -123,9 +123,10 @@ custom-header.fixed {
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  background-color: #fafafa;
   padding: 8rem 12rem 5.6rem 12rem;
+  margin-bottom: 0;
   z-index: 2;
+  transition: opacity 1s ease, translate 1s ease;
 }
 @media (max-height: 1000px) {
   custom-header.fixed {
@@ -284,25 +285,31 @@ html body .wrap section {
   padding: 1rem 3rem;
   line-height: 1;
   font-size: 1.8rem;
-  border: 1px solid #2d2d2d;
-  color: #2d2d2d;
+  border-radius: 5rem;
+  color: #fff;
   z-index: 999;
   font-weight: 600;
 }
 .home main .body .img-group > .img-box[name=Passion]::after {
   top: -30%;
   right: -30%;
-  background-color: #FE8600;
+  border: 0.1rem solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(94deg, rgba(251, 204, 47, 0.5) 0%, rgba(255, 186, 109, 0.75) 56.28%, #FE8600 100%);
+  box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.1);
 }
 .home main .body .img-group > .img-box[name=Fellowship]::after {
   top: 35%;
   left: -60%;
-  background-color: #FFCEE8;
+  border: 0.1rem solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(89deg, #FD394A 5.04%, rgba(255, 18, 78, 0.75) 46.46%, rgba(253, 134, 193, 0.5) 99.78%);
+  box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.1);
 }
 .home main .body .img-group > .img-box[name=Adventure]::after {
   top: 100%;
   right: -50%;
-  background-color: #6FDDFF;
+  border: 0.1rem solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(94deg, rgba(64, 247, 255, 0.5) 0%, rgba(77, 178, 255, 0.75) 48.08%, #0E33CE 100%);
+  box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.1);
 }
 .home main .body .img-group .wave-animation {
   position: absolute;
@@ -349,16 +356,16 @@ html body .wrap section {
   align-items: flex-end;
   justify-content: space-between;
 }
-.home main .bottom h5 {
-  font-size: 4rem;
+.home main .bottom > span {
+  font-size: 1.8rem;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  color: #555;
   letter-spacing: -0.05em;
 }
 .home main .bottom ul {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.6rem;
 }
 .home main .bottom ul li {
   font-family: "Montserrat", sans-serif;
@@ -393,6 +400,7 @@ html body .wrap section {
   }
 }
 .about main .resume .grid-container > li {
+  border-radius: 1rem;
   background-color: #fff;
   box-shadow: 0px 8px 25px 0px rgba(94, 94, 94, 0.1);
   padding: 5.6rem 4.8rem 4rem 4.8rem;
@@ -456,7 +464,7 @@ html body .wrap section {
 }
 .about main .resume .grid-container li.left > .profile > .txt-box span {
   display: block;
-  padding-top: 1.6rem;
+  padding-top: 0.8rem;
   font-size: 1.6rem;
   color: #8e8e8e;
   line-height: 1;
@@ -504,7 +512,7 @@ html body .wrap section {
   font-size: 1.2rem;
   line-height: 2;
   color: #8e8e8e;
-  border: 1px solid #8e8e8e;
+  border: 0.1rem solid #8e8e8e;
   padding: 0 1.6rem;
   border-radius: 1.3rem;
   display: inline-block;
@@ -549,7 +557,7 @@ html body .wrap section {
 .about main .resume .grid-container li.center > ul > li .company-info b::after {
   content: "";
   display: inline-block;
-  width: 1px;
+  width: 0.1rem;
   height: 1.2rem;
   background-color: #555;
 }
@@ -654,13 +662,18 @@ html body .wrap section {
   }
 }
 .about main .resume .grid-container li.right.skill .etc-tool {
-  padding: 1.6rem 1.4rem;
+  padding: 1.2rem 1.4rem;
   background-color: #f8f8f8;
   margin-top: 3rem;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .about main .resume .grid-container li.right.skill .etc-tool > span {
   color: #8e8e8e;
   font-size: 1.3rem;
+  font-weight: 400;
 }
 .about main .resume .grid-container li.right.skill .etc-tool > ul {
   display: flex;
@@ -673,7 +686,7 @@ html body .wrap section {
   align-items: center;
 }
 .about main .resume .grid-container li.right.skill .etc-tool > ul li img {
-  width: 28px;
+  width: 2.8rem;
   aspect-ratio: 1/1;
 }
 .about main .resume .grid-container li.right.skill .etc-tool > ul li span {
@@ -764,7 +777,6 @@ html body .wrap section {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2.4rem;
 }
 .works main > .grid .grid-sizer a .title-box .badge > li,
 .works main > .grid .grid-item a .title-box .badge > li {
@@ -774,19 +786,18 @@ html body .wrap section {
   line-height: 2.7rem;
   padding: 0 1.2rem;
   border-radius: 0.4rem;
-  color: #fff;
+  color: #2d2d2d;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .works main > .grid .grid-sizer a .title-box .badge > li.year,
 .works main > .grid .grid-item a .title-box .badge > li.year {
-  border: 1px solid #fff;
+  border: 0.1rem solid #fff;
+  color: #fff;
+  background-color: transparent;
 }
-.works main > .grid .grid-sizer a .title-box .badge > li.design,
-.works main > .grid .grid-item a .title-box .badge > li.design {
-  background-color: #A28DFF;
-}
-.works main > .grid .grid-sizer a .title-box .badge > li.publishing,
-.works main > .grid .grid-item a .title-box .badge > li.publishing {
-  background-color: #5D9DFF;
+.works main > .grid .grid-sizer a .title-box .title,
+.works main > .grid .grid-item a .title-box .title {
+  margin-bottom: 2.4rem;
 }
 .works main > .grid .grid-sizer a .title-box .title > *,
 .works main > .grid .grid-item a .title-box .title > * {
@@ -899,17 +910,17 @@ html body .wrap section {
   grid-template-columns: repeat(10, 1fr);
   column-gap: 4rem;
   row-gap: 4rem;
-  padding: 0 14.3rem 8rem 14.3rem;
+  padding: 8rem 14.3rem 8rem 14.3rem;
 }
 .work-detail main .side {
   grid-column: span 3;
   height: fit-content;
   position: sticky;
-  top: 4rem;
+  top: 8rem;
 }
 .work-detail main .side .work-info {
-  border-top: 1px solid #555;
-  border-bottom: 1px solid #555;
+  border-top: 0.1rem solid #555;
+  border-bottom: 0.1rem solid #555;
   padding: 4.8rem 0.8rem;
   display: flex;
   flex-direction: column;
@@ -948,7 +959,7 @@ html body .wrap section {
 }
 .work-detail main .side .pagenation {
   height: 4.8rem;
-  border-bottom: 1px solid #555;
+  border-bottom: 0.1rem solid #555;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -50,7 +50,7 @@
                             display: flex;
                             align-items: center;
                             gap: $num-10;
-                            margin-bottom: $num-24;
+                            
 
                             >li {
                                 font-size: $num-16;
@@ -59,23 +59,19 @@
                                 line-height: 2.7rem;
                                 padding: 0 $num-12;
                                 border-radius: $num-4;
-                                color: $white;
+                                color: $text-color-bolder;
+                                background-color: rgba(255,255,255,0.5);
 
                                 &.year {
-                                    border: 1px solid $white;
-                                }
-
-                                &.design {
-                                    background-color: #A28DFF;
-                                }
-
-                                &.publishing {
-                                    background-color: #5D9DFF;
+                                    border: 0.1rem solid $white;
+                                    color: $white;
+                                    background-color: transparent;
                                 }
                             }
                         }
 
                         .title {
+                            margin-bottom: $num-24;
                             >* {
                                 font-size: $num-24;
                                 line-height: 1;

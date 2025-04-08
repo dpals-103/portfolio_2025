@@ -35,13 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gnbLink.forEach((link) => {
         const linkPath = new URL(link.href, window.location.origin).pathname; // 절대경로 변환
-        
-        console.log(linkPath);
+
         if (linkPath === currentPath) {
             link.classList.add('active');
-        } else if (linkPath.includes('work') && currentPath.includes('work')) {
+        } else if ((linkPath.includes('work') || linkPath.includes('works')) && (currentPath.includes('work') || currentPath.includes('works'))) {
             link.classList.add('active');
-            header.style.display="none"
+            header.classList.add('fixed');
         }
     });
 
@@ -57,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentPage > 1) {
         const prevPage = `work-0${currentPage - 1}.html`;
         prevBtn.href = prevPage
-    } else{
-        prevBtn.style.display="none";
+    } else {
+        prevBtn.style.display = "none";
     }
 
 
@@ -66,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentPage < totalPages) {
         const nextPage = `work-0${currentPage + 1}.html`;
         nextBtn.href = nextPage
-    } else{
-        nextBtn.style.display="none";
+    } else {
+        nextBtn.style.display = "none";
     }
 
 
@@ -76,13 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
     const headerSection = document.querySelector('custom-header.fixed');
 
-    function onScroll(){
+    function onScroll() {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScroll - lastScrollTop > 3){
+        if (currentScroll - lastScrollTop > 3) {
             headerSection.style.transform = "translateY(-100%)";
             headerSection.style.opacity = "0";
-        } else if ( lastScrollTop - currentScroll > 10){
+        } else if (lastScrollTop - currentScroll > 10) {
             headerSection.style.transform = "translateY(0)";
             headerSection.style.opacity = "1";
         }
@@ -91,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ticking = false;
     }
 
-    window.addEventListener("scroll",function(){
-        if (!ticking){
+    window.addEventListener("scroll", function () {
+        if (!ticking) {
             this.requestAnimationFrame(onScroll);
             ticking = true;
         }

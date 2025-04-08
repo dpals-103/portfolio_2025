@@ -109,17 +109,19 @@
                         padding: $num-10 $num-30;
                         line-height: 1;
                         font-size: $num-18;
-                        border: 1px solid $gray-80;
-                        color: $gray-80;
+                        border-radius: 5rem;
+                        color: $white;
                         z-index: 999;
-                        font-weight: 600;
+                        font-weight: 600;                                           
                     }
 
                     &[name="Passion"] {
                         &::after {
                             top: -30%;
                             right: -30%;
-                            background-color: #FE8600;
+                            border: 0.1rem solid rgba(255, 255, 255, 0.50);
+                            background: linear-gradient(94deg, rgba(251, 204, 47, 0.50) 0%, rgba(255, 186, 109, 0.75) 56.28%, #FE8600 100%);
+                            box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.10);
                         }
                     }
 
@@ -127,7 +129,9 @@
                         &::after {
                             top: 35%;
                             left: -60%;
-                            background-color: #FFCEE8;
+                            border: 0.1rem solid rgba(255, 255, 255, 0.50);
+                            background: linear-gradient(89deg, #FD394A 5.04%, rgba(255, 18, 78, 0.75) 46.46%, rgba(253, 134, 193, 0.50) 99.78%);
+                            box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.10);
                         }
                     }
 
@@ -135,7 +139,9 @@
                         &::after {
                             top: 100%;
                             right: -50%;
-                            background-color: #6FDDFF;
+                            border: 0.1rem solid rgba(255, 255, 255, 0.50);
+                            background: linear-gradient(94deg, rgba(64, 247, 255, 0.50) 0%, rgba(77, 178, 255, 0.75) 48.08%, #0E33CE 100%);
+                            box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.10);
                         }
                     }
 
@@ -201,17 +207,17 @@
             align-items: flex-end;
             justify-content: space-between;
 
-            h5 {
-                font-size: $num-40;
+            >span {
+                font-size: $num-18;
                 font-family: 'Montserrat', sans-serif;
-                font-weight: 500;
+                color: $text-color-basic;
                 letter-spacing: -0.05em;
             }
 
             ul {
                 display: flex;
                 flex-direction: column;
-                gap: $num-24;
+                gap: $num-16;
 
                 li {
                     font-family: 'Montserrat', sans-serif;
