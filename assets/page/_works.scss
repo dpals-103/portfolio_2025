@@ -1,11 +1,7 @@
 .works {
-    padding-top: 16rem;
-
-    @media (max-height : 1000px) {
-        padding-top: 12rem;
-    }
 
     main {
+        padding-top: 8rem;
         flex-grow: 1;
         max-width: 139.4rem;
         width: 100%;
@@ -59,7 +55,7 @@
                                 line-height: 2.7rem;
                                 padding: 0 $num-12;
                                 border-radius: $num-4;
-                                color: $text-color-bolder;
+                                color: var(--text-color-bolder);
                                 background-color: rgba(255,255,255,0.5);
 
                                 &.year {
@@ -174,7 +170,7 @@
 
 
 
-                    &:hover {
+                    &:hover, &:active {
                         &::before {
                             background-color: rgba($black, 0.6);
                         }
@@ -193,7 +189,7 @@
 
                 &:hover {
                     transform: translateY(-0.2rem);
-                    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
+                    box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.15);
                 }
 
             }

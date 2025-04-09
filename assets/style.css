@@ -111,6 +111,32 @@ h6 {
   letter-spacing: -0.03em;
 }
 
+:root {
+  --bg-gradient: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+  --bg-secondary: #fafafa;
+  --bg-desc: #f8f8f8;
+  --bg-box: #fff;
+  --border-primary: #555;
+  --box-border: #f0f0f0;
+  --text-color-bolder: #2d2d2d;
+  --text-color-basic: #555;
+  --text-color-caption: #8e8e8e;
+  --skill-bar: #f0f0f0;
+}
+
+:root[class=dark] {
+  --bg-gradient: radial-gradient(65.86% 120.46% at 0% 0%, var(--gray-80, #2D2D2D) 43.73%, var(--gray-black, #000) 100%);
+  --bg-secondary: #000;
+  --bg-desc: rgba(0,0,0,0.3);
+  --bg-box: #1d1d1d;
+  --border-primary: #c6c6c6;
+  --box-border: #2d2d2d;
+  --text-color-bolder: #fff;
+  --text-color-basic: #e4e4e4;
+  --text-color-caption: #8e8e8e;
+  --skill-bar: #555;
+}
+
 custom-header {
   display: flex;
   align-items: flex-start;
@@ -123,10 +149,11 @@ custom-header.fixed {
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 8rem 12rem 5.6rem 12rem;
+  background-color: var(--bg-secondary);
+  padding: 8rem 12rem 2rem 12rem;
   margin-bottom: 0;
   z-index: 2;
-  transition: opacity 1s ease, translate 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 @media (max-height: 1000px) {
   custom-header.fixed {
@@ -137,14 +164,14 @@ custom-header > span, custom-header a {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
 }
 custom-header nav {
   display: flex;
   gap: 4rem;
 }
 custom-header nav a {
-  color: #555;
+  color: var(--text-color-basic);
   display: inline-block;
   width: 6rem;
   text-align: center;
@@ -152,7 +179,7 @@ custom-header nav a {
 }
 custom-header nav a:hover, custom-header nav a.active {
   font-weight: 600;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
 }
 custom-header nav button {
   background: none;
@@ -161,13 +188,18 @@ custom-header nav button {
 }
 custom-header nav button i {
   font-size: 1.6rem;
+  color: var(--text-color-bolder);
+  transition: transform 0.4s ease;
+}
+.dark custom-header nav button i {
+  transform: rotate(180deg);
 }
 
 html {
   scroll-behavior: smooth;
 }
 html body {
-  background-color: #fafafa;
+  background-color: var(--bg-secondary);
 }
 html body .wrap {
   width: 100%;
@@ -189,7 +221,7 @@ html body .wrap section {
 }
 
 .home {
-  background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+  background: var(--bg-gradient);
 }
 .home main {
   display: flex;
@@ -210,7 +242,7 @@ html body .wrap section {
   font-family: "Montserrat", sans-serif;
   font-size: 4.8rem;
   font-weight: 500;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   line-height: normal;
   letter-spacing: -0.05em;
 }
@@ -218,7 +250,7 @@ html body .wrap section {
   font-family: "Montserrat", sans-serif;
   font-size: 7rem;
   font-weight: 700;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   line-height: normal;
   letter-spacing: -0.05em;
 }
@@ -348,7 +380,7 @@ html body .wrap section {
   font-family: "Old Standard TT", serif;
   font-size: 14rem;
   font-weight: 400;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   letter-spacing: -0.03em;
   font-style: italic;
 }
@@ -360,7 +392,7 @@ html body .wrap section {
 .home main .bottom > span {
   font-size: 1.8rem;
   font-family: "Montserrat", sans-serif;
-  color: #555;
+  color: var(--text-color-basic);
   letter-spacing: -0.05em;
 }
 .home main .bottom ul {
@@ -372,12 +404,12 @@ html body .wrap section {
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   text-align: right;
-  color: #555;
+  color: var(--text-color-basic);
   line-height: 1;
 }
 
 .about {
-  background-color: #fafafa;
+  background-color: var(--bg-secondary);
 }
 .about main {
   height: calc(100% - 8rem);
@@ -402,8 +434,9 @@ html body .wrap section {
 }
 .about main .resume .grid-container > li {
   border-radius: 1rem;
-  background-color: #fff;
-  box-shadow: 0px 8px 25px 0px rgba(94, 94, 94, 0.1);
+  background-color: var(--bg-box);
+  border: 0.1rem solid var(--box-border);
+  box-shadow: 0px 0.8rem 2.5rem 0px rgba(94, 94, 94, 0.1);
   padding: 5.6rem 4.8rem 4rem 4.8rem;
 }
 .about main .resume .grid-container > li:last-child {
@@ -443,7 +476,11 @@ html body .wrap section {
   display: flex;
   flex-direction: column;
   background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
-  box-shadow: 0px 8px 25px 0px rgba(33, 41, 80, 0.1);
+  box-shadow: 0px 0.8rem 2.5rem 0px rgba(33, 41, 80, 0.1);
+}
+.dark .about main .resume .grid-container li.left {
+  background: radial-gradient(64.06% 120.46% at 0% 0%, #2d2d2d 0%, #1d1d1d 100%);
+  border: 0;
 }
 .about main .resume .grid-container li.left > .profile {
   display: flex;
@@ -460,14 +497,14 @@ html body .wrap section {
 }
 .about main .resume .grid-container li.left > .profile > .txt-box h6 {
   font-family: "pretendard", sans-serif;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   line-height: 1;
 }
 .about main .resume .grid-container li.left > .profile > .txt-box span {
   display: block;
   padding-top: 0.8rem;
   font-size: 1.6rem;
-  color: #8e8e8e;
+  color: var(--text-color-caption);
   line-height: 1;
 }
 .about main .resume .grid-container li.left > .introduce > .img-box {
@@ -494,12 +531,12 @@ html body .wrap section {
   line-height: 1.5;
   display: block;
   font-weight: 500;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
 }
 .about main .resume .grid-container li.left > .introduce > p {
   padding-top: 4rem;
   font-size: 1.4rem;
-  color: #555;
+  color: var(--text-color-basic);
   font-weight: 400;
 }
 .about main .resume .grid-container li.left > .hashtag {
@@ -512,14 +549,15 @@ html body .wrap section {
 .about main .resume .grid-container li.left > .hashtag > li {
   font-size: 1.2rem;
   line-height: 2;
-  color: #8e8e8e;
-  border: 0.1rem solid #8e8e8e;
+  color: var(--text-color-caption);
+  border: 0.1rem solid var(--text-color-caption);
   padding: 0 1.6rem;
   border-radius: 1.3rem;
   display: inline-block;
 }
 .about main .resume .grid-container li.center > h6, .about main .resume .grid-container li.right > h6 {
   padding-bottom: 5.6rem;
+  color: var(--text-color-bolder);
 }
 @media (max-height: 1000px) {
   .about main .resume .grid-container li.center > h6, .about main .resume .grid-container li.right > h6 {
@@ -547,10 +585,12 @@ html body .wrap section {
 .about main .resume .grid-container li.center > ul > li .company-info b,
 .about main .resume .grid-container li.center > ul > li .company-info span {
   font-size: 1.4rem;
+  color: var(--text-color-basic);
+  font-weight: 400;
 }
 .about main .resume .grid-container li.center > ul > li .company-info b {
   font-weight: 600;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -560,16 +600,16 @@ html body .wrap section {
   display: inline-block;
   width: 0.1rem;
   height: 1.2rem;
-  background-color: #555;
+  background-color: var(--text-color-basic);
 }
 .about main .resume .grid-container li.center > ul > li .company-info small {
   font-size: 1.2rem;
-  color: #8e8e8e;
+  color: var(--text-color-caption);
   margin-left: auto;
 }
 .about main .resume .grid-container li.center > ul > li .main-work {
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: var(--bg-desc);
   padding: 1.6rem 1.4rem;
   display: flex;
   flex-direction: column;
@@ -578,7 +618,7 @@ html body .wrap section {
 .about main .resume .grid-container li.center > ul > li .main-work > li {
   font-size: 1.3rem;
   line-height: 2.1rem;
-  color: #555;
+  color: var(--text-color-basic);
   font-weight: 400;
 }
 .about main .resume .grid-container li.right.skill {
@@ -617,14 +657,14 @@ html body .wrap section {
   display: block;
   font-size: 1.3rem;
   padding-bottom: 0.8rem;
-  color: #555;
+  color: var(--text-color-basic);
   line-height: 1;
 }
 .about main .resume .grid-container li.right.skill .main-skill > li > div > div .bar {
   width: 6.4rem;
   height: 1rem;
   position: relative;
-  background-color: #f0f0f0;
+  background-color: var(--skill-bar);
 }
 .about main .resume .grid-container li.right.skill .main-skill > li > div > div .bar .bar-val {
   width: 100%;
@@ -664,7 +704,7 @@ html body .wrap section {
 }
 .about main .resume .grid-container li.right.skill .etc-tool {
   padding: 1.2rem 1.4rem;
-  background-color: #f8f8f8;
+  background-color: var(--bg-desc);
   margin-top: 3rem;
   border-radius: 0.4rem;
   display: flex;
@@ -672,7 +712,7 @@ html body .wrap section {
   justify-content: space-between;
 }
 .about main .resume .grid-container li.right.skill .etc-tool > span {
-  color: #8e8e8e;
+  color: var(--text-color-caption);
   font-size: 1.3rem;
   font-weight: 400;
 }
@@ -692,7 +732,7 @@ html body .wrap section {
 }
 .about main .resume .grid-container li.right.skill .etc-tool > ul li span {
   font-size: 1.3rem;
-  color: #555;
+  color: var(--text-color-basic);
 }
 @media (max-height: 1000px) {
   .about main .resume .grid-container li.right.skill .etc-tool {
@@ -709,29 +749,23 @@ html body .wrap section {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 2.4rem;
+  color: var(--text-color-bolder);
 }
 .about main .resume .grid-container li.right.edu > div > ul > li {
   margin-bottom: 0.8rem;
 }
 .about main .resume .grid-container li.right.edu > div > ul > li span {
   font-size: 1.3rem;
-  color: #555;
+  color: var(--text-color-basic);
   display: block;
 }
 .about main .resume .grid-container li.right.edu > div > ul > li small {
   font-size: 1.2rem;
-  color: #8e8e8e;
+  color: var(--text-color-caption);
 }
 
-.works {
-  padding-top: 16rem;
-}
-@media (max-height: 1000px) {
-  .works {
-    padding-top: 12rem;
-  }
-}
 .works main {
+  padding-top: 8rem;
   flex-grow: 1;
   max-width: 139.4rem;
   width: 100%;
@@ -787,7 +821,7 @@ html body .wrap section {
   line-height: 2.7rem;
   padding: 0 1.2rem;
   border-radius: 0.4rem;
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   background-color: rgba(255, 255, 255, 0.5);
 }
 .works main > .grid .grid-sizer a .title-box .badge > li.year,
@@ -882,16 +916,19 @@ html body .wrap section {
 .works main > .grid .grid-item a.work-08::before {
   background: linear-gradient(247deg, rgba(51, 99, 121, 0) 36.39%, rgba(51, 99, 121, 0.8) 85.75%);
 }
-.works main > .grid .grid-sizer a:hover::before,
-.works main > .grid .grid-item a:hover::before {
+.works main > .grid .grid-sizer a:hover::before, .works main > .grid .grid-sizer a:active::before,
+.works main > .grid .grid-item a:hover::before,
+.works main > .grid .grid-item a:active::before {
   background-color: rgba(0, 0, 0, 0.6);
 }
-.works main > .grid .grid-sizer a:hover .btn-detail,
-.works main > .grid .grid-item a:hover .btn-detail {
+.works main > .grid .grid-sizer a:hover .btn-detail, .works main > .grid .grid-sizer a:active .btn-detail,
+.works main > .grid .grid-item a:hover .btn-detail,
+.works main > .grid .grid-item a:active .btn-detail {
   opacity: 1;
 }
-.works main > .grid .grid-sizer a:hover .btn-detail::after,
-.works main > .grid .grid-item a:hover .btn-detail::after {
+.works main > .grid .grid-sizer a:hover .btn-detail::after, .works main > .grid .grid-sizer a:active .btn-detail::after,
+.works main > .grid .grid-item a:hover .btn-detail::after,
+.works main > .grid .grid-item a:active .btn-detail::after {
   opacity: 1;
   margin-left: 0.8rem;
   transform: translateX(0);
@@ -899,7 +936,7 @@ html body .wrap section {
 .works main > .grid .grid-sizer:hover,
 .works main > .grid .grid-item:hover {
   transform: translateY(-0.2rem);
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.15);
 }
 .works main > .grid .blank {
   width: 100%;
@@ -908,16 +945,21 @@ html body .wrap section {
 .works .btn-page-up {
   background-color: transparent;
   border-radius: 10rem;
-  border: 0.2rem solid #2d2d2d;
+  border: 0.2rem solid var(--text-color-bolder);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;
   bottom: 4rem;
   right: 12rem;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 .works .btn-page-up > i {
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   font-size: 2rem;
+}
+.works .btn-page-up.visible {
+  opacity: 1;
 }
 
 .work-detail main {
@@ -931,11 +973,11 @@ html body .wrap section {
   grid-column: span 3;
   height: fit-content;
   position: sticky;
-  top: 8rem;
+  top: 9rem;
 }
 .work-detail main .side .work-info {
-  border-top: 0.1rem solid #555;
-  border-bottom: 0.1rem solid #555;
+  border-top: 0.1rem solid var(--border-primary);
+  border-bottom: 0.1rem solid var(--border-primary);
   padding: 4.8rem 0.8rem;
   display: flex;
   flex-direction: column;
@@ -948,17 +990,17 @@ html body .wrap section {
 }
 .work-detail main .side .work-info > div > span {
   font-size: 1.4rem;
-  color: #555;
+  color: var(--text-color-basic);
   line-height: 1;
 }
 .work-detail main .side .work-info > div > p {
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   line-height: 1.3;
 }
 .work-detail main .side .work-info > div > p.desc-txt {
   font-size: 1.3rem;
   font-weight: 400;
-  color: #555;
+  color: var(--text-color-basic);
   line-height: 1.5;
 }
 .work-detail main .side .work-info > div > ul {
@@ -974,7 +1016,7 @@ html body .wrap section {
 }
 .work-detail main .side .pagenation {
   height: 4.8rem;
-  border-bottom: 0.1rem solid #555;
+  border-bottom: 0.1rem solid var(--border-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -982,7 +1024,7 @@ html body .wrap section {
 }
 .work-detail main .side .pagenation > a {
   font-size: 1.4rem;
-  color: #555;
+  color: var(--text-color-basic);
 }
 .work-detail main .detail {
   grid-column: span 7;
@@ -1003,21 +1045,26 @@ html body .wrap section {
 .work-detail main .detail .detail-desc {
   font-size: 1.6rem;
   font-weight: 400;
-  color: #555;
+  color: var(--text-color-basic);
   line-height: 1.5;
   font-family: "pretendard";
 }
 .work-detail .btn-page-up {
   background-color: transparent;
   border-radius: 10rem;
-  border: 0.2rem solid #2d2d2d;
+  border: 0.2rem solid var(--text-color-bolder);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;
   bottom: 4rem;
   right: 12rem;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 .work-detail .btn-page-up > i {
-  color: #2d2d2d;
+  color: var(--text-color-bolder);
   font-size: 2rem;
+}
+.work-detail .btn-page-up.visible {
+  opacity: 1;
 }

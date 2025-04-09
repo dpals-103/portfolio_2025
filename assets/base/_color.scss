@@ -6,3 +6,38 @@ $bg-secondary : $gray-1;
 $text-color-bolder : $gray-80;
 $text-color-basic : $gray-70;
 $text-color-caption : $gray-50;
+
+:root{
+    --bg-gradient : radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
+    --bg-secondary : #{$gray-1};
+    --bg-desc : #{$gray-5};
+    --bg-box : #{$white};
+
+    --border-primary : #{$gray-70};
+    --box-border : #{$gray-10};
+
+    --text-color-bolder : #{$gray-80};
+    --text-color-basic : #{$gray-70};
+    --text-color-caption : #{$gray-50};
+
+    --skill-bar : #{$gray-10};
+}
+
+
+:root[class="dark"]{
+    --bg-gradient : radial-gradient(65.86% 120.46% at 0% 0%, var(--gray-80, #2D2D2D) 43.73%, var(--gray-black, #000) 100%);
+    --bg-secondary : #{$black};
+    --bg-desc : rgba(0,0,0,0.3);
+    --bg-box : #{$gray-90};
+
+    --border-primary : #{$gray-40};
+    --box-border : #{$gray-80};
+
+    --text-color-bolder : #{$white};
+    --text-color-basic : #{$gray-20};
+    --text-color-caption : #{$gray-50};
+
+    --skill-bar : #{$gray-70};
+}
+
+

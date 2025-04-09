@@ -11,11 +11,11 @@ custom-header{
         left: 0;
         width: 100%;
         box-sizing: border-box;
-        //background-color: $bg-secondary;
-        padding:  8rem 12rem 5.6rem 12rem;
+        background-color: var(--bg-secondary);
+        padding:  8rem 12rem 2rem 12rem;
         margin-bottom: 0;
         z-index: 2;
-        transition: opacity 1s ease, translate 1s ease;
+        transition: opacity 1s ease, transform 1s ease;
     
         @media (max-height : 1000px) {
             padding-top: 4rem;
@@ -28,14 +28,14 @@ custom-header{
         font-family: 'Montserrat', sans-serif;
         font-size: 1.6rem;
         font-weight: 500;
-        color: $text-color-bolder;
+        color: var(--text-color-bolder);
     }
 
     nav{
         display: flex;
         gap: $num-40;
         a{
-            color: $text-color-basic;   
+            color: var(--text-color-basic);   
             display: inline-block;       
             width: 6rem;
             text-align: center;
@@ -43,7 +43,7 @@ custom-header{
 
             &:hover, &.active{
                 font-weight: 600;
-                color: $text-color-bolder
+                color: var(--text-color-bolder);
             }
         }
 
@@ -53,6 +53,12 @@ custom-header{
             cursor: pointer;
             i{
                 font-size: 1.6rem;
+                color: var(--text-color-bolder);
+                transition: transform 0.4s ease;
+
+                .dark &{
+                    transform: rotate(180deg);
+                }
             }
         }
     }

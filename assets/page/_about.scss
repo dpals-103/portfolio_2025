@@ -1,5 +1,5 @@
 .about {
-    background-color: $bg-secondary;
+    background-color: var(--bg-secondary);
 
     main {
         height: calc(100% - 8rem);
@@ -23,8 +23,9 @@
 
                 >li {
                     border-radius: $num-10;
-                    background-color: $white;
-                    box-shadow: 0px 8px 25px 0px rgba(94, 94, 94, 0.1);
+                    background-color: var(--bg-box);
+                    border: 0.1rem solid var(--box-border);
+                    box-shadow: 0px 0.8rem 2.5rem 0px rgba(94, 94, 94, 0.1);
                     padding: $num-56 $num-48 $num-40 $num-48;
 
                     &:last-child {
@@ -74,7 +75,12 @@
                     display: flex;
                     flex-direction: column;
                     background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
-                    box-shadow: 0px 8px 25px 0px rgba(33, 41, 80, 0.1);
+                    box-shadow: 0px 0.8rem 2.5rem 0px rgba(33, 41, 80, 0.1);
+
+                    .dark &{
+                        background: radial-gradient(64.06% 120.46% at 0% 0%, $gray-80 0%, $gray-90 100%);
+                        border: 0
+                    }
 
                     // 프로필
                     >.profile {
@@ -93,7 +99,7 @@
                         >.txt-box {
                             h6 {
                                 font-family: 'pretendard', sans-serif;
-                                color: $text-color-bolder;
+                                color: var( --text-color-bolder);
                                 line-height: 1;
                             }
 
@@ -101,7 +107,7 @@
                                 display: block;
                                 padding-top: $num-8;
                                 font-size: $num-16;
-                                color: $text-color-caption;
+                                color: var(--text-color-caption);
                                 line-height: 1;
                             }
                         }
@@ -137,13 +143,13 @@
                             line-height: 1.5;
                             display: block;
                             font-weight: 500;
-                            color: $text-color-bolder;
+                            color: var(--text-color-bolder);
                         }
 
                         >p {
                             padding-top: $num-40;
                             font-size: $num-14;
-                            color: $text-color-basic;
+                            color: var(--text-color-basic);
                             font-weight: 400
                         }
                     }
@@ -157,8 +163,8 @@
                         >li {
                             font-size: $num-12;
                             line-height: 2;
-                            color: $text-color-caption;
-                            border: 0.1rem solid $gray-50;
+                            color: var(--text-color-caption);
+                            border: 0.1rem solid var(--text-color-caption);
                             padding: 0 $num-16;
                             border-radius: $round-13;
                             display: inline-block;
@@ -169,6 +175,7 @@
                 li.center,li.right{
                     > h6{
                         padding-bottom: $num-56;
+                        color: var(--text-color-bolder);
 
                         @media (max-height:1000px) {
                             & {
@@ -202,11 +209,13 @@
                                 b,
                                 span {
                                     font-size: $num-14;
+                                    color: var(--text-color-basic);
+                                    font-weight: 400;
                                 }
 
                                 b {
                                     font-weight: 600;
-                                    color: $text-color-bolder;
+                                    color: var(--text-color-bolder);
                                     @include flex-align-center;
                                     gap: $num-8;
 
@@ -215,20 +224,20 @@
                                         display: inline-block;
                                         width: 0.1rem;
                                         height: 1.2rem;
-                                        background-color: $text-color-basic;
+                                        background-color: var(--text-color-basic);
                                     }
                                 }
 
                                 small {
                                     font-size: $num-12;
-                                    color: $text-color-caption;
+                                    color: var(--text-color-caption);
                                     margin-left: auto;
                                 }
                             }
 
                             .main-work {
                                 width: 100%;
-                                background-color: $gray-5;
+                                background-color: var(--bg-desc);
                                 padding: $num-16 $num-14;
                                 display: flex;
                                 flex-direction: column;
@@ -237,7 +246,7 @@
                                 >li {
                                     font-size: $num-13;
                                     line-height: 2.1rem;
-                                    color: $text-color-basic;
+                                    color: var(--text-color-basic);
                                     font-weight: 400;
                                 }
                             }
@@ -285,7 +294,7 @@
                                             display: block;
                                             font-size: $num-13;
                                             padding-bottom: $num-8;
-                                            color: $text-color-basic;
+                                            color: var(--text-color-basic);
                                             line-height: 1;
                                         }
 
@@ -293,7 +302,7 @@
                                             width: 6.4rem;
                                             height: 1rem;
                                             position: relative;
-                                            background-color: $gray-10;
+                                            background-color: var(--skill-bar);
 
                                             .bar-val {
                                                 width: 100%;
@@ -366,7 +375,7 @@
 
                         .etc-tool {
                             padding: $num-12 $num-14;
-                            background-color: $gray-5;
+                            background-color: var(--bg-desc);
                             margin-top: $num-32;
                             border-radius: $num-4;
                             display: flex;
@@ -374,7 +383,7 @@
                             justify-content: space-between;
 
                             >span {
-                                color: $text-color-caption;
+                                color: var(--text-color-caption);
                                 font-size: $num-13;
                                 font-weight: 400
                             }
@@ -395,7 +404,7 @@
 
                                     span {
                                         font-size: $num-13;
-                                        color: $text-color-basic
+                                        color: var(--text-color-basic);
                                     }
                                 }
                             }
@@ -418,11 +427,8 @@
                             >p {
                                 font-size: $num-15;
                                 font-weight: 600;
-                                margin-bottom: $num-24;
-
-                                // @media (max-height : 1000px) {
-                                //     margin-bottom: $num-16;
-                                // }
+                                margin-bottom: $num-24;                           
+                                color: var(--text-color-bolder); 
                             }
 
                             >ul {
@@ -431,13 +437,13 @@
 
                                     span {
                                         font-size: $num-13;
-                                        color: $text-color-basic;
+                                        color: var(--text-color-basic);
                                         display: block;
                                     }
 
                                     small {
                                         font-size: $num-12;
-                                        color: $text-color-caption;
+                                        color: var(--text-color-caption);
                                     }
                                 }
                             }

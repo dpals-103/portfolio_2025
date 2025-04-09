@@ -6,14 +6,21 @@
 @mixin pageUpBtn{
     background-color: transparent;
     border-radius: 10rem;
-    border: 0.2rem solid $text-color-bolder;
+    border: 0.2rem solid var(--text-color-bolder);
     position: fixed;    
     width:  $num-40;
     aspect-ratio: 1 / 1;
     bottom: $num-40;
     right: 12rem;
+    opacity: 0;
+    transition: opacity 1s ease ;
+
     > i{
-        color : $text-color-bolder;
+        color : var(--text-color-bolder);
         font-size : 2rem
+    }
+
+    &.visible{
+        opacity: 1;
     }
 }

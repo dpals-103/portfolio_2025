@@ -11,15 +11,16 @@
             grid-column: span 3;
             height: fit-content;
             position: sticky;
-            top: 8rem;
+            top: 9rem;
 
             .work-info {
-                border-top: 0.1rem solid $gray-70;
-                border-bottom: 0.1rem solid $gray-70;
+                border-top: 0.1rem solid var(--border-primary);
+                border-bottom: 0.1rem solid var(--border-primary);
                 padding: $num-48 $num-8;
                 display: flex;
                 flex-direction: column;
                 gap: $num-40;
+                
 
                 >div {
                     display: flex;
@@ -28,18 +29,18 @@
 
                     >span {
                         font-size: $num-14;
-                        color: $text-color-basic;
+                        color: var(--text-color-basic);
                         line-height: 1;
                     }
 
                     >p {
-                        color: $text-color-bolder;
+                        color: var(--text-color-bolder);
                         line-height: 1.3;                        
 
                         &.desc-txt {
                             font-size: $num-13;
                             font-weight: 400;
-                            color: $text-color-basic;
+                            color: var(--text-color-basic);
                             line-height: 1.5;
                         }
                     }
@@ -56,12 +57,12 @@
                             }
                         }
                     }
-                }
+                }              
             }
 
             .pagenation {
                 height: $num-48;
-                border-bottom: 0.1rem solid $gray-70;
+                border-bottom: 0.1rem solid var(--border-primary);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -69,7 +70,7 @@
 
                 >a {
                     font-size: $num-14;
-                    color: $text-color-basic;
+                    color: var(--text-color-basic);
                 }
             }
 
@@ -97,7 +98,7 @@
             .detail-desc{
                 font-size: $num-16;
                 font-weight: 400;
-                color: $text-color-basic;
+                color: var(--text-color-basic);
                 line-height: 1.5;
                 font-family: 'pretendard';
             }

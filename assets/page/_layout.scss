@@ -1,7 +1,7 @@
 html{
     scroll-behavior:  smooth;
     body{
-        background-color: $bg-secondary;
+        background-color: var(--bg-secondary);
         
         .wrap{
             width: 100%;
