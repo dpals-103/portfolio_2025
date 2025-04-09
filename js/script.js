@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyTheme(darkMode) {
         root.classList.toggle('dark', darkMode);
+        
         if (darkMode) {
             themeBtnIco.classList.replace('fa-moon', 'fa-sun');
           } else {

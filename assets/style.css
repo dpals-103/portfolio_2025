@@ -127,13 +127,13 @@ h6 {
 :root[class=dark] {
   --bg-gradient: radial-gradient(65.86% 120.46% at 0% 0%, var(--gray-80, #2D2D2D) 43.73%, var(--gray-black, #000) 100%);
   --bg-secondary: #000;
-  --bg-desc: rgba(0,0,0,0.3);
+  --bg-desc: rgba(104,104,104,0.1);
   --bg-box: #1d1d1d;
   --border-primary: #c6c6c6;
   --box-border: #2d2d2d;
-  --text-color-bolder: #fff;
-  --text-color-basic: #e4e4e4;
-  --text-color-caption: #8e8e8e;
+  --text-color-bolder: #f0f0f0;
+  --text-color-basic: #c6c6c6;
+  --text-color-caption: #717171;
   --skill-bar: #555;
 }
 
@@ -606,10 +606,12 @@ html body .wrap section {
   font-size: 1.2rem;
   color: var(--text-color-caption);
   margin-left: auto;
+  font-family: "pretendard";
 }
 .about main .resume .grid-container li.center > ul > li .main-work {
   width: 100%;
   background-color: var(--bg-desc);
+  border-radius: 0.4rem;
   padding: 1.6rem 1.4rem;
   display: flex;
   flex-direction: column;
@@ -705,6 +707,7 @@ html body .wrap section {
 .about main .resume .grid-container li.right.skill .etc-tool {
   padding: 1.2rem 1.4rem;
   background-color: var(--bg-desc);
+  border-radius: 0.4rem;
   margin-top: 3rem;
   border-radius: 0.4rem;
   display: flex;

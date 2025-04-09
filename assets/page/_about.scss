@@ -232,12 +232,14 @@
                                     font-size: $num-12;
                                     color: var(--text-color-caption);
                                     margin-left: auto;
+                                    font-family: 'pretendard';
                                 }
                             }
 
                             .main-work {
                                 width: 100%;
                                 background-color: var(--bg-desc);
+                                border-radius: $num-4;
                                 padding: $num-16 $num-14;
                                 display: flex;
                                 flex-direction: column;
@@ -247,7 +249,7 @@
                                     font-size: $num-13;
                                     line-height: 2.1rem;
                                     color: var(--text-color-basic);
-                                    font-weight: 400;
+                                    font-weight: 400;                                    
                                 }
                             }
                         }
@@ -376,6 +378,7 @@
                         .etc-tool {
                             padding: $num-12 $num-14;
                             background-color: var(--bg-desc);
+                            border-radius: $num-4;
                             margin-top: $num-32;
                             border-radius: $num-4;
                             display: flex;
