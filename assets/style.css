@@ -177,6 +177,7 @@ html body .wrap {
   padding: 8rem 12rem;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 @media (max-height: 1000px) {
   html body .wrap {
@@ -904,6 +905,20 @@ html body .wrap section {
   width: 100%;
   height: 6rem;
 }
+.works .btn-page-up {
+  background-color: transparent;
+  border-radius: 10rem;
+  border: 0.2rem solid #2d2d2d;
+  position: fixed;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  bottom: 4rem;
+  right: 12rem;
+}
+.works .btn-page-up > i {
+  color: #2d2d2d;
+  font-size: 2rem;
+}
 
 .work-detail main {
   display: grid;
@@ -981,10 +996,28 @@ html body .wrap section {
   aspect-ratio: 16/9;
   background-color: #f0f0f0;
 }
+.work-detail main .detail picture img {
+  width: 100%;
+  object-fit: cover;
+}
 .work-detail main .detail .detail-desc {
   font-size: 1.6rem;
   font-weight: 400;
   color: #555;
   line-height: 1.5;
   font-family: "pretendard";
+}
+.work-detail .btn-page-up {
+  background-color: transparent;
+  border-radius: 10rem;
+  border: 0.2rem solid #2d2d2d;
+  position: fixed;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  bottom: 4rem;
+  right: 12rem;
+}
+.work-detail .btn-page-up > i {
+  color: #2d2d2d;
+  font-size: 2rem;
 }

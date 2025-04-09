@@ -204,4 +204,8 @@
             }
         }
     }
+
+    .btn-page-up{
+        @include pageUpBtn;
+    }
 }
