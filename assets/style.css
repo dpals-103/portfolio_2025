@@ -238,6 +238,7 @@ custom-header .m-header > .m-menu svg path {
 }
 
 mobile-menu {
+  display: none;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -289,6 +290,11 @@ mobile-menu aside .contact li span {
 mobile-menu aside .contact li span:first-child {
   margin-right: 1.6rem;
   color: var(--text-color-caption);
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  mobile-menu {
+    display: block;
+  }
 }
 
 html {
