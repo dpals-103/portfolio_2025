@@ -220,11 +220,56 @@
                 gap: $num-16;
 
                 li {
-                    font-family: 'Montserrat', sans-serif;
                     font-size: $num-18;
                     text-align: right;
                     color: var(--text-color-basic);
                     line-height: 1;
+                }
+            }
+        }
+    }
+
+
+    @include responsive(sm){
+        > main{
+            height: 100%;
+            .body{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                height: 100%;
+                .txt-box{
+                    display: none;
+                }
+                .img-group{
+                    transform: scale(50%);
+                    left: 8%;
+                    top: 24%;
+                }
+                .italic{
+                    h1{
+                        font-size: 6.6rem;
+                        //transform: translateY(-50%)
+                    }
+                }
+            }
+
+
+            .bottom{
+                display: block;
+                >span {
+                    font-size: $num-13; 
+                    position: relative;
+                    bottom: 4rem;                   
+                }
+    
+                ul {
+                    gap: $num-8;
+                    li {
+                        font-size: $num-13;
+                        text-align: right;
+                    }
                 }
             }
         }

@@ -11,12 +11,84 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="works.html" alt="작업물 페이지로 이동">Works</a>
                 <a href="contact.html">Contact</a>
                 <button class="theme-btn" alt="어두운테마로 변경" title="Change Dark mode!"><i class="fa-solid fa-moon"></i></button>
+                <button class="m-menu">
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_411_529)">
+                        <path d="M5.6001 7H26.4001V9H5.6001V7Z" fill="none"/>
+                        <path d="M5.6001 15H26.4001V17H5.6001V15Z" fill="none"/>
+                        <path d="M5.6001 23H26.4001V25H5.6001V23Z" fill="none"/>
+                    </g>
+                </svg>
+                </button>
             </nav>
+
+            <div class="m-header">
+            <a href="/"><strong class="logo">©LEE HYO JU</strong></a>
+            <button class="m-menu">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_411_529)">
+                        <path d="M5.6001 7H26.4001V9H5.6001V7Z" fill="none" />
+                        <path d="M5.6001 15H26.4001V17H5.6001V15Z" fill="none" />
+                        <path d="M5.6001 23H26.4001V25H5.6001V23Z" fill="none" />
+                    </g>
+                </svg>
+            </button>
+        </div>
            `
         }
     }
 
     customElements.define('custom-header', Header);
+
+
+    // mobile menu
+    class mobileMenu extends HTMLElement {
+        connectedCallback() {
+            this.innerHTML =
+                `<aside>
+            <button class="close-menu">
+                <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.4208 9.99954L0.36676 1.7735L1.63324 0.225586L12 8.70748L22.3668 0.225586L23.6332 1.7735L13.5792 9.99954L23.6332 18.2256L22.3668 19.7735L12 11.2916L1.63324 19.7735L0.36676 18.2256L10.4208 9.99954Z"
+                        fill="none" />
+                </svg>
+            </button>
+            <nav>
+                <a href="about.html" alt="소개페이지로 이동">About</a>
+                <a href="works.html" alt="작업물 페이지로 이동">Works</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-btn" alt="어두운테마로 변경" title="Change Dark mode!"><i
+                        class="fa-solid fa-moon"></i></button>
+            </nav>
+            <ul class="contact">
+                <li>
+                    <span>Phone</span>
+                    <span>010-9259-7333</span>
+                </li>
+                <li>
+                    <span>E-mail</span>
+                    <a href="mailto:dpals103@gmail.com">dpals103@gmail.com</a>
+                </li>
+            </ul>
+        </aside>
+           `
+        }
+    }
+
+    customElements.define('mobile-menu', mobileMenu);
+
+
+
+    //responsive 사이드바 메뉴 토글 기능
+    const mobileMenuBtn = document.querySelector('.m-header .m-menu');
+    const sideMenu = document.querySelector('mobile-menu');
+    const closeMenuBtn = document.querySelector('.close-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+        sideMenu.style.transform = 'translateX(0)';
+    });
+    closeMenuBtn.addEventListener('click', () => {
+        sideMenu.style.transform = 'translateX(100%)';
+    });
 
 
     // 페이지별 header 좌측 텍스트 변경
@@ -53,27 +125,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyTheme(darkMode) {
         root.classList.toggle('dark', darkMode);
-        
+
         if (darkMode) {
             themeBtnIco.classList.replace('fa-moon', 'fa-sun');
-          } else {
+        } else {
             themeBtnIco.classList.replace('fa-sun', 'fa-moon');
-          }
+        }
         themeBtn.setAttribute('title', darkMode ? 'Change light Mode!' : 'Change dark Mode!');
         themeBtn.setAttribute('alt', darkMode ? '밝은 테마로 변경' : '어두운 테마로 변경');
         localStorage.setItem('theme', darkMode ? 'dark' : '');
     }
-    
+
     // 초기 테마 설정
     const savedTheme = localStorage.getItem('theme');
     applyTheme(savedTheme === 'dark');
-    
+
     // 버튼 클릭 이벤트
     themeBtn.addEventListener('click', () => {
         const notContainDark = !root.classList.contains('dark'); // Not Dark mode  = true
         applyTheme(notContainDark);
     });
-    
+
 
 
     //페이지업 버튼 구조 생성
@@ -164,5 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', visibleScroll);
     pageUpBtn.addEventListener('click', pageUp);
+
+
 
 });

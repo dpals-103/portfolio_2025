@@ -63,6 +63,11 @@ a {
   color: inherit;
 }
 
+button {
+  border: 0;
+  background-color: unset;
+}
+
 @font-face {
   font-family: "pretendard", sans-serif;
   src: url(font/Pretendard-Regular.subset.woff) format("woff"), url(font/Pretendard-Regular.subset.woff2) format("woff2");
@@ -160,7 +165,8 @@ custom-header.fixed {
     padding-top: 4rem;
   }
 }
-custom-header > span, custom-header a {
+custom-header > span,
+custom-header a {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
@@ -194,6 +200,96 @@ custom-header nav button i {
 .dark custom-header nav button i {
   transform: rotate(180deg);
 }
+custom-header nav button.m-menu {
+  display: none;
+}
+custom-header nav button.m-menu > svg path {
+  fill: var(--text-color-bolder);
+}
+custom-header .m-header {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+custom-header .m-header > .logo {
+  font-size: 1.6rem;
+}
+custom-header .m-header > .m-menu {
+  background: none;
+  border: 0;
+  text-align: center;
+}
+custom-header .m-header > .m-menu svg {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+custom-header .m-header > .m-menu svg path {
+  fill: var(--text-color-bolder);
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  custom-header > *:not(.m-header) {
+    display: none;
+  }
+  custom-header .m-header {
+    display: flex;
+  }
+}
+
+mobile-menu {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: transform 0.8s ease;
+  z-index: 999;
+  background-color: var(--bg-secondary);
+}
+mobile-menu aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.8rem 2.4rem;
+  height: 100%;
+}
+mobile-menu aside > .close-menu {
+  margin-left: auto;
+  position: absolute;
+  top: 2.8rem;
+  right: 2.4rem;
+}
+mobile-menu aside > .close-menu > svg {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+mobile-menu aside > .close-menu > svg path {
+  fill: var(--text-color-bolder);
+}
+mobile-menu aside > nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.8rem;
+  padding-top: 5.6rem;
+}
+mobile-menu aside > nav a, mobile-menu aside > nav i, mobile-menu aside > nav button {
+  font-size: 1.8rem;
+  padding: 0.8rem;
+}
+mobile-menu aside > nav button {
+  display: inline-block;
+}
+mobile-menu aside .contact li span {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+mobile-menu aside .contact li span:first-child {
+  margin-right: 1.6rem;
+  color: var(--text-color-caption);
+}
 
 html {
   scroll-behavior: smooth;
@@ -218,6 +314,14 @@ html body .wrap {
 }
 html body .wrap section {
   width: 100%;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  html body .wrap {
+    min-width: 36rem;
+    max-width: 48rem;
+    padding: 4rem 2.4rem;
+    overflow: hidden;
+  }
 }
 
 .home {
@@ -401,11 +505,48 @@ html body .wrap section {
   gap: 1.6rem;
 }
 .home main .bottom ul li {
-  font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   text-align: right;
   color: var(--text-color-basic);
   line-height: 1;
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .home > main {
+    height: 100%;
+  }
+  .home > main .body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  .home > main .body .txt-box {
+    display: none;
+  }
+  .home > main .body .img-group {
+    transform: scale(50%);
+    left: 8%;
+    top: 24%;
+  }
+  .home > main .body .italic h1 {
+    font-size: 6.6rem;
+  }
+  .home > main .bottom {
+    display: block;
+  }
+  .home > main .bottom > span {
+    font-size: 1.3rem;
+    position: relative;
+    bottom: 4rem;
+  }
+  .home > main .bottom ul {
+    gap: 0.8rem;
+  }
+  .home > main .bottom ul li {
+    font-size: 1.3rem;
+    text-align: right;
+  }
 }
 
 .about {
@@ -765,6 +906,18 @@ html body .wrap section {
 .about main .resume .grid-container li.right.edu > div > ul > li small {
   font-size: 1.2rem;
   color: var(--text-color-caption);
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .about {
+    overflow-y: auto !important;
+  }
+  .about > main > .resume {
+    padding: 0;
+  }
+  .about > main > .resume .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .works main {

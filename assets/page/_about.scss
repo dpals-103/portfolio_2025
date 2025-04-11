@@ -457,4 +457,19 @@
 
         }
     }
+
+
+    @include responsive(sm){
+        overflow-y: auto !important;
+        
+        > main{
+            > .resume{
+                padding: 0;
+                .grid-container{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
 }

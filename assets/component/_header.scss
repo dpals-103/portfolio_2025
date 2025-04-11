@@ -1,65 +1,120 @@
-custom-header{
+custom-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: $num-56;
-    
-    
-    &.fixed{
+
+
+    &.fixed {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         box-sizing: border-box;
         background-color: var(--bg-secondary);
-        padding:  8rem 12rem 2rem 12rem;
+        padding: 8rem 12rem 2rem 12rem;
         margin-bottom: 0;
         z-index: 2;
         transition: opacity 1s ease, transform 1s ease;
-    
+
         @media (max-height : 1000px) {
             padding-top: 4rem;
         }
     }
 
 
-   
-    > span, a{
+
+    >span,
+    a {
         font-family: 'Montserrat', sans-serif;
         font-size: 1.6rem;
         font-weight: 500;
         color: var(--text-color-bolder);
     }
 
-    nav{
+    nav {
         display: flex;
         gap: $num-40;
-        a{
-            color: var(--text-color-basic);   
-            display: inline-block;       
+
+        a {
+            color: var(--text-color-basic);
+            display: inline-block;
             width: 6rem;
             text-align: center;
-            height: $num-24;     
+            height: $num-24;
 
-            &:hover, &.active{
+            &:hover,
+            &.active {
                 font-weight: 600;
                 color: var(--text-color-bolder);
             }
         }
 
-        button{
+        button {
             background: none;
             border: 0;
             cursor: pointer;
-            i{
+
+            i {
                 font-size: 1.6rem;
                 color: var(--text-color-bolder);
                 transition: transform 0.4s ease;
 
-                .dark &{
+                .dark & {
                     transform: rotate(180deg);
+                }
+            }
+
+            &.m-menu {
+                display: none;
+
+                >svg {
+                    path {
+                        fill: var(--text-color-bolder);
+                    }
                 }
             }
         }
     }
+
+
+
+    // 모바일 헤더
+    .m-header {
+        display: none;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        >.logo {
+            font-size: $num-16;
+        }
+
+        >.m-menu {
+            background: none;
+            border: 0;
+            text-align: center;
+
+            svg {
+                width: $num-32;
+                height: $num-32;
+                object-fit: cover;
+
+                path {
+                    fill: var(--text-color-bolder)
+                }
+            }
+        }
+    }
+
+
+    @include responsive(sm) {
+        >*:not(.m-header){
+            display: none;
+        }
+        .m-header {
+            display: flex;
+        }
+    }
+
 }
