@@ -90,7 +90,7 @@
                         >.img-box {
                             width: 8rem;
                             aspect-ratio: 1 / 1;
-                            border-radius: 100px;
+                            border-radius: 10rem;
                             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
                             background: url(images/img_profile.png) no-repeat;
                             background-size: cover;
@@ -98,7 +98,6 @@
 
                         >.txt-box {
                             h6 {
-                                font-family: 'pretendard', sans-serif;
                                 color: var( --text-color-bolder);
                                 line-height: 1;
                             }
@@ -232,7 +231,6 @@
                                     font-size: $num-12;
                                     color: var(--text-color-caption);
                                     margin-left: auto;
-                                    font-family: 'pretendard';
                                 }
                             }
 
@@ -461,13 +459,129 @@
 
     @include responsive(sm){
         overflow-y: auto !important;
-        
+    
         > main{
+            height: auto;
             > .resume{
                 padding: 0;
                 .grid-container{
                     display: flex;
                     flex-direction: column;
+
+                    > li{
+                        padding : $num-30;
+
+                        &:last-child{
+                            padding : $num-30;
+                        }
+                    }
+
+                    li.center,li.right{
+                        >  h6{
+                            padding-bottom: $num-24;
+                        }
+                    }
+
+                    li.left{
+                        > .introduce{
+                            > .img-box{
+                                height: 18rem;
+                                >img {
+                                    right: -4rem;
+                                }
+                            }
+                            > span{
+                                font-size: $num-28;
+                            }
+                            >p{
+                                padding: $num-28 0;
+                                word-break:keep-all;
+                            }
+                        }
+
+                        .hashtag{
+                            > li{
+                                padding: 0 $num-12;
+                            }
+                        }
+                    }
+                    
+                    li.center{
+                        > ul {
+                            > li{
+
+                                &:not(:last-child) {
+                                    margin-bottom: $num-30;
+                                }
+
+                                .company-info{
+                                    flex-wrap: wrap-reverse;
+                                    row-gap: 0.2rem;
+                                    margin-bottom: $num-10;
+                                    > small{
+                                        margin-left: unset;
+                                        margin-right: 10rem;
+                                    }
+                                }
+                                .main-work{
+                                    li{
+                                        list-style: disc;
+                                        list-style-position: inside;
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+
+                    li.right{
+                        &.skill{
+                            > .main-skill{
+                                justify-content: space-around;
+                                > li {
+                                    gap: $num-16;
+                                    > div{
+                                        i{
+                                            width: $num-32;
+                                            > img{
+                                                transform: translate(0.4rem, 0.2rem);
+                                            }
+                                        
+                                    }
+                                }
+                               }
+                            }
+
+                            > .etc-tool{
+                                gap: $num-16;
+                                > ul{
+                                    justify-content: center;
+                                    flex-wrap: wrap;
+
+                                    @include responsive(xsm){
+                                        justify-content: flex-start;
+                                    }
+                                }
+                            }
+                        }
+                        &.edu{
+                            flex-direction: column;
+                            gap: $num-20;
+                          >div{
+                            >p{
+                                margin-bottom: $num-16;
+                            }
+
+                            > ul {
+                                > li{
+                                   margin-bottom: 0;
+                                }
+                             }
+                          }
+                         
+                        }
+                        
+                    }
                 }
             }
         }

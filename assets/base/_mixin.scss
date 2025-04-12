@@ -1,3 +1,23 @@
+@mixin responsive($breakpoint){
+    @if $breakpoint == xsm{
+        @media(max-width : 360px){
+            @content
+        }
+    }@else if $breakpoint == sm{
+        @media(max-width : 500px){
+            @content
+        }
+    }@else if $breakpoint == md{
+        @media(max-width : 768px){
+            @content
+        }
+    }@else if $breakpoint == lg{
+        @media(min-width : 1024px){
+            @content
+        }
+    }  
+}
+
 @mixin flex-align-center{
     display: flex;
     align-items: center;
@@ -7,6 +27,7 @@
     background-color: transparent;
     border-radius: 10rem;
     border: 0.2rem solid var(--text-color-bolder);
+    background-color: var(--bg-secondary);
     position: fixed;    
     width:  $num-40;
     aspect-ratio: 1 / 1;
@@ -23,21 +44,10 @@
     &.visible{
         opacity: 1;
     }
+
+    @include responsive(sm){
+        right: 0;
+    }
 }
 
 
-@mixin responsive($breakpoint){
-    @if $breakpoint == sm{
-        @media(min-width : 360px) and (max-width : 480px){
-            @content
-        }
-    }@else if $breakpoint == md{
-        @media(max-width : 768px){
-            @content
-        }
-    }@else if $breakpoint == lg{
-        @media(min-width : 1024px){
-            @content
-        }
-    }  
-}

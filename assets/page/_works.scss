@@ -46,7 +46,7 @@
                             display: flex;
                             align-items: center;
                             gap: $num-10;
-                            
+
 
                             >li {
                                 font-size: $num-16;
@@ -56,7 +56,7 @@
                                 padding: 0 $num-12;
                                 border-radius: $num-4;
                                 color: var(--text-color-bolder);
-                                background-color: rgba(255,255,255,0.5);
+                                background-color: rgba(255, 255, 255, 0.5);
 
                                 &.year {
                                     border: 0.1rem solid $white;
@@ -68,6 +68,7 @@
 
                         .title {
                             margin-bottom: $num-24;
+
                             >* {
                                 font-size: $num-24;
                                 line-height: 1;
@@ -170,7 +171,8 @@
 
 
 
-                    &:hover, &:active {
+                    &:hover,
+                    &:active {
                         &::before {
                             background-color: rgba($black, 0.6);
                         }
@@ -201,7 +203,61 @@
         }
     }
 
-    .btn-page-up{
+    .btn-page-up {
         @include pageUpBtn;
+    }
+
+
+    @include responsive(sm) {
+        main {
+            >.grid {
+                .grid-sizer,
+                .grid-item {
+                    width: 100%;
+                    margin-bottom: $num-20;
+
+                    a {
+                        .title-box {
+                            padding: 0 $num-24 $num-24 $num-24;
+
+                            .badge {
+                                >li {
+                                    font-size: $num-13;
+                                    line-height: 2.4rem;
+                                    padding: 0 $num-8;
+                                    border-radius: .3;
+                                }
+                            }
+
+                            .title{
+                                margin-bottom: $num-20;
+
+                                >* {
+                                    font-size: $num-18;
+                                }
+
+                                >p {
+                                    margin-bottom: $num-4;
+                                    word-break: keep-all;
+                                    line-height: 1.5;
+                                }
+                            }
+
+                            .btn-detail {
+                                display: none;
+                                // bottom: $num-24;
+                                // right: $num-24;
+                                // font-size: $num-13;
+    
+                                // &::after {
+                                //     background-size: contain;
+                                // }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

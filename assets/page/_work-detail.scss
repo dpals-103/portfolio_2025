@@ -109,4 +109,27 @@
     .btn-page-up{
         @include pageUpBtn;
     }
+
+
+    @include responsive(sm){
+        main{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 2fr;
+            column-gap: unset;
+            row-gap: $num-40;
+            padding: 0;
+            padding-bottom: $num-40;
+
+            .side{
+                position: static;
+                padding-top: 8rem;
+
+                .work-info{
+                    gap: $num-24;
+                    padding: $num-24 $num-8;
+                }
+            }
+        }
+    }
 }

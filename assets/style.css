@@ -221,19 +221,25 @@ custom-header .m-header > .m-menu {
   text-align: center;
 }
 custom-header .m-header > .m-menu svg {
-  width: 3rem;
-  height: 3rem;
+  width: 3.2rem;
+  height: 3.2rem;
   object-fit: cover;
 }
 custom-header .m-header > .m-menu svg path {
   fill: var(--text-color-bolder);
 }
-@media (min-width: 360px) and (max-width: 480px) {
+@media (max-width: 500px) {
+  custom-header {
+    margin-bottom: 2.4rem;
+  }
   custom-header > *:not(.m-header) {
     display: none;
   }
   custom-header .m-header {
     display: flex;
+  }
+  custom-header.fixed {
+    padding: 4rem 2.4rem 2rem 2.4rem;
   }
 }
 
@@ -241,7 +247,7 @@ mobile-menu {
   display: none;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transform: translateX(100%);
@@ -291,7 +297,7 @@ mobile-menu aside .contact li span:first-child {
   margin-right: 1.6rem;
   color: var(--text-color-caption);
 }
-@media (min-width: 360px) and (max-width: 480px) {
+@media (max-width: 500px) {
   mobile-menu {
     display: block;
   }
@@ -321,12 +327,11 @@ html body .wrap {
 html body .wrap section {
   width: 100%;
 }
-@media (min-width: 360px) and (max-width: 480px) {
+@media (max-width: 500px) {
   html body .wrap {
     min-width: 36rem;
-    max-width: 48rem;
+    max-width: 50rem;
     padding: 4rem 2.4rem;
-    overflow: hidden;
   }
 }
 
@@ -516,7 +521,10 @@ html body .wrap section {
   color: var(--text-color-basic);
   line-height: 1;
 }
-@media (min-width: 360px) and (max-width: 480px) {
+@media (max-width: 500px) {
+  .home {
+    overflow: hidden;
+  }
   .home > main {
     height: 100%;
   }
@@ -531,9 +539,11 @@ html body .wrap section {
     display: none;
   }
   .home > main .body .img-group {
-    transform: scale(50%);
-    left: 8%;
-    top: 24%;
+    transform: scale(50%) translateX(-100%);
+    top: 20vh;
+  }
+  .home > main .body .italic {
+    transform: translateY(0);
   }
   .home > main .body .italic h1 {
     font-size: 6.6rem;
@@ -544,7 +554,7 @@ html body .wrap section {
   .home > main .bottom > span {
     font-size: 1.3rem;
     position: relative;
-    bottom: 4rem;
+    bottom: 2vh;
   }
   .home > main .bottom ul {
     gap: 0.8rem;
@@ -587,7 +597,7 @@ html body .wrap section {
   padding: 5.6rem 4.8rem 4rem 4.8rem;
 }
 .about main .resume .grid-container > li:last-child {
-  padding: 3rem 2.8rem;
+  padding: 3.2rem 2.8rem;
 }
 .about main .resume .grid-container > li.row-span-7 {
   grid-row: span 7;
@@ -637,13 +647,12 @@ html body .wrap section {
 .about main .resume .grid-container li.left > .profile > .img-box {
   width: 8rem;
   aspect-ratio: 1/1;
-  border-radius: 100px;
+  border-radius: 10rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   background: url(images/img_profile.png) no-repeat;
   background-size: cover;
 }
 .about main .resume .grid-container li.left > .profile > .txt-box h6 {
-  font-family: "pretendard", sans-serif;
   color: var(--text-color-bolder);
   line-height: 1;
 }
@@ -753,7 +762,6 @@ html body .wrap section {
   font-size: 1.2rem;
   color: var(--text-color-caption);
   margin-left: auto;
-  font-family: "pretendard";
 }
 .about main .resume .grid-container li.center > ul > li .main-work {
   width: 100%;
@@ -855,7 +863,7 @@ html body .wrap section {
   padding: 1.2rem 1.4rem;
   background-color: var(--bg-desc);
   border-radius: 0.4rem;
-  margin-top: 3rem;
+  margin-top: 3.2rem;
   border-radius: 0.4rem;
   display: flex;
   flex-direction: column;
@@ -886,7 +894,7 @@ html body .wrap section {
 }
 @media (max-height: 1000px) {
   .about main .resume .grid-container li.right.skill .etc-tool {
-    margin-top: 3rem;
+    margin-top: 3.2rem;
   }
 }
 .about main .resume .grid-container li.right.edu {
@@ -913,9 +921,12 @@ html body .wrap section {
   font-size: 1.2rem;
   color: var(--text-color-caption);
 }
-@media (min-width: 360px) and (max-width: 480px) {
+@media (max-width: 500px) {
   .about {
     overflow-y: auto !important;
+  }
+  .about > main {
+    height: auto;
   }
   .about > main > .resume {
     padding: 0;
@@ -923,6 +934,83 @@ html body .wrap section {
   .about > main > .resume .grid-container {
     display: flex;
     flex-direction: column;
+  }
+  .about > main > .resume .grid-container > li {
+    padding: 3rem;
+  }
+  .about > main > .resume .grid-container > li:last-child {
+    padding: 3rem;
+  }
+  .about > main > .resume .grid-container li.center > h6, .about > main > .resume .grid-container li.right > h6 {
+    padding-bottom: 2.4rem;
+  }
+  .about > main > .resume .grid-container li.left > .introduce > .img-box {
+    height: 18rem;
+  }
+  .about > main > .resume .grid-container li.left > .introduce > .img-box > img {
+    right: -4rem;
+  }
+  .about > main > .resume .grid-container li.left > .introduce > span {
+    font-size: 2.8rem;
+  }
+  .about > main > .resume .grid-container li.left > .introduce > p {
+    padding: 2.8rem 0;
+    word-break: keep-all;
+  }
+  .about > main > .resume .grid-container li.left .hashtag > li {
+    padding: 0 1.2rem;
+  }
+  .about > main > .resume .grid-container li.center > ul > li:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  .about > main > .resume .grid-container li.center > ul > li .company-info {
+    flex-wrap: wrap-reverse;
+    row-gap: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  .about > main > .resume .grid-container li.center > ul > li .company-info > small {
+    margin-left: unset;
+    margin-right: 10rem;
+  }
+  .about > main > .resume .grid-container li.center > ul > li .main-work li {
+    list-style: disc;
+    list-style-position: inside;
+  }
+  .about > main > .resume .grid-container li.right.skill > .main-skill {
+    justify-content: space-around;
+  }
+  .about > main > .resume .grid-container li.right.skill > .main-skill > li {
+    gap: 1.6rem;
+  }
+  .about > main > .resume .grid-container li.right.skill > .main-skill > li > div i {
+    width: 3.2rem;
+  }
+  .about > main > .resume .grid-container li.right.skill > .main-skill > li > div i > img {
+    transform: translate(0.4rem, 0.2rem);
+  }
+  .about > main > .resume .grid-container li.right.skill > .etc-tool {
+    gap: 1.6rem;
+  }
+  .about > main > .resume .grid-container li.right.skill > .etc-tool > ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 500px) and (max-width: 360px) {
+  .about > main > .resume .grid-container li.right.skill > .etc-tool > ul {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 500px) {
+  .about > main > .resume .grid-container li.right.edu {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about > main > .resume .grid-container li.right.edu > div > p {
+    margin-bottom: 1.6rem;
+  }
+  .about > main > .resume .grid-container li.right.edu > div > ul > li {
+    margin-bottom: 0;
   }
 }
 
@@ -1028,7 +1116,7 @@ html body .wrap section {
 .works main > .grid .grid-item a .title-box .btn-detail::after {
   content: "";
   display: inline-block;
-  width: 3rem;
+  width: 3.2rem;
   height: 1rem;
   background: url(images/ico_arrow_right.svg) no-repeat;
   background-size: cover;
@@ -1108,6 +1196,7 @@ html body .wrap section {
   background-color: transparent;
   border-radius: 10rem;
   border: 0.2rem solid var(--text-color-bolder);
+  background-color: var(--bg-secondary);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;
@@ -1122,6 +1211,47 @@ html body .wrap section {
 }
 .works .btn-page-up.visible {
   opacity: 1;
+}
+@media (max-width: 500px) {
+  .works .btn-page-up {
+    right: 0;
+  }
+}
+@media (max-width: 500px) {
+  .works main > .grid .grid-sizer,
+  .works main > .grid .grid-item {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .works main > .grid .grid-sizer a .title-box,
+  .works main > .grid .grid-item a .title-box {
+    padding: 0 2.4rem 2.4rem 2.4rem;
+  }
+  .works main > .grid .grid-sizer a .title-box .badge > li,
+  .works main > .grid .grid-item a .title-box .badge > li {
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    padding: 0 0.8rem;
+    border-radius: 0.3;
+  }
+  .works main > .grid .grid-sizer a .title-box .title,
+  .works main > .grid .grid-item a .title-box .title {
+    margin-bottom: 2rem;
+  }
+  .works main > .grid .grid-sizer a .title-box .title > *,
+  .works main > .grid .grid-item a .title-box .title > * {
+    font-size: 1.8rem;
+  }
+  .works main > .grid .grid-sizer a .title-box .title > p,
+  .works main > .grid .grid-item a .title-box .title > p {
+    margin-bottom: 0.4rem;
+    word-break: keep-all;
+    line-height: 1.5;
+  }
+  .works main > .grid .grid-sizer a .title-box .btn-detail,
+  .works main > .grid .grid-item a .title-box .btn-detail {
+    display: none;
+  }
 }
 
 .work-detail main {
@@ -1170,7 +1300,7 @@ html body .wrap section {
   align-items: flex-end;
 }
 .work-detail main .side .work-info > div > ul > li {
-  width: 3rem;
+  width: 3.2rem;
   aspect-ratio: 1/1;
 }
 .work-detail main .side .work-info > div > ul > li > img {
@@ -1215,6 +1345,7 @@ html body .wrap section {
   background-color: transparent;
   border-radius: 10rem;
   border: 0.2rem solid var(--text-color-bolder);
+  background-color: var(--bg-secondary);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;
@@ -1229,4 +1360,28 @@ html body .wrap section {
 }
 .work-detail .btn-page-up.visible {
   opacity: 1;
+}
+@media (max-width: 500px) {
+  .work-detail .btn-page-up {
+    right: 0;
+  }
+}
+@media (max-width: 500px) {
+  .work-detail main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    column-gap: unset;
+    row-gap: 4rem;
+    padding: 0;
+    padding-bottom: 4rem;
+  }
+  .work-detail main .side {
+    position: static;
+    padding-top: 8rem;
+  }
+  .work-detail main .side .work-info {
+    gap: 2.4rem;
+    padding: 2.4rem 0.8rem;
+  }
 }

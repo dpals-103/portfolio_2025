@@ -231,6 +231,7 @@
 
 
     @include responsive(sm){
+        overflow: hidden;
         > main{
             height: 100%;
             .body{
@@ -243,14 +244,13 @@
                     display: none;
                 }
                 .img-group{
-                    transform: scale(50%);
-                    left: 8%;
-                    top: 24%;
+                    transform: scale(50%) translateX(-100%);
+                    top: 20vh;
                 }
                 .italic{
+                    transform: translateY(0);
                     h1{
                         font-size: 6.6rem;
-                        //transform: translateY(-50%)
                     }
                 }
             }
@@ -261,7 +261,7 @@
                 >span {
                     font-size: $num-13; 
                     position: relative;
-                    bottom: 4rem;                   
+                    bottom: 2vh;                   
                 }
     
                 ul {

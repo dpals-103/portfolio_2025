@@ -109,11 +109,16 @@ custom-header {
 
 
     @include responsive(sm) {
+        margin-bottom: $num-24;
         >*:not(.m-header){
             display: none;
         }
         .m-header {
             display: flex;
+        }
+
+        &.fixed{
+            padding: $num-40 $num-24 $num-20 $num-24;
         }
     }
 

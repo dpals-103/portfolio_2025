@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <nav>
                 <a href="about.html" alt="소개페이지로 이동">About</a>
                 <a href="works.html" alt="작업물 페이지로 이동">Works</a>
-                <a href="contact.html">Contact</a>
                 <button class="theme-btn" alt="어두운테마로 변경" title="Change Dark mode!"><i
                         class="fa-solid fa-moon"></i></button>
             </nav>
@@ -79,18 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    //responsive 사이드바 메뉴 토글 기능
-    const mobileMenuBtn = document.querySelector('.m-header .m-menu');
-    const sideMenu = document.querySelector('mobile-menu');
-    const closeMenuBtn = document.querySelector('.close-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-        sideMenu.style.transform = 'translateX(0)';
-    });
-    closeMenuBtn.addEventListener('click', () => {
-        sideMenu.style.transform = 'translateX(100%)';
-    });
-
-
     // 페이지별 header 좌측 텍스트 변경
     const currentPath = window.location.pathname;
     const headerYear = document.querySelector('custom-header .year');
@@ -102,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         headerYear.style.display = 'none';
     }
+
 
     // 페이지별 gnb 활성화
     const gnbLink = document.querySelectorAll('custom-header nav > a');
@@ -116,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.add('fixed');
         }
     });
+
 
 
     // 테마버튼
@@ -199,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
         if (currentScroll - lastScrollTop > 10) {
+            console.log('dd');
             headerSection.style.transform = "translateY(-100%)";
             headerSection.style.opacity = "0";
         } else if (lastScrollTop - currentScroll > 10) {
@@ -236,6 +226,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', visibleScroll);
     pageUpBtn.addEventListener('click', pageUp);
+
+
+
+
+    //responsive 사이드바 메뉴 토글 기능
+    const mobileMenuBtn = document.querySelector('.m-header .m-menu');
+    const sideMenu = document.querySelector('mobile-menu');
+    const closeMenuBtn = document.querySelector('.close-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+        sideMenu.style.transform = 'translateX(0)';
+    });
+    closeMenuBtn.addEventListener('click', () => {
+        sideMenu.style.transform = 'translateX(100%)';
+    });
 
 
 
