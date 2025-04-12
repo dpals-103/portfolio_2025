@@ -6,7 +6,7 @@ html{
         
         .wrap{
             width: 100%;
-            min-width: 170rem;
+            //min-width: 170rem;
             height: 100vh;
             height: 100dvh;
             padding: 8rem 12rem;
@@ -37,8 +37,9 @@ html{
 
     }
 
-
- 
+    @include responsive(xlg){
+        font-size: 84.5%;
+    }
     
 }
 

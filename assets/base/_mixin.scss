@@ -15,7 +15,11 @@
         @media(min-width : 1024px){
             @content
         }
-    }  
+    }@else if $breakpoint == xlg{
+        @media(min-width : 2500px){
+            @content
+        }
+    }
 }
 
 @mixin flex-align-center{

@@ -14,9 +14,12 @@
             width: 100%;
             height: unset !important;
 
-            .grid-sizer,
-            .grid-item {
+             .grid-sizer,
+            .grid-item{
                 width: calc((100% - 4rem) / 2);
+            }
+            
+            .grid-item {               
                 margin-bottom: $num-40;
                 border-radius: $num-10;
                 overflow: hidden;
@@ -212,8 +215,10 @@
         main {
             >.grid {
                 .grid-sizer,
-                .grid-item {
+                .grid-item{
                     width: 100%;
+                }
+                .grid-item {
                     margin-bottom: $num-20;
 
                     a {

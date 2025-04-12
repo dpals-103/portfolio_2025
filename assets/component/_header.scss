@@ -94,7 +94,11 @@ custom-header {
             background: none;
             border: 0;
             text-align: center;
+            cursor: pointer;
 
+            .theme-btn{
+                
+            }
             svg {
                 width: $num-32;
                 height: $num-32;

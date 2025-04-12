@@ -10,6 +10,7 @@ mobile-menu{
     z-index: 999;
     background-color: var(--bg-secondary);
 
+
     aside{
         display: flex;
         flex-direction: column;
@@ -22,6 +23,7 @@ mobile-menu{
             position: absolute;
             top : $num-28;
             right: $num-24;
+            cursor: pointer;
             >svg{
                 width: $num-28;
                 height: $num-28;
@@ -41,11 +43,18 @@ mobile-menu{
             a,i,button{
                 font-size: $num-18;
                 padding : $num-8;
+                color: var(--text-color-basic);
+                &:hover{
+                    font-weight: 600;
+                    color: var(--text-color-bolder);
+                }
             }
     
             button{
                 display: inline-block;
+                cursor: pointer;
             }
+            
         }
     
         .contact{
@@ -53,10 +62,15 @@ mobile-menu{
                 span{
                     display: inline-block;
                     font-size: $num-15;
+                    color : var(--text-color-bolder);
+
                     &:first-child{
                         margin-right : $num-16;
                         color : var(--text-color-caption)
                     }
+                }
+                a{
+                    color : var(--text-color-bolder);
                 }
             }
         }

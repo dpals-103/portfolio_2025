@@ -11,6 +11,7 @@
             @include flex-align-center;
             justify-content: space-between;
             height: 100%;
+            position: relative;
 
             .txt-box {
                 transform: translateY(-50%);
@@ -244,7 +245,8 @@
                     display: none;
                 }
                 .img-group{
-                    transform: scale(50%) translateX(-100%);
+                    // transform: scale(50%) translateX(-100%);
+                    pointer-events: none;
                     top: 20vh;
                 }
                 .italic{

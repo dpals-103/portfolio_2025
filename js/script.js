@@ -71,6 +71,35 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
         </aside>
            `
+
+            //모바일용 테마버튼 기능 추가 
+            const mThemeBtn = this.querySelector('.theme-btn');
+            const mThemeBtnIco = this.querySelector('.theme-btn > i');
+            const root = document.documentElement;
+
+            function applyTheme(darkMode) {
+                root.classList.toggle('dark', darkMode);
+
+                if (darkMode) {
+                    mThemeBtnIco.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    mThemeBtnIco.classList.replace('fa-sun', 'fa-moon');
+                }
+                mThemeBtn.setAttribute('title', darkMode ? 'Change light Mode!' : 'Change dark Mode!');
+                mThemeBtn.setAttribute('alt', darkMode ? '밝은 테마로 변경' : '어두운 테마로 변경');
+                localStorage.setItem('theme', darkMode ? 'dark' : '');
+            }
+
+            // 초기 테마 설정
+            const savedTheme = localStorage.getItem('theme');
+            applyTheme(savedTheme === 'dark');
+
+            mThemeBtn.addEventListener('click', () => {
+                const notContainDark = !root.classList.contains('dark'); // Not Dark mode  = true
+                applyTheme(notContainDark);
+            });
+
+            //모바일용 gnb 활성화 기능 추가
         }
     }
 
