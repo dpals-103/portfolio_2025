@@ -106,7 +106,7 @@
                                 width: $num-32;
                                 height: $num-10;
                                 background: url(images/ico_arrow_right.svg) no-repeat;
-                                background-size: cover;
+                                background-size: contain;
                                 opacity: 0;
                                 transform: translateX(-1rem);
                                 transition: all ease-in .2s;
@@ -126,7 +126,7 @@
 
                     &.work-01 {
                         &::before {
-                            background: linear-gradient(247deg, rgba(75, 109, 151, 0) 36.39%, rgba(75, 109, 151, 0.8) 85.75%);
+                            background: linear-gradient(253deg, rgba(204, 204, 204, 0.00) 40.43%, #7A71CD 99.66%);
                         }
                     }
 
@@ -169,6 +169,12 @@
                     &.work-08 {
                         &::before {
                             background: linear-gradient(247deg, rgba(#336379, 0) 36.39%, rgba(#336379, 0.8) 85.75%);
+                        }
+                    }
+
+                    &.work-09 {
+                        &::before {
+                            background: linear-gradient(196deg, rgba(56, 109, 185, 0.00) 35.42%, #386DB9 93.92%),;
                         }
                     }
 
@@ -250,13 +256,6 @@
 
                             .btn-detail {
                                 display: none;
-                                // bottom: $num-24;
-                                // right: $num-24;
-                                // font-size: $num-13;
-    
-                                // &::after {
-                                //     background-size: contain;
-                                // }
                             }
                         }
                     }

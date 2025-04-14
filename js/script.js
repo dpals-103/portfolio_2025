@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.work-detail').appendChild(pageUpBtn);
 
         // work 상세페이지 페이지네이션 기능 
-        const totalPages = 8; // 전체 프로젝트 개수    
+        const totalPages = 9; // 전체 프로젝트 개수    
         const prevBtn = document.querySelector(".prev-btn")
         const nextBtn = document.querySelector(".next-btn")
         const currentPage = parseInt(currentPath.match(/work-(\d+)/)?.[1] || "1", 10);

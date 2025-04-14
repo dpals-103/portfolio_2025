@@ -10,9 +10,11 @@
 
     --text-color-bolder : #{$gray-80};
     --text-color-basic : #{$gray-70};
-    --text-color-caption : #{$gray-50};
+    --text-color-caption : #{$gray-60};
 
     --skill-bar : #{$gray-10};
+    --hyperlink-color :  rgb(28, 74, 173);
+   
 }
 
 
@@ -27,9 +29,11 @@
 
     --text-color-bolder : #{$gray-10};
     --text-color-basic : #{$gray-40};
-    --text-color-caption : #{$gray-60};
+    --text-color-caption : #{$gray-50};
 
     --skill-bar : #{$gray-70};
+    --hyperlink-color :  #83d6ff;
+  
 }
 
 

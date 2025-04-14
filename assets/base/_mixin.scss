@@ -39,6 +39,7 @@
     right: 12rem;
     opacity: 0;
     transition: opacity 1s ease ;
+    cursor: pointer;
 
     > i{
         color : var(--text-color-bolder);
