@@ -3,7 +3,7 @@ custom-header {
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: $num-56;
-
+    padding: 0 12rem;
 
     &.fixed {
         position: fixed;
@@ -81,16 +81,17 @@ custom-header {
         }
 
         .contact-popup{
-            border: 1px solid black;
+            border: 1px solid var(--box-border);
             padding: $num-10 $num-16;    
-            background-color: var(--bg-secondary);     
+            background-color: var(--bg-box);     
             border-radius: $num-4;
-            position: absolute;
-            top: 150%;
-            right: -100%;
+            position: fixed;
+            top: 8%;
+            right: -10%;
+            z-index: 9;
             opacity: 0;
             box-shadow: .4rem .4rem 1rem rgba(0,0,0,0.1);
-            transition: opacity 1s ease-out, right 1s ease;
+            transition: opacity 1s ease-out, right 1s ease-out;
             ul{
                 li{
                     display: flex;
@@ -124,7 +125,7 @@ custom-header {
 
             &.visible{
                 opacity: 1;
-                right: 0;
+                right: 7%;
             }
         }
     }
@@ -163,9 +164,9 @@ custom-header {
         }
     }
 
-
-    @include responsive(sm) {
+    @mixin responsiveHeader{
         margin-bottom: $num-24;
+        
         >*:not(.m-header){
             display: none;
         }
@@ -176,6 +177,22 @@ custom-header {
         &.fixed{
             padding: $num-40 $num-24 $num-20 $num-24;
         }
+    }
+
+    @include responsive(sm) {
+        @include responsiveHeader
+    }
+
+    @include responsive(tablet) {
+        @include responsiveHeader
+    }
+
+    @include responsive(smd) {
+        @include responsiveHeader
+    }
+
+    @include responsive(md) {
+        @include responsiveHeader
     }
 
 }

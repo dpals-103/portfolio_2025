@@ -149,6 +149,7 @@ custom-header {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 5.6rem;
+  padding: 0 12rem;
 }
 custom-header.fixed {
   position: fixed;
@@ -212,16 +213,17 @@ custom-header nav button.m-menu > svg path {
   fill: var(--text-color-bolder);
 }
 custom-header nav .contact-popup {
-  border: 1px solid black;
+  border: 1px solid var(--box-border);
   padding: 1rem 1.6rem;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-box);
   border-radius: 0.4rem;
-  position: absolute;
-  top: 150%;
-  right: -100%;
+  position: fixed;
+  top: 8%;
+  right: -10%;
+  z-index: 9;
   opacity: 0;
   box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
-  transition: opacity 1s ease-out, right 1s ease;
+  transition: opacity 1s ease-out, right 1s ease-out;
 }
 custom-header nav .contact-popup ul li {
   display: flex;
@@ -247,7 +249,7 @@ custom-header nav .contact-popup ul li a:hover {
 }
 custom-header nav .contact-popup.visible {
   opacity: 1;
-  right: 0;
+  right: 7%;
 }
 custom-header .m-header {
   display: none;
@@ -272,7 +274,49 @@ custom-header .m-header > .m-menu svg {
 custom-header .m-header > .m-menu svg path {
   fill: var(--text-color-bolder);
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
+  custom-header {
+    margin-bottom: 2.4rem;
+  }
+  custom-header > *:not(.m-header) {
+    display: none;
+  }
+  custom-header .m-header {
+    display: flex;
+  }
+  custom-header.fixed {
+    padding: 4rem 2.4rem 2rem 2.4rem;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  custom-header {
+    margin-bottom: 2.4rem;
+  }
+  custom-header > *:not(.m-header) {
+    display: none;
+  }
+  custom-header .m-header {
+    display: flex;
+  }
+  custom-header.fixed {
+    padding: 4rem 2.4rem 2rem 2.4rem;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1301px) {
+  custom-header {
+    margin-bottom: 2.4rem;
+  }
+  custom-header > *:not(.m-header) {
+    display: none;
+  }
+  custom-header .m-header {
+    display: flex;
+  }
+  custom-header.fixed {
+    padding: 4rem 2.4rem 2rem 2.4rem;
+  }
+}
+@media (min-width: 1302px) and (max-width: 1501px) {
   custom-header {
     margin-bottom: 2.4rem;
   }
@@ -352,7 +396,12 @@ mobile-menu aside .contact li span:first-child {
 mobile-menu aside .contact li a {
   color: var(--text-color-bolder);
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
+  mobile-menu {
+    display: block;
+  }
+}
+@media (min-width: 1302px) and (max-width: 1501px) {
   mobile-menu {
     display: block;
   }
@@ -375,17 +424,35 @@ html body .wrap {
 }
 @media (max-height: 1000px) {
   html body .wrap {
-    padding: 4rem 12rem;
+    padding: 4rem 0;
   }
 }
 html body .wrap section {
   width: 100%;
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   html body .wrap {
     min-width: 36rem;
     max-width: 50rem;
     padding: 4rem 2.4rem;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 48.5%;
+  }
+  html .wrap {
+    padding: 4rem 4rem;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1301px) {
+  html {
+    font-size: 55.5%;
+  }
+}
+@media (min-width: 1302px) and (max-width: 1501px) {
+  html {
+    font-size: 61.5%;
   }
 }
 @media (min-width: 2500px) {
@@ -396,6 +463,7 @@ html body .wrap section {
 
 .home {
   background: var(--bg-gradient);
+  overflow: hidden;
 }
 .home main {
   display: flex;
@@ -581,7 +649,7 @@ html body .wrap section {
   color: var(--text-color-basic);
   line-height: 1;
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   .home {
     overflow: hidden;
   }
@@ -630,9 +698,10 @@ html body .wrap section {
 }
 .about main {
   height: calc(100% - 8rem);
+  max-width: 139.5rem;
+  margin: 0 auto;
 }
 .about main .resume {
-  padding: 0 14.3rem;
   height: 100%;
 }
 .about main .resume .grid-container {
@@ -938,6 +1007,7 @@ html body .wrap section {
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 .about main .resume .grid-container li.right.skill .etc-tool > ul li {
   display: flex;
@@ -981,7 +1051,7 @@ html body .wrap section {
   font-size: 1.2rem;
   color: var(--text-color-caption);
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   .about {
     overflow-y: auto !important;
   }
@@ -1056,12 +1126,12 @@ html body .wrap section {
     flex-wrap: wrap;
   }
 }
-@media (max-width: 500px) and (max-width: 360px) {
+@media (min-width: 361px) and (max-width: 640px) and (max-width: 360px) {
   .about > main > .resume .grid-container li.right.skill > .etc-tool > ul {
     justify-content: flex-start;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   .about > main > .resume .grid-container li.right.edu {
     flex-direction: column;
     gap: 2rem;
@@ -1073,11 +1143,16 @@ html body .wrap section {
     margin-bottom: 0;
   }
 }
+@media (min-width: 1025px) and (max-width: 1301px) {
+  .about main {
+    max-width: 120rem;
+  }
+}
 
 .works main {
   padding-top: 8rem;
   flex-grow: 1;
-  max-width: 139.4rem;
+  max-width: 139.5rem;
   width: 100%;
   margin: 0 auto;
   height: 100dvh;
@@ -1233,7 +1308,8 @@ html body .wrap section {
   background-color: transparent;
   border-radius: 10rem;
   border: 0.2rem solid var(--text-color-bolder);
-  background-color: var(--bg-secondary);
+  background-color: rgba(var(--bg-secondary), 0.2);
+  backdrop-filter: blur(4px);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;
@@ -1250,12 +1326,12 @@ html body .wrap section {
 .works .btn-page-up.visible {
   opacity: 1;
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   .works .btn-page-up {
     right: 0;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
     width: 100%;
@@ -1402,7 +1478,8 @@ html body .wrap section {
   background-color: transparent;
   border-radius: 10rem;
   border: 0.2rem solid var(--text-color-bolder);
-  background-color: var(--bg-secondary);
+  background-color: rgba(var(--bg-secondary), 0.2);
+  backdrop-filter: blur(4px);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;
@@ -1419,12 +1496,12 @@ html body .wrap section {
 .work-detail .btn-page-up.visible {
   opacity: 1;
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   .work-detail .btn-page-up {
     right: 0;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 361px) and (max-width: 640px) {
   .work-detail main {
     display: grid;
     grid-template-columns: 1fr;

@@ -235,8 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function onScroll() {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScroll - lastScrollTop > 10) {
-            console.log('dd');
+        if (currentScroll - lastScrollTop > 10) {            
             headerSection.style.transform = "translateY(-100%)";
             headerSection.style.opacity = "0";
         } else if (lastScrollTop - currentScroll > 10) {

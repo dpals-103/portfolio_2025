@@ -4,15 +4,19 @@
             @content
         }
     }@else if $breakpoint == sm{
-        @media(max-width : 500px){
+        @media(min-width : 361px) and (max-width : 640px){
+            @content
+        }
+    }@else if $breakpoint == tablet{
+        @media (min-width : 641px) and (max-width : 1024px){
+            @content
+        }
+    }@else if $breakpoint == smd{
+        @media (min-width : 1025px) and (max-width : 1301px){
             @content
         }
     }@else if $breakpoint == md{
-        @media(max-width : 768px){
-            @content
-        }
-    }@else if $breakpoint == lg{
-        @media(min-width : 1024px){
+        @media(min-width : 1302px) and (max-width : 1501px){
             @content
         }
     }@else if $breakpoint == xlg{
@@ -31,7 +35,8 @@
     background-color: transparent;
     border-radius: 10rem;
     border: 0.2rem solid var(--text-color-bolder);
-    background-color: var(--bg-secondary);
+    background-color: rgba(var(--bg-secondary), 0.2);
+    backdrop-filter: blur(4px);
     position: fixed;    
     width:  $num-40;
     aspect-ratio: 1 / 1;

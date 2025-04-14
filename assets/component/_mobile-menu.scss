@@ -79,5 +79,9 @@ mobile-menu{
     @include responsive(sm){
         display: block;
     }
+
+    @include responsive(md){
+        display: block;
+    }
     
 }
