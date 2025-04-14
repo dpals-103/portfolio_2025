@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <nav>
                 <a href="about.html" alt="소개페이지로 이동">About</a>
                 <a href="works.html" alt="작업물 페이지로 이동">Works</a>
-                <a href="contact.html">Contact</a>
+                <button class="contact-btn">Contact</button>
                 <button class="theme-btn" alt="어두운테마로 변경" title="Change Dark mode!"><i class="fa-solid fa-moon"></i></button>
                 <button class="m-menu">
                 <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,6 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     </g>
                 </svg>
                 </button>
+
+                <div class="contact-popup">
+                    <ul>
+                        <li>
+                            <small>Phone</small>
+                            <span>010-9259-7333</span>
+                        </li>
+                         <li>
+                            <small>E-mail</small>
+                             <a href="mailto:dpals103@gmail.com">dpals103@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
 
             <div class="m-header">
@@ -35,6 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
         </div>
            `
+
+            const contactInfo = document.querySelector('.contact-btn');
+            const contactPopup = document.querySelector('.contact-popup');
+            contactInfo.addEventListener('click', () => {
+                contactPopup.classList.toggle('visible');
+            });
         }
     }
 

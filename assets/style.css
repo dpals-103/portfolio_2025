@@ -168,24 +168,27 @@ custom-header.fixed {
   }
 }
 custom-header > span,
-custom-header a {
+custom-header a,
+custom-header button {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
   color: var(--text-color-bolder);
+  cursor: pointer;
 }
 custom-header nav {
   display: flex;
   gap: 4rem;
+  position: relative;
 }
-custom-header nav a {
+custom-header nav a, custom-header nav button {
   color: var(--text-color-basic);
   display: inline-block;
   width: 6rem;
   text-align: center;
   height: 2.4rem;
 }
-custom-header nav a:hover, custom-header nav a.active {
+custom-header nav a:hover, custom-header nav a.active, custom-header nav button:hover, custom-header nav button.active {
   font-weight: 600;
   color: var(--text-color-bolder);
 }
@@ -207,6 +210,44 @@ custom-header nav button.m-menu {
 }
 custom-header nav button.m-menu > svg path {
   fill: var(--text-color-bolder);
+}
+custom-header nav .contact-popup {
+  border: 1px solid black;
+  padding: 1rem 1.6rem;
+  background-color: var(--bg-secondary);
+  border-radius: 0.4rem;
+  position: absolute;
+  top: 150%;
+  right: -100%;
+  opacity: 0;
+  box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
+  transition: opacity 1s ease-out, right 1s ease;
+}
+custom-header nav .contact-popup ul li {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+custom-header nav .contact-popup ul li small, custom-header nav .contact-popup ul li a, custom-header nav .contact-popup ul li span {
+  font-size: 1.4rem;
+  display: block;
+  line-height: 1.5;
+}
+custom-header nav .contact-popup ul li small {
+  color: var(--text-color-caption);
+}
+custom-header nav .contact-popup ul li a, custom-header nav .contact-popup ul li span {
+  color: var(--text-color-bolder);
+  width: auto;
+  height: auto;
+}
+custom-header nav .contact-popup ul li a:hover {
+  text-decoration: underline;
+  font-weight: 400;
+}
+custom-header nav .contact-popup.visible {
+  opacity: 1;
+  right: 0;
 }
 custom-header .m-header {
   display: none;

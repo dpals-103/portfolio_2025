@@ -25,18 +25,21 @@ custom-header {
 
 
     >span,
-    a {
+    a,
+    button {
         font-family: 'Montserrat', sans-serif;
         font-size: 1.6rem;
         font-weight: 500;
         color: var(--text-color-bolder);
+        cursor: pointer;
     }
 
     nav {
         display: flex;
         gap: $num-40;
+        position: relative;
 
-        a {
+        a,button {
             color: var(--text-color-basic);
             display: inline-block;
             width: 6rem;
@@ -49,6 +52,7 @@ custom-header {
                 color: var(--text-color-bolder);
             }
         }
+        
 
         button {
             background: none;
@@ -73,6 +77,54 @@ custom-header {
                         fill: var(--text-color-bolder);
                     }
                 }
+            }
+        }
+
+        .contact-popup{
+            border: 1px solid black;
+            padding: $num-10 $num-16;    
+            background-color: var(--bg-secondary);     
+            border-radius: $num-4;
+            position: absolute;
+            top: 150%;
+            right: -100%;
+            opacity: 0;
+            box-shadow: .4rem .4rem 1rem rgba(0,0,0,0.1);
+            transition: opacity 1s ease-out, right 1s ease;
+            ul{
+                li{
+                    display: flex;
+                    align-items: center;
+                    gap: $num-16;
+
+                    small,a,span{
+                        font-size: $num-14;
+                        display: block;
+                        line-height: 1.5;
+                    }
+
+                    small{
+                        color: var(--text-color-caption);
+                    }
+                   
+                    a,span{
+                        color: var(--text-color-bolder);
+                        width: auto;
+                        height: auto;
+                    }
+
+                    a{
+                        &:hover{
+                            text-decoration: underline;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            &.visible{
+                opacity: 1;
+                right: 0;
             }
         }
     }
