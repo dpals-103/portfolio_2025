@@ -1,63 +1,82 @@
-@mixin responsive($breakpoint){
-    @if $breakpoint == xsm{
-        @media(max-width : 360px){
-            @content
-        }
-    }@else if $breakpoint == sm{
-        @media(min-width : 361px) and (max-width : 640px){
-            @content
-        }
-    }@else if $breakpoint == tablet{
-        @media (min-width : 641px) and (max-width : 1024px){
-            @content
-        }
-    }@else if $breakpoint == smd{
-        @media (min-width : 1025px) and (max-width : 1301px){
-            @content
-        }
-    }@else if $breakpoint == md{
-        @media(min-width : 1302px) and (max-width : 1501px){
-            @content
-        }
-    }@else if $breakpoint == xlg{
-        @media(min-width : 2500px){
+@mixin responsive($breakpoint) {
+
+    //xs : 초소형
+    //sm : 소형모바일
+    //md : 태블릿
+    //lg : 태블릿 이상 데스크탑 미만    
+    //xl : 일반 데스크탑 
+    //xxl : 초대형
+
+    @if $breakpoint ==xs {
+        @media(min-width:360px) and (max-width : 399px) {
             @content
         }
     }
+    @else if $breakpoint ==sm {
+        @media(min-width : 400px) and (max-width : 640px) {
+            @content
+        }
+    }
+
+    @else if $breakpoint ==md {
+        @media (min-width : 641px) and (max-width : 1024px) {
+            @content
+        }
+    }
+
+    @else if $breakpoint ==lg {
+        @media (min-width : 1025px) and (max-width : 1199px) {
+            @content
+        }
+    }
+
+    @else if $breakpoint ==xl {
+        @media(min-width : 1200px) and (max-width : 1501px) {
+            @content
+        }
+    }
+
+    @else if $breakpoint ==xxl {
+        @media(min-width : 2500px) {
+            @content
+        }
+    }
+
+    @else {
+        @warn "⚠️ Unknown breakpoint: #{$breakpoint}";
+    }
 }
 
-@mixin flex-align-center{
+@mixin flex-align-center {
     display: flex;
     align-items: center;
 }
 
-@mixin pageUpBtn{
+@mixin pageUpBtn {
     background-color: transparent;
     border-radius: 10rem;
     border: 0.2rem solid var(--text-color-bolder);
     background-color: rgba(var(--bg-secondary), 0.2);
     backdrop-filter: blur(4px);
-    position: fixed;    
-    width:  $num-40;
+    position: fixed;
+    width: $num-40;
     aspect-ratio: 1 / 1;
     bottom: $num-40;
     right: 12rem;
     opacity: 0;
-    transition: opacity 1s ease ;
+    transition: opacity 1s ease;
     cursor: pointer;
 
-    > i{
-        color : var(--text-color-bolder);
-        font-size : 2rem
+    >i {
+        color: var(--text-color-bolder);
+        font-size: 2rem
     }
 
-    &.visible{
+    &.visible {
         opacity: 1;
     }
 
-    @include responsive(sm){
+    @include responsive(sm) {
         right: 0;
     }
 }
-
-

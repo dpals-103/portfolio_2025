@@ -9,6 +9,11 @@
         height: 100dvh;
         flex-shrink: 0;
 
+        @include responsive(md){
+            max-width: unset;
+        }
+
+
 
         >.grid {
             width: 100%;
@@ -17,6 +22,13 @@
              .grid-sizer,
             .grid-item{
                 width: calc((100% - 4rem) / 2);
+
+                @include responsive(md){
+                    width: calc((100% - 2rem) / 2);
+                }
+                @include responsive(lg){
+                    width: calc((100% - 1rem) / 2);
+                }
             }
             
             .grid-item {               
@@ -24,6 +36,10 @@
                 border-radius: $num-10;
                 overflow: hidden;
                 transition: ease-in 0.2s;
+
+                @include responsive(md){
+                    margin-bottom: $num-10;
+                }
 
                 a {
                     display: block;
@@ -44,6 +60,10 @@
                         left: 0;
                         bottom: 0;
                         padding: 0 $num-40 $num-48 $num-40;
+
+                        @include responsive(md){
+                            padding: $num-28 $num-32 $num-28;
+                        }
 
                         .badge {
                             display: flex;

@@ -1,87 +1,92 @@
-mobile-menu{
+mobile-menu {
     display: none;
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0; 
+    left: 0;
     transform: translateX(100%);
     transition: transform 0.8s ease;
     z-index: 999;
     background-color: var(--bg-secondary);
 
 
-    aside{
+    aside {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: $num-28 $num-24;
         height: 100%;
 
-        > .close-menu{
+        >.close-menu {
             margin-left: auto;
             position: absolute;
-            top : $num-28;
+            top: $num-28;
             right: $num-24;
             cursor: pointer;
-            >svg{
+
+            >svg {
                 width: $num-28;
                 height: $num-28;
-                path{
+
+                path {
                     fill: var(--text-color-bolder);
                 }
             }
         }
-    
-        > nav{
+
+        >nav {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: $num-28;
             padding-top: $num-56;
-    
-            a,i,button{
+
+            a,
+            i,
+            button {
                 font-size: $num-18;
-                padding : $num-8;
+                padding: $num-8;
                 color: var(--text-color-basic);
-                &:hover{
+
+                &:hover {
                     font-weight: 600;
                     color: var(--text-color-bolder);
                 }
             }
-    
-            button{
+
+            button {
                 display: inline-block;
                 cursor: pointer;
             }
-            
+
         }
-    
-        .contact{
-            li{
-                span{
+
+        .contact {
+            li {
+                span {
                     display: inline-block;
                     font-size: $num-15;
-                    color : var(--text-color-bolder);
+                    color: var(--text-color-bolder);
 
-                    &:first-child{
-                        margin-right : $num-16;
-                        color : var(--text-color-caption)
+                    &:first-child {
+                        margin-right: $num-16;
+                        color: var(--text-color-caption)
                     }
                 }
-                a{
-                    color : var(--text-color-bolder);
+
+                a {
+                    color: var(--text-color-bolder);
                 }
             }
         }
     }
 
-    @include responsive(sm){
-        display: block;
+
+    @each $bp in xs, sm, md {
+        @include responsive(#{$bp}) {
+            display: block;
+        }
     }
 
-    @include responsive(md){
-        display: block;
-    }
-    
 }

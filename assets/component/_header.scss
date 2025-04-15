@@ -3,7 +3,6 @@ custom-header {
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: $num-56;
-    padding: 0 12rem;
 
     &.fixed {
         position: fixed;
@@ -12,11 +11,11 @@ custom-header {
         width: 100%;
         box-sizing: border-box;
         background-color: var(--bg-secondary);
-        padding: 8rem 12rem 2rem 12rem;
+        
         margin-bottom: 0;
         z-index: 2;
         transition: opacity 1s ease, transform 1s ease;
-
+        padding: 8rem 12rem 2rem 12rem;
         @media (max-height : 1000px) {
             padding-top: 4rem;
         }
@@ -85,8 +84,8 @@ custom-header {
             padding: $num-10 $num-16;    
             background-color: var(--bg-box);     
             border-radius: $num-4;
-            position: fixed;
-            top: 8%;
+            position: absolute;
+            top: 150%;
             right: -10%;
             z-index: 9;
             opacity: 0;
@@ -149,9 +148,7 @@ custom-header {
             text-align: center;
             cursor: pointer;
 
-            .theme-btn{
-                
-            }
+
             svg {
                 width: $num-32;
                 height: $num-32;
@@ -163,36 +160,39 @@ custom-header {
             }
         }
     }
+ 
 
-    @mixin responsiveHeader{
-        margin-bottom: $num-24;
+    @each $bp in xs, sm, md {
+        @include responsive(#{$bp}){
+            margin-bottom: $num-24;
         
-        >*:not(.m-header){
-            display: none;
+            >*:not(.m-header){
+                display: none;
+            }
+            .m-header {
+                display: flex;
+            }
+    
+            &.fixed{
+                padding: $num-40 $num-24 $num-20 $num-24;
+            }
         }
-        .m-header {
-            display: flex;
-        }
-
-        &.fixed{
-            padding: $num-40 $num-24 $num-20 $num-24;
-        }
+       
     }
 
-    @include responsive(sm) {
-        @include responsiveHeader
-    }
+    // @each $bp in lg{
+    //     margin-bottom: $num-56;
+        
+    //     >*:not(.m-header){
+    //         display: flex;
+    //     }
+    //     .m-header {
+    //         display: none;
+    //     }
 
-    @include responsive(tablet) {
-        @include responsiveHeader
-    }
-
-    @include responsive(smd) {
-        @include responsiveHeader
-    }
-
-    @include responsive(md) {
-        @include responsiveHeader
-    }
+    //     &.fixed{
+    //        
+    //     }
+    // }
 
 }

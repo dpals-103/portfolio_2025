@@ -16,41 +16,56 @@ html{
         
             @media (max-height : 1000px) {
                 &{
-                    padding: 4rem 0;
+                    padding: 4rem 12rem;
+                }
+            }
+
+          
+            @include responsive(xs){
+                max-width: 39rem;
+                min-width: 36rem;
+                padding: 4rem 2.4rem;
+            }
+
+            @include responsive(sm){
+                //min-width: 36rem;
+                max-width : 64rem;
+                padding: 4rem 2.4rem;
+            }
+
+            @include responsive(md){
+                padding: 4rem 4rem;
+            }
+
+            @include responsive(lg){
+                padding: 6rem 8rem;
+                @media (max-height : 1000px) {
+                    padding: 6rem 8rem;
                 }
             }
         
             // common
             section {
                 width: 100%;
-            }
-
-
-            @include responsive(sm){
-                min-width: 36rem;
-                max-width : 50rem;
-                padding: 4rem 2.4rem;
-            }
+            }  
         }
 
 
     }
 
- 
-    @include responsive(tablet){
-        font-size: 48.5%;
-        .wrap{
-            padding: 4rem 4rem;
-        }
-    }
-    @include responsive(smd){
+
+    @include responsive(lg){
         font-size: 55.5%;
     }
-    @include responsive(md){
+    @include responsive(xl){
         font-size: 61.5%;
     }
-    @include responsive(xlg){
+    @include responsive(xxl){
         font-size: 84.5%;
+    }
+
+    @media (max-height : 800px) {
+        font-size: 49.5%;
     }
     
 }

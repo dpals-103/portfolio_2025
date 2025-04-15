@@ -6,9 +6,10 @@
         height: calc(100% - 8rem);
         max-width: 139.5rem;
         margin: 0 auto;
+        flex-grow: 1;
 
         .resume {
-            
+
             height: 100%;
 
             .grid-container {
@@ -24,6 +25,11 @@
                     row-gap: $num-30;
                 }
 
+                @include responsive(md) {
+                    grid-template-rows: repeat(4, 1fr);
+                    grid-template-columns: 1fr;
+                }
+
                 >li {
                     border-radius: $num-10;
                     background-color: var(--bg-box);
@@ -33,31 +39,51 @@
 
                     &:last-child {
                         padding: $num-32 $num-28;
+                        @include responsive(md) {
+                            padding: $num-56 $num-48 $num-40 $num-48;
+                        }
                     }
 
-                    &.row-span-7 {
+
+                    &.left{
                         grid-row: span 7;
-                    }
-
-                    &.row-span-5 {
-                        grid-row: span 5;
-                    }
-
-                    &.row-span-2 {
-                        grid-row: span 2;
-                    }
-
-                    &.col-span-3 {
                         grid-column: span 3;
+
+                        @include responsive(md) {
+                            grid-row: span 1;
+                            grid-column: span 1;
+                        }
                     }
 
-                    &.col-span-4 {
+                    &.center{
+                        grid-row: span 7;
                         grid-column: span 4;
+
+                        @include responsive(md) {
+                            grid-row: span 1;
+                            grid-column: span 1;
+                        }
                     }
 
-                    &.col-span-5 {
-                        grid-column: span 5;
+                    &.right{
+                        &.skill{
+                            grid-row: span 5;
+                            grid-column: span 3;
+                            @include responsive(md) {
+                                grid-row: span 1;
+                                grid-column: span 1;
+                            }
+                        }
+                        &.edu{
+                            grid-row: span 2;
+                            grid-column: span 3;
+                            @include responsive(md) {
+                                grid-row: span 1;
+                                grid-column: span 1;
+                            }
+                        }
                     }
+                   
 
                     @media (max-height:1000px) {
                         & {
@@ -80,7 +106,7 @@
                     background: radial-gradient(56.2% 104.42% at 10.18% 12.5%, #FAFCFE 0%, #F9F9FF 50%, #F0F7FF 100%);
                     box-shadow: 0px 0.8rem 2.5rem 0px rgba(33, 41, 80, 0.1);
 
-                    .dark &{
+                    .dark & {
                         background: radial-gradient(64.06% 120.46% at 0% 0%, $gray-80 0%, $gray-90 100%);
                         border: 0
                     }
@@ -101,7 +127,7 @@
 
                         >.txt-box {
                             h6 {
-                                color: var( --text-color-bolder);
+                                color: var(--text-color-bolder);
                                 line-height: 1;
                             }
 
@@ -125,6 +151,7 @@
                             margin-bottom: $num-40;
                             position: relative;
 
+                    
                             img {
                                 height: 140%;
                                 aspect-ratio: 1 / 1;
@@ -136,6 +163,14 @@
                             @media (max-height:1000px) {
                                 & {
                                     height: 20rem;
+                                }
+                            }
+
+                            @include responsive(md){
+                                height: 32vw;
+                                margin-bottom: 0;
+                                img{
+                                    right: 0;
                                 }
                             }
                         }
@@ -152,7 +187,11 @@
                             padding-top: $num-40;
                             font-size: $num-14;
                             color: var(--text-color-basic);
-                            font-weight: 400
+                            font-weight: 400;
+
+                            @include responsive(md){
+                                padding: $num-20 0;
+                            }
                         }
                     }
 
@@ -174,9 +213,10 @@
                     }
                 }
 
-                li.center,li.right{
-                    > h6{
-                        padding-bottom: $num-56;
+                li.center,
+                li.right {
+                    >h6 {
+                        padding-bottom: $num-40;
                         color: var(--text-color-bolder);
 
                         @media (max-height:1000px) {
@@ -184,11 +224,9 @@
                                 padding-bottom: $num-28;
                             }
                         }
-
-                        @media (max-height:1040px) {
-                            & {
-                                padding-bottom: $num-16;
-                            }
+                        
+                        @include responsive(md) {
+                            padding-bottom: $num-24;
                         }
                     }
                 }
@@ -250,7 +288,7 @@
                                     font-size: $num-13;
                                     line-height: 2.1rem;
                                     color: var(--text-color-basic);
-                                    font-weight: 400;                                    
+                                    font-weight: 400;
                                 }
                             }
                         }
@@ -373,6 +411,15 @@
                                     }
                                 }
 
+                                @include responsive(md) {
+                                    width: 100%;
+                                    flex-direction: row;
+                                    margin: $num-8 0;
+                                }
+                            }
+                            @include responsive(md) {
+                                flex-direction: column;
+                                width: 100%;
                             }
                         }
 
@@ -385,7 +432,7 @@
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
-                           
+
                             >span {
                                 color: var(--text-color-caption);
                                 font-size: $num-13;
@@ -396,6 +443,8 @@
                                 @include flex-align-center;
                                 gap: $num-20;
                                 flex-wrap: wrap;
+                                justify-content: space-around;
+
 
                                 li {
                                     display: flex;
@@ -412,6 +461,19 @@
                                         color: var(--text-color-basic);
                                     }
                                 }
+
+
+                                @include responsive(xs) {
+                                    justify-content: flex-start;
+                                }
+
+                                @include responsive(sm) {
+                                    justify-content: space-around;
+                                }
+
+                                @include responsive(md) {
+                                    justify-content: space-around;
+                                }
                             }
 
                             @media (max-height:1000px) {
@@ -419,7 +481,11 @@
                                     margin-top: $num-32;
                                 }
                             }
+
+
                         }
+
+                       
                     }
 
                     &.edu {
@@ -432,8 +498,8 @@
                             >p {
                                 font-size: $num-15;
                                 font-weight: 600;
-                                margin-bottom: $num-24;                           
-                                color: var(--text-color-bolder); 
+                                margin-bottom: $num-24;
+                                color: var(--text-color-bolder);
                             }
 
                             >ul {
@@ -451,6 +517,13 @@
                                         color: var(--text-color-caption);
                                     }
                                 }
+
+                                @include responsive(md){
+                                    display: flex;
+                                    align-items: flex-start;
+                                    gap: $num-24;
+                                }
+
                             }
                         }
                     }
@@ -460,139 +533,147 @@
         }
     }
 
+    @each $bp in xs, sm{
+        @include responsive(#{$bp}) {
+            overflow-y: auto !important;
 
-    @include responsive(sm){
-        overflow-y: auto !important;
+            >main {
+                height: auto;
+                max-width: unset;
+                width: 100%;
     
-        > main{
-            height: auto;
-            > .resume{
-                padding: 0;
-                .grid-container{
-                    display: flex;
-                    flex-direction: column;
-
-                    > li{
-                        padding : $num-30;
-
-                        &:last-child{
-                            padding : $num-30;
-                        }
-                    }
-
-                    li.center,li.right{
-                        >  h6{
-                            padding-bottom: $num-24;
-                        }
-                    }
-
-                    li.left{
-                        > .introduce{
-                            > .img-box{
-                                height: 18rem;
-                                >img {
-                                    right: -4rem;
-                                }
-                            }
-                            > span{
-                                font-size: $num-28;
-                            }
-                            >p{
-                                padding: $num-28 0;
-                                word-break:keep-all;
+                >.resume {
+                    padding: 0;
+    
+                    .grid-container {
+                        display: flex;
+                        flex-direction: column;
+    
+                        >li {
+                            padding: $num-30;
+    
+                            &:last-child {
+                                padding: $num-30;
                             }
                         }
-
-                        .hashtag{
-                            > li{
-                                padding: 0 $num-12;
+    
+                        li.center,
+                        li.right {
+                            >h6 {
+                                padding-bottom: $num-24;
                             }
                         }
-                    }
-                    
-                    li.center{
-                        > ul {
-                            > li{
-
-                                &:not(:last-child) {
-                                    margin-bottom: $num-30;
-                                }
-
-                                .company-info{
-                                    flex-wrap: wrap-reverse;
-                                    row-gap: 0.2rem;
-                                    margin-bottom: $num-10;
-                                    > small{
-                                        margin-left: unset;
-                                        margin-right: 10rem;
+    
+                        li.left {
+                            >.introduce {
+                                >.img-box {
+                                    height: 18rem;
+    
+                                    >img {
+                                        right: -4rem;
                                     }
                                 }
-                                .main-work{
-                                    li{
-                                        list-style: disc;
-                                        list-style-position: inside;
-                                    }
+    
+                                >span {
+                                    font-size: $num-28;
                                 }
-                                
+    
+                                >p {
+                                    padding: $num-28 0;
+                                    word-break: keep-all;
+                                }
+                            }
+    
+                            .hashtag {
+                                >li {
+                                    padding: 0 $num-12;
+                                }
                             }
                         }
-                    }
-
-                    li.right{
-                        &.skill{
-                            > .main-skill{
-                                justify-content: space-around;
-                                > li {
-                                    gap: $num-16;
-                                    > div{
-                                        i{
-                                            width: $num-32;
-                                            > img{
-                                                transform: translate(0.4rem, 0.2rem);
+    
+                        li.center {
+                            >ul {
+                                >li {
+    
+                                    &:not(:last-child) {
+                                        margin-bottom: $num-30;
+                                    }
+    
+                                    .company-info {
+                                        flex-wrap: wrap-reverse;
+                                        row-gap: 0.2rem;
+                                        margin-bottom: $num-10;
+    
+                                        >small {
+                                            margin-left: unset;
+                                            margin-right: 10rem;
+                                        }
+                                    }
+    
+                                    .main-work {
+                                        li {
+                                            list-style: disc;
+                                            list-style-position: inside;
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+    
+                        li.right {
+                            &.skill {
+                                >.main-skill {
+                                    justify-content: space-around;
+    
+                                    >li {
+                                        gap: $num-16;
+    
+                                        >div {
+                                            i {
+                                                width: $num-32;
+    
+                                                >img {
+                                                    transform: translate(0.4rem, 0.2rem);
+                                                }
+    
                                             }
-                                        
+                                        }
                                     }
                                 }
-                               }
+    
+                                >.etc-tool {
+                                    gap: $num-16;
+                                }
                             }
-
-                            > .etc-tool{
-                                gap: $num-16;
-                                > ul{
-                                    justify-content: center;
-                                    flex-wrap: wrap;
-
-                                    @include responsive(xsm){
-                                        justify-content: flex-start;
+    
+                            &.edu {
+                                flex-direction: column;
+                                gap: $num-20;
+    
+                                >div {
+                                    >p {
+                                        margin-bottom: $num-16;
+                                    }
+    
+                                    >ul {
+                                        >li {
+                                            margin-bottom: $num-8;
+                                        }
                                     }
                                 }
+    
                             }
+    
                         }
-                        &.edu{
-                            flex-direction: column;
-                            gap: $num-20;
-                          >div{
-                            >p{
-                                margin-bottom: $num-16;
-                            }
-
-                            > ul {
-                                > li{
-                                   margin-bottom: 0;
-                                }
-                             }
-                          }
-                         
-                        }
-                        
                     }
                 }
             }
         }
     }
 
-    @include responsive(smd){
-        main{
+    @include responsive(lg) {
+        main {
             max-width: 120rem;
         }
     }
