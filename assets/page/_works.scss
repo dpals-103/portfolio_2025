@@ -23,11 +23,16 @@
             .grid-item{
                 width: calc((100% - 4rem) / 2);
 
+                @include responsive(sm){
+                    width: 100%;
+                }
+
                 @include responsive(md){
                     width: calc((100% - 2rem) / 2);
                 }
+
                 @include responsive(lg){
-                    width: calc((100% - 1rem) / 2);
+                    width: calc((100% - 4rem) / 2);
                 }
             }
             
@@ -38,7 +43,7 @@
                 transition: ease-in 0.2s;
 
                 @include responsive(md){
-                    margin-bottom: $num-10;
+                    margin-bottom: $num-20;
                 }
 
                 a {
@@ -60,10 +65,6 @@
                         left: 0;
                         bottom: 0;
                         padding: 0 $num-40 $num-48 $num-40;
-
-                        @include responsive(md){
-                            padding: $num-28 $num-32 $num-28;
-                        }
 
                         .badge {
                             display: flex;
@@ -130,6 +131,31 @@
                                 opacity: 0;
                                 transform: translateX(-1rem);
                                 transition: all ease-in .2s;
+                            }
+
+                            @each $bp in xs, sm, md{
+                                display: none
+                            }
+                        }
+
+                        @include responsive(md){
+                            padding: $num-28 $num-32 $num-28;
+
+                            .badge{
+                                >li {
+                                    font-size: $num-14;
+                                    line-height: 2.7rem;
+                                    padding: 0 $num-10;
+                                }
+                            }
+                            .title{
+                                margin-bottom: $num-16;
+                                >* {
+                                    font-size: $num-18;
+                                }
+                                >p{
+                                    margin-bottom: $num-8;
+                                }
                             }
                         }
                     }
@@ -240,10 +266,6 @@
     @include responsive(sm) {
         main {
             >.grid {
-                .grid-sizer,
-                .grid-item{
-                    width: 100%;
-                }
                 .grid-item {
                     margin-bottom: $num-20;
 
@@ -272,10 +294,6 @@
                                     word-break: keep-all;
                                     line-height: 1.5;
                                 }
-                            }
-
-                            .btn-detail {
-                                display: none;
                             }
                         }
                     }

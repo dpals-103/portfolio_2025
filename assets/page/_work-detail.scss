@@ -20,7 +20,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: $num-40;
-                
+
 
                 >div {
                     display: flex;
@@ -37,19 +37,19 @@
                     >p {
                         color: var(--text-color-bolder);
                         line-height: 1.3;
-                        font-size: $num-15;               
+                        font-size: $num-15;
                         font-weight: 400;
 
-                        &.desc-txt {                            
+                        &.desc-txt {
                             line-height: 1.5;
 
-                            > a{
+                            >a {
                                 display: flex;
                                 text-decoration: underline;
                                 align-items: center;
                                 color: var(--hyperlink-color);
 
-                                &:hover{
+                                &:hover {
                                     font-weight: 500
                                 }
                             }
@@ -63,12 +63,13 @@
                         >li {
                             width: $num-32;
                             aspect-ratio: 1 / 1;
+
                             >img {
-                               width: 100%;
+                                width: 100%;
                             }
                         }
                     }
-                }              
+                }
             }
 
             .pagenation {
@@ -85,7 +86,7 @@
                     line-height: 1.5;
                     font-weight: 500;
 
-                    &:hover{
+                    &:hover {
                         font-weight: 600;
                         color: var(--text-color-bolder);
                     }
@@ -101,62 +102,76 @@
             flex-direction: column;
             gap: $num-28;
 
-            picture{
+            picture {
                 display: inline-block;
                 width: 100%;
                 aspect-ratio: 16 / 9;
 
-                img{
+                img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                 }
             }
 
-            .img-col-2{
+            .img-col-2 {
                 display: flex;
                 align-items: center;
                 gap: $num-24;
-                picture{
+
+                picture {
                     aspect-ratio: unset;
                 }
             }
 
-            .detail-desc{
+            .detail-desc {
                 font-size: $num-16;
                 font-weight: 400;
                 color: var(--text-color-basic);
                 line-height: 1.5;
                 font-family: 'pretendard';
             }
-            
+
         }
+
+
+        @each $bp in sm, md, lg, xl {
+            @include responsive(#{$bp}) {
+                padding: 8rem 4rem;
+            }
+        }
+
     }
 
-    .btn-page-up{
+    .btn-page-up {
         @include pageUpBtn;
     }
 
 
-    @include responsive(sm){
-        main{
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 2fr;
-            column-gap: unset;
-            row-gap: $num-40;
-            padding: 0;
-            padding-bottom: $num-40;
+    @each $bp in sm, md {
+        @include responsive(#{$bp}) {
+            main {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr;
+                column-gap: unset;
+                row-gap: $num-40;
+                padding: 0;
+                padding-bottom: $num-40;
 
-            .side{
-                position: static;
-                padding-top: 8rem;
+                .side {
+                    position: static;
+                    padding-top: 8rem;
 
-                .work-info{
-                    gap: $num-24;
-                    padding: $num-24 $num-8;
+                    .work-info {
+                        gap: $num-24;
+                        padding: $num-24 $num-8;
+                    }
                 }
             }
         }
     }
+
+
+
 }

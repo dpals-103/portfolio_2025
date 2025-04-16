@@ -194,9 +194,9 @@
         const grid = document.querySelector('.grid');
 
         function getGutterByWindowWidth() {
-            if (window.innerWidth < 960) return 10;
-            if (window.innerWidth > 1200) return 20;
-            if (window.innerWidth < 1200) return 40;
+            if (window.innerWidth < 1024) return 20;
+            if (window.innerWidth > 1024) return 40;
+            
             return 40;
         }
 

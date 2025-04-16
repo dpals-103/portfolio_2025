@@ -460,6 +460,14 @@
                                         font-size: $num-13;
                                         color: var(--text-color-basic);
                                     }
+
+                                    .dark &{
+                                        &:first-child, &:nth-child(3){
+                                            >img{
+                                                filter: contrast(0) brightness(1);
+                                            }
+                                        }
+                                    }
                                 }
 
 

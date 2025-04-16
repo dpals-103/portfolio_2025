@@ -1245,6 +1245,9 @@ html body .wrap section {
   font-size: 1.3rem;
   color: var(--text-color-basic);
 }
+.dark .about main .resume .grid-container li.right.skill .etc-tool > ul li:first-child > img, .dark .about main .resume .grid-container li.right.skill .etc-tool > ul li:nth-child(3) > img {
+  filter: contrast(0) brightness(1);
+}
 @media (min-width: 360px) and (max-width: 399px) {
   .about main .resume .grid-container li.right.skill .etc-tool > ul {
     justify-content: flex-start;
@@ -1492,6 +1495,12 @@ html body .wrap section {
 .works main > .grid .grid-item {
   width: calc((100% - 4rem) / 2);
 }
+@media (min-width: 400px) and (max-width: 640px) {
+  .works main > .grid .grid-sizer,
+  .works main > .grid .grid-item {
+    width: 100%;
+  }
+}
 @media (min-width: 641px) and (max-width: 1024px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
@@ -1501,7 +1510,7 @@ html body .wrap section {
 @media (min-width: 1025px) and (max-width: 1199px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
-    width: calc((100% - 1rem) / 2);
+    width: calc((100% - 4rem) / 2);
   }
 }
 .works main > .grid .grid-item {
@@ -1512,7 +1521,7 @@ html body .wrap section {
 }
 @media (min-width: 641px) and (max-width: 1024px) {
   .works main > .grid .grid-item {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 .works main > .grid .grid-item a {
@@ -1533,11 +1542,6 @@ html body .wrap section {
   left: 0;
   bottom: 0;
   padding: 0 4rem 4.8rem 4rem;
-}
-@media (min-width: 641px) and (max-width: 1024px) {
-  .works main > .grid .grid-item a .title-box {
-    padding: 2.8rem 3.2rem 2.8rem;
-  }
 }
 .works main > .grid .grid-item a .title-box .badge {
   display: flex;
@@ -1585,6 +1589,9 @@ html body .wrap section {
   font-weight: 500;
   opacity: 0;
   transition: opacity ease-in 0.2s;
+  display: none;
+  display: none;
+  display: none;
 }
 .works main > .grid .grid-item a .title-box .btn-detail::after {
   content: "";
@@ -1596,6 +1603,25 @@ html body .wrap section {
   opacity: 0;
   transform: translateX(-1rem);
   transition: all ease-in 0.2s;
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .works main > .grid .grid-item a .title-box {
+    padding: 2.8rem 3.2rem 2.8rem;
+  }
+  .works main > .grid .grid-item a .title-box .badge > li {
+    font-size: 1.4rem;
+    line-height: 2.7rem;
+    padding: 0 1rem;
+  }
+  .works main > .grid .grid-item a .title-box .title {
+    margin-bottom: 1.6rem;
+  }
+  .works main > .grid .grid-item a .title-box .title > * {
+    font-size: 1.8rem;
+  }
+  .works main > .grid .grid-item a .title-box .title > p {
+    margin-bottom: 0.8rem;
+  }
 }
 .works main > .grid .grid-item a::before {
   content: "";
@@ -1680,10 +1706,6 @@ html body .wrap section {
   }
 }
 @media (min-width: 400px) and (max-width: 640px) {
-  .works main > .grid .grid-sizer,
-  .works main > .grid .grid-item {
-    width: 100%;
-  }
   .works main > .grid .grid-item {
     margin-bottom: 2rem;
   }
@@ -1706,9 +1728,6 @@ html body .wrap section {
     margin-bottom: 0.4rem;
     word-break: keep-all;
     line-height: 1.5;
-  }
-  .works main > .grid .grid-item a .title-box .btn-detail {
-    display: none;
   }
 }
 
@@ -1822,6 +1841,26 @@ html body .wrap section {
   line-height: 1.5;
   font-family: "pretendard";
 }
+@media (min-width: 400px) and (max-width: 640px) {
+  .work-detail main {
+    padding: 8rem 4rem;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .work-detail main {
+    padding: 8rem 4rem;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .work-detail main {
+    padding: 8rem 4rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1601px) {
+  .work-detail main {
+    padding: 8rem 4rem;
+  }
+}
 .work-detail .btn-page-up {
   background-color: transparent;
   border-radius: 10rem;
@@ -1850,6 +1889,25 @@ html body .wrap section {
   }
 }
 @media (min-width: 400px) and (max-width: 640px) {
+  .work-detail main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    column-gap: unset;
+    row-gap: 4rem;
+    padding: 0;
+    padding-bottom: 4rem;
+  }
+  .work-detail main .side {
+    position: static;
+    padding-top: 8rem;
+  }
+  .work-detail main .side .work-info {
+    gap: 2.4rem;
+    padding: 2.4rem 0.8rem;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
   .work-detail main {
     display: grid;
     grid-template-columns: 1fr;
