@@ -423,14 +423,13 @@ html body .wrap {
 }
 @media (min-width: 360px) and (max-width: 399px) {
   html body .wrap {
-    max-width: 39rem;
     min-width: 36rem;
     padding: 4rem 2.4rem;
   }
 }
 @media (min-width: 400px) and (max-width: 640px) {
   html body .wrap {
-    max-width: 64rem;
+    min-width: 36rem;
     padding: 4rem 2.4rem;
   }
 }
@@ -449,6 +448,11 @@ html body .wrap {
     padding: 6rem 8rem;
   }
 }
+@media (min-width: 1200px) and (max-width: 1601px) {
+  html body .wrap {
+    padding: 6rem 8rem;
+  }
+}
 html body .wrap section {
   width: 100%;
 }
@@ -457,7 +461,7 @@ html body .wrap section {
     font-size: 55.5%;
   }
 }
-@media (min-width: 1200px) and (max-width: 1501px) {
+@media (min-width: 1200px) and (max-width: 1601px) {
   html {
     font-size: 61.5%;
   }
@@ -585,6 +589,18 @@ html body .wrap section {
   background: linear-gradient(94deg, rgba(251, 204, 47, 0.5) 0%, rgba(255, 186, 109, 0.75) 56.28%, #FE8600 100%);
   box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.1);
 }
+@media (min-width: 360px) and (max-width: 399px) {
+  .home main .body .img-group > .img-box[name=Passion]::after {
+    right: unset;
+    left: 0;
+  }
+}
+@media (min-width: 400px) and (max-width: 640px) {
+  .home main .body .img-group > .img-box[name=Passion]::after {
+    right: unset;
+    left: 0;
+  }
+}
 .home main .body .img-group > .img-box[name=Fellowship]::after {
   top: 35%;
   left: -60%;
@@ -592,12 +608,34 @@ html body .wrap section {
   background: linear-gradient(89deg, #FD394A 5.04%, rgba(255, 18, 78, 0.75) 46.46%, rgba(253, 134, 193, 0.5) 99.78%);
   box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.1);
 }
+@media (min-width: 360px) and (max-width: 399px) {
+  .home main .body .img-group > .img-box[name=Fellowship]::after {
+    right: -10%;
+    left: unset;
+  }
+}
+@media (min-width: 400px) and (max-width: 640px) {
+  .home main .body .img-group > .img-box[name=Fellowship]::after {
+    right: -10%;
+    left: unset;
+  }
+}
 .home main .body .img-group > .img-box[name=Adventure]::after {
   top: 100%;
   right: -50%;
   border: 0.1rem solid rgba(255, 255, 255, 0.5);
   background: linear-gradient(94deg, rgba(64, 247, 255, 0.5) 0%, rgba(77, 178, 255, 0.75) 48.08%, #0E33CE 100%);
   box-shadow: 0px 0.4rem 1rem 0px rgba(109, 125, 142, 0.1);
+}
+@media (min-width: 360px) and (max-width: 399px) {
+  .home main .body .img-group > .img-box[name=Adventure]::after {
+    right: 57%;
+  }
+}
+@media (min-width: 400px) and (max-width: 640px) {
+  .home main .body .img-group > .img-box[name=Adventure]::after {
+    right: 57%;
+  }
 }
 .home main .body .img-group .wave-animation {
   position: absolute;
@@ -639,6 +677,28 @@ html body .wrap section {
   letter-spacing: -0.03em;
   font-style: italic;
 }
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .home main .body {
+    align-items: flex-end;
+  }
+  .home main .body > .img-group {
+    top: 20vh;
+  }
+  .home main .body > .italic {
+    transform: unset;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1601px) {
+  .home main .body {
+    align-items: flex-end;
+  }
+  .home main .body > .img-group {
+    top: 20vh;
+  }
+  .home main .body > .italic {
+    transform: unset;
+  }
+}
 .home main .bottom {
   display: flex;
   align-items: flex-end;
@@ -661,7 +721,93 @@ html body .wrap section {
   color: var(--text-color-basic);
   line-height: 1;
 }
+@media (min-width: 360px) and (max-width: 399px) {
+  .home {
+    overflow: hidden;
+  }
+  .home > main {
+    height: 100%;
+  }
+  .home > main .body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  .home > main .body .txt-box {
+    display: none;
+  }
+  .home > main .body .img-group {
+    pointer-events: none;
+    top: 20vh;
+  }
+  .home > main .body .italic {
+    transform: translateY(0);
+  }
+  .home > main .body .italic h1 {
+    font-size: 6.6rem;
+  }
+  .home > main .bottom {
+    display: block;
+  }
+  .home > main .bottom > span {
+    font-size: 1.3rem;
+    position: relative;
+    bottom: 2vh;
+  }
+  .home > main .bottom ul {
+    gap: 0.8rem;
+  }
+  .home > main .bottom ul li {
+    font-size: 1.3rem;
+    text-align: right;
+  }
+}
 @media (min-width: 400px) and (max-width: 640px) {
+  .home {
+    overflow: hidden;
+  }
+  .home > main {
+    height: 100%;
+  }
+  .home > main .body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  .home > main .body .txt-box {
+    display: none;
+  }
+  .home > main .body .img-group {
+    pointer-events: none;
+    top: 20vh;
+  }
+  .home > main .body .italic {
+    transform: translateY(0);
+  }
+  .home > main .body .italic h1 {
+    font-size: 6.6rem;
+  }
+  .home > main .bottom {
+    display: block;
+  }
+  .home > main .bottom > span {
+    font-size: 1.3rem;
+    position: relative;
+    bottom: 2vh;
+  }
+  .home > main .bottom ul {
+    gap: 0.8rem;
+  }
+  .home > main .bottom ul li {
+    font-size: 1.3rem;
+    text-align: right;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
   .home {
     overflow: hidden;
   }

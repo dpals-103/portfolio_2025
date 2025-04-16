@@ -22,14 +22,14 @@ html{
 
           
             @include responsive(xs){
-                max-width: 39rem;
+                //max-width: 39rem;
                 min-width: 36rem;
                 padding: 4rem 2.4rem;
             }
 
             @include responsive(sm){
-                //min-width: 36rem;
-                max-width : 64rem;
+                min-width: 36rem;
+                //max-width : 64rem;
                 padding: 4rem 2.4rem;
             }
 
@@ -39,9 +39,14 @@ html{
 
             @include responsive(lg){
                 padding: 6rem 8rem;
+                
                 @media (max-height : 1000px) {
                     padding: 6rem 8rem;
                 }
+            }
+
+            @include responsive(xl){
+                padding: 6rem 8rem;
             }
         
             // common
