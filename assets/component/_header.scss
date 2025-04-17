@@ -153,6 +153,7 @@ custom-header {
                 width: $num-32;
                 height: $num-32;
                 object-fit: cover;
+                fill: var(--text-color-bolder);
 
                 path {
                     fill: var(--text-color-bolder)
@@ -180,19 +181,15 @@ custom-header {
        
     }
 
-    // @each $bp in lg{
-    //     margin-bottom: $num-56;
-        
-    //     >*:not(.m-header){
-    //         display: flex;
-    //     }
-    //     .m-header {
-    //         display: none;
-    //     }
 
-    //     &.fixed{
-    //        
-    //     }
-    // }
+    @each $bp in lg, xl{
+        @include responsive(lg){
+            &.fixed{
+                padding: 6rem 8rem 2rem 8rem;
+            }
+           
+            
+        }
+    }
 
 }

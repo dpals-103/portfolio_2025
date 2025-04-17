@@ -23,8 +23,11 @@
             .grid-item{
                 width: calc((100% - 4rem) / 2);
 
-                @include responsive(sm){
-                    width: 100%;
+
+                @each $bp in xs, sm{
+                    @include responsive(#{$bp}){
+                        width: 100%;
+                    }
                 }
 
                 @include responsive(md){
@@ -32,7 +35,7 @@
                 }
 
                 @include responsive(lg){
-                    width: calc((100% - 4rem) / 2);
+                    width: calc((100% - 6rem) / 2);
                 }
             }
             
@@ -42,8 +45,10 @@
                 overflow: hidden;
                 transition: ease-in 0.2s;
 
-                @include responsive(md){
-                    margin-bottom: $num-20;
+                @each $bp in xs, sm, md{
+                    @include responsive(#{$bp}){
+                        margin-bottom: $num-20;
+                    }
                 }
 
                 a {
@@ -137,6 +142,8 @@
                                 display: none
                             }
                         }
+
+
 
                         @include responsive(md){
                             padding: $num-28 $num-32 $num-28;
@@ -263,43 +270,45 @@
     }
 
 
-    @include responsive(sm) {
-        main {
-            >.grid {
-                .grid-item {
-                    margin-bottom: $num-20;
 
-                    a {
-                        .title-box {
-                            padding: 0 $num-24 $num-24 $num-24;
-
-                            .badge {
-                                >li {
-                                    font-size: $num-13;
-                                    line-height: 2.4rem;
-                                    padding: 0 $num-8;
-                                    border-radius: .3;
+    @each $bp in xs, sm{
+        @include responsive(#{$bp}){
+            main {
+                >.grid {
+                    .grid-item {
+    
+                        a {
+                            .title-box {
+                                padding: 0 $num-24 $num-24 $num-24;
+    
+                                .badge {
+                                    >li {
+                                        font-size: $num-13;
+                                        line-height: 2.4rem;
+                                        padding: 0 $num-8;
+                                        border-radius: .3;
+                                    }
                                 }
-                            }
-
-                            .title{
-                                margin-bottom: $num-20;
-
-                                >* {
-                                    font-size: $num-18;
-                                }
-
-                                >p {
-                                    margin-bottom: $num-4;
-                                    word-break: keep-all;
-                                    line-height: 1.5;
+    
+                                .title{
+                                    margin-bottom: $num-20;
+    
+                                    >* {
+                                        font-size: $num-18;
+                                    }
+    
+                                    >p {
+                                        margin-bottom: $num-4;
+                                        word-break: keep-all;
+                                        line-height: 1.5;
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
+    
         }
-
     }
 }

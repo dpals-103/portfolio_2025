@@ -177,8 +177,9 @@
 
                 .wave-animation {
                     position: absolute;
-                    top: -50%;
-                    left: -50%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                     z-index: -1;
 
                     >circle {
@@ -230,11 +231,28 @@
             @each $bp in lg, xl{
                 @include responsive(#{$bp}){
                     align-items: flex-end;
+                    > .txt-box{
+                        @media (max-height : 1000px) {
+                            h4 {
+                                font-size: 3.8rem;
+                            }
+            
+                            h1 {
+                                font-size: 6rem;
+                            }
+                        }
+                    }
                     > .img-group{
                         top: 20vh;
                     }
                     > .italic{
                         transform: unset;
+                        >h1{
+                            @media (max-height : 1000px) {
+                                font-size: 12rem;
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -269,6 +287,7 @@
 
 
     @each $bp in xs, sm, md{
+
         @include responsive(#{$bp}){
             overflow: hidden;
             > main{
@@ -279,13 +298,17 @@
                     align-items: flex-start;
                     justify-content: flex-end;
                     height: 100%;
+
                     .txt-box{
                         display: none;
                     }
                     .img-group{
-                        // transform: scale(50%) translateX(-100%);
                         pointer-events: none;
                         top: 20vh;
+
+                        @include responsive(xs){
+                            transform: translateX(-50%) scale(0.85);
+                        }
                     }
                     .italic{
                         transform: translateY(0);

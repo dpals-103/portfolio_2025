@@ -76,7 +76,11 @@
         opacity: 1;
     }
 
+    @include responsive(xs) {
+        right: 4rem;
+    }
+
     @include responsive(sm) {
-        right: 0;
+        right: 4rem;
     }
 }

@@ -61,6 +61,10 @@ html{
 
     @include responsive(lg){
         font-size: 55.5%;
+
+        @media (max-height : 1000px) {
+            font-size: 50.5%;
+        }
     }
     @include responsive(xl){
         font-size: 61.5%;
@@ -70,7 +74,7 @@ html{
     }
 
     @media (max-height : 800px) {
-        font-size: 49.5%;
+        font-size: 48.5%;
     }
     
 }
