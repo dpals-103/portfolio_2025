@@ -11,11 +11,11 @@ custom-header {
         width: 100%;
         box-sizing: border-box;
         background-color: var(--bg-secondary);
-        
         margin-bottom: 0;
         z-index: 2;
         transition: opacity 1s ease, transform 1s ease;
         padding: 8rem 12rem 2rem 12rem;
+
         @media (max-height : 1000px) {
             padding-top: 4rem;
         }

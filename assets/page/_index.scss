@@ -15,6 +15,9 @@
 
             .txt-box {
                 transform: translateY(-50%);
+                opacity: 0;
+                animation: fadeLeft 1s ease-out .5s forwards;
+                
 
                 h4 {
                     font-family: 'Montserrat', sans-serif;
@@ -33,6 +36,16 @@
                     line-height: normal;
                     letter-spacing: -0.05em;
                 }
+
+                @keyframes fadeLeft {
+                    0%{
+                        transform: translate(-100%, -50%);
+                    }
+                    100%{
+                        transform: translate(0, -50%);
+                        opacity: 1;
+                    }
+                }
             }
 
             .img-group {
@@ -40,15 +53,18 @@
                 flex-direction: column;
                 position: absolute;
                 left: 50%;
-                top: 35%;
-                transform: translateX(-50%);
+                top: 50%;
+                transform: translate(-50%,-50%) scale(.9);
                 width: 30rem;
                 aspect-ratio: 1 / 1;
+                opacity: 0;
+                animation: fadeScale 1.5s ease-out forwards;
 
                 >.img-box {
                     img {
                         width: 100%;
                         position: absolute;
+                        -webkit-user-drag: none;
 
                         &.fire {
                             transform: rotate(7.7deg);
@@ -173,8 +189,6 @@
 
                 }
 
-
-
                 .wave-animation {
                     position: absolute;
                     top: 50%;
@@ -213,10 +227,22 @@
                     }
                 }
 
+
+                @keyframes fadeScale {
+                    0%{
+                        transform: translate(-50%,-50%) scale(0.9);
+                    }
+                    100%{
+                        transform: translate(-50%,-50%) scale(1);
+                        opacity: 1;
+                    }
+                }
             }
 
             .italic {
                 transform: translateY(-25%);
+                opacity: 0;
+                animation: fadeRight 1s ease-out .8s forwards;
 
                 h1 {
                     font-family: 'Old Standard TT', serif;
@@ -225,6 +251,16 @@
                     color: var(--text-color-bolder);
                     letter-spacing: -0.03em;
                     font-style: italic;
+                }
+
+                @keyframes fadeRight {
+                    0%{
+                        transform: translate(100%, -25%);
+                    }
+                    100%{
+                        transform: translate(0, -25%);
+                        opacity: 1;
+                    }
                 }
             }
 
@@ -243,10 +279,10 @@
                         }
                     }
                     > .img-group{
-                        top: 20vh;
+                        top: 30vh;
                     }
                     > .italic{
-                        transform: unset;
+                        transform: unset !important;
                         >h1{
                             @media (max-height : 1000px) {
                                 font-size: 12rem;
@@ -304,7 +340,7 @@
                     }
                     .img-group{
                         pointer-events: none;
-                        top: 20vh;
+                        top: 30vh;
 
                         @include responsive(xs){
                             transform: translateX(-50%) scale(0.85);

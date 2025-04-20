@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageUpBtn = document.createElement("button")
     const pageUpBtnIcon = document.createElement("i")
     pageUpBtn.classList.add('btn-page-up');
+    pageUpBtn.setAttribute('title','페이지 위로');
     pageUpBtnIcon.classList.add('fa-solid', 'fa-arrow-up');
     pageUpBtn.appendChild(pageUpBtnIcon);
 
@@ -228,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // 스크롤 방향에 따라 헤더 숨겼다 보여주기
-    let lastScrollTop = 0;
+    let lastScrollTop = 50;
     let ticking = false;
     const headerSection = document.querySelector('custom-header.fixed');
 
@@ -289,5 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
+    AOS.init({
+        once: true,
+    });
 });

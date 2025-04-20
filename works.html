@@ -11,6 +11,8 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <title>LEE HYO JU | Works </title>
     </head>
 </head>
@@ -20,7 +22,7 @@
         <custom-header></custom-header>
         <mobile-menu></mobile-menu>
 
-        <main>
+        <main data-aos="fade-in" data-aos-duration="1000" data-aos-easing="linear">
             <ul class="grid">
                 <li class="grid-sizer"></li>
 
@@ -196,7 +198,7 @@
         function getGutterByWindowWidth() {
             if (window.innerWidth < 1024) return 20;
             if (window.innerWidth > 1024) return 40;
-            
+
             return 40;
         }
 
@@ -205,6 +207,7 @@
             columnWidth: '.grid-sizer',
             percentPosition: true,
             gutter: getGutterByWindowWidth(),
+            transitionDuration: 800,
             fitWidth: false
         });
 

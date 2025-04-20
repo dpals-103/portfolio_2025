@@ -55,9 +55,10 @@
 @mixin pageUpBtn {
     background-color: transparent;
     border-radius: 10rem;
-    border: 0.2rem solid var(--text-color-bolder);
-    background-color: rgba(var(--bg-secondary), 0.2);
-    backdrop-filter: blur(4px);
+    border: 0.2rem solid var(--box-border);
+    background-color: var(--bg-secondary);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    //backdrop-filter: blur(4px);
     position: fixed;
     width: $num-40;
     aspect-ratio: 1 / 1;
@@ -77,10 +78,14 @@
     }
 
     @include responsive(xs) {
-        right: 4rem;
+        right: .8rem;
     }
 
     @include responsive(sm) {
-        right: 4rem;
+        right: .8rem;
+    }
+
+    @include responsive(md) {
+        right: 2rem;
     }
 }
