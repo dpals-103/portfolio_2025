@@ -362,8 +362,8 @@ mobile-menu aside > .close-menu {
   cursor: pointer;
 }
 mobile-menu aside > .close-menu > svg {
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2rem;
+  height: 2rem;
 }
 mobile-menu aside > .close-menu > svg path {
   fill: var(--text-color-bolder);
@@ -396,6 +396,7 @@ mobile-menu aside .contact li span {
   display: inline-block;
   font-size: 1.5rem;
   color: var(--text-color-bolder);
+  min-width: 5rem;
 }
 mobile-menu aside .contact li span:first-child {
   margin-right: 1.6rem;
@@ -555,6 +556,7 @@ html body .wrap section {
   left: 50%;
   top: 50%;
   z-index: -1;
+  pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
   width: 30rem;
   aspect-ratio: 1/1;

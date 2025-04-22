@@ -74,11 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
             this.innerHTML =
                 `<aside>
             <button class="close-menu">
-                <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M10.4208 9.99954L0.36676 1.7735L1.63324 0.225586L12 8.70748L22.3668 0.225586L23.6332 1.7735L13.5792 9.99954L23.6332 18.2256L22.3668 19.7735L12 11.2916L1.63324 19.7735L0.36676 18.2256L10.4208 9.99954Z"
-                        fill="none" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.64252 10L0 1.58371L1.08867 0L10 8.67806L18.9113 0L20 1.58371L11.3575 10L20 18.4163L18.9113 20L10 11.3219L1.08867 20L0 18.4163L8.64252 10Z" fill="#2D2D2D"/>
                 </svg>
+
             </button>
             <nav>
                 <a href="about.html" alt="소개페이지로 이동">About</a>
@@ -87,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         class="fa-solid fa-moon"></i></button>
             </nav>
             <ul class="contact">
+             
                 <li>
                     <span>Phone</span>
                     <span>010-9259-7333</span>
@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li>
                     <span>E-mail</span>
                     <a href="mailto:dpals103@gmail.com">dpals103@gmail.com</a>
+                </li>
+                <li>
+                    <span>Github</span>
+                    <a href="https://github.com/dpals-103/portfolio_2025">portfolio_2025.git</a>
+                </li>
+                <li>
+                    <span><br>함께 성장할 수 있는 팀을 기다리고 있습니다 :)</span>
                 </li>
             </ul>
         </aside>
@@ -197,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageUpBtn = document.createElement("button")
     const pageUpBtnIcon = document.createElement("i")
     pageUpBtn.classList.add('btn-page-up');
-    pageUpBtn.setAttribute('title','페이지 위로');
+    pageUpBtn.setAttribute('title', '페이지 위로');
     pageUpBtnIcon.classList.add('fa-solid', 'fa-arrow-up');
     pageUpBtn.appendChild(pageUpBtnIcon);
 
@@ -244,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function onScroll() {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScroll - lastScrollTop > 10) {            
+        if (currentScroll - lastScrollTop > 10) {
             headerSection.style.transform = "translateY(-100%)";
             headerSection.style.opacity = "0";
         } else if (lastScrollTop - currentScroll > 10) {

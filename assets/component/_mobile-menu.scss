@@ -26,8 +26,8 @@ mobile-menu {
             cursor: pointer;
 
             >svg {
-                width: $num-28;
-                height: $num-28;
+                width: $num-20;
+                height: $num-20;
 
                 path {
                     fill: var(--text-color-bolder);
@@ -68,6 +68,7 @@ mobile-menu {
                     display: inline-block;
                     font-size: $num-15;
                     color: var(--text-color-bolder);
+                    min-width: 5rem;
 
                     &:first-child {
                         margin-right: $num-16;
