@@ -274,8 +274,8 @@ custom-header .m-header > .m-menu {
   cursor: pointer;
 }
 custom-header .m-header > .m-menu svg {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   object-fit: cover;
   fill: var(--text-color-bolder);
 }
