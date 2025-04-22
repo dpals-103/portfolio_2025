@@ -1,6 +1,6 @@
 .about {
     background-color: var(--bg-secondary);
-
+    overflow-x: hidden;
 
     main {
         height: calc(100% - 8rem);
@@ -9,9 +9,7 @@
         flex-grow: 1;
 
         .resume {
-
             height: 100%;
-
             .grid-container {
                 display: grid;
                 grid-template-rows: repeat(7, 1fr);
@@ -25,9 +23,15 @@
                     row-gap: $num-30;
                 }
 
+                @include responsive(lg) {
+                    padding-bottom: 8rem;
+                    grid-template-rows: unset;
+                }
+
                 @include responsive(md) {
                     grid-template-rows: repeat(4, 1fr);
                     grid-template-columns: 1fr;
+                    padding-bottom: 4rem;
                 }
 
                 >li {
@@ -39,51 +43,71 @@
 
                     &:last-child {
                         padding: $num-32 $num-28;
+
                         @include responsive(md) {
                             padding: $num-56 $num-48 $num-40 $num-48;
                         }
                     }
 
 
-                    &.left{
+                    &.left {
                         grid-row: span 7;
                         grid-column: span 3;
 
-                        @include responsive(md) {
+                        @include responsive(lg) {
                             grid-row: span 1;
+                            grid-column: span 4;
+                        }
+
+                        @include responsive(md) {
                             grid-column: span 1;
                         }
                     }
 
-                    &.center{
+                    &.center {
                         grid-row: span 7;
                         grid-column: span 4;
 
-                        @include responsive(md) {
+                        @include responsive(lg) {
                             grid-row: span 1;
+                            grid-column: span 6;
+                        }
+
+                        @include responsive(md) {                          
                             grid-column: span 1;
                         }
                     }
 
-                    &.right{
-                        &.skill{
+                    &.right {
+                        &.skill {
                             grid-row: span 5;
                             grid-column: span 3;
-                            @include responsive(md) {
+
+                            @include responsive(lg) {
                                 grid-row: span 1;
+                                grid-column: span 7;
+                            }
+
+                            @include responsive(md) {                                
                                 grid-column: span 1;
                             }
                         }
-                        &.edu{
+
+                        &.edu {
                             grid-row: span 2;
                             grid-column: span 3;
-                            @include responsive(md) {
+
+                            @include responsive(lg) {
                                 grid-row: span 1;
+                                grid-column: span 3;
+                            }
+
+                            @include responsive(md) {
                                 grid-column: span 1;
                             }
                         }
                     }
-                   
+
 
                     @media (max-height:1000px) {
                         & {
@@ -95,7 +119,6 @@
                         & {
                             display: flex;
                             flex-direction: column;
-                            justify-content: space-between;
                         }
                     }
                 }
@@ -127,8 +150,8 @@
 
                         >.txt-box {
                             h6 {
-                                color: var(--text-color-bolder); 
-                                line-height: 1;                               
+                                color: var(--text-color-bolder);
+                                line-height: 1;
                             }
 
                             span {
@@ -136,7 +159,7 @@
                                 padding-top: $num-8;
                                 font-size: $num-16;
                                 color: var(--text-color-caption);
-                                line-height: 1; 
+                                line-height: 1;
                             }
                         }
 
@@ -151,7 +174,7 @@
                             margin-bottom: $num-40;
                             position: relative;
 
-                    
+
                             img {
                                 height: 140%;
                                 aspect-ratio: 1 / 1;
@@ -166,10 +189,11 @@
                                 }
                             }
 
-                            @include responsive(md){
+                            @include responsive(md) {
                                 height: 32vw;
                                 margin-bottom: 0;
-                                img{
+
+                                img {
                                     right: 0;
                                 }
                             }
@@ -189,7 +213,7 @@
                             color: var(--text-color-basic);
                             font-weight: 400;
 
-                            @include responsive(md){
+                            @include responsive(md) {
                                 padding: $num-20 0;
                             }
                         }
@@ -224,7 +248,7 @@
                                 padding-bottom: $num-28;
                             }
                         }
-                        
+
                         @include responsive(md) {
                             padding-bottom: $num-24;
                         }
@@ -411,16 +435,24 @@
                                     }
                                 }
 
-                                @include responsive(md) {
+                                @each $bp in md, lg {
+                                    @include responsive(#{$bp}) {
+                                        width: 100%;
+                                        flex-direction: row;
+                                        margin: $num-8 0;
+                                    }
+                                }
+
+                            }
+
+
+                            @each $bp in md, lg {
+                                @include responsive(#{$bp}) {
+                                    flex-direction: column;
                                     width: 100%;
-                                    flex-direction: row;
-                                    margin: $num-8 0;
                                 }
                             }
-                            @include responsive(md) {
-                                flex-direction: column;
-                                width: 100%;
-                            }
+
                         }
 
                         .etc-tool {
@@ -461,9 +493,11 @@
                                         color: var(--text-color-basic);
                                     }
 
-                                    .dark &{
-                                        &:first-child, &:nth-child(3){
-                                            >img{
+                                    .dark & {
+
+                                        &:first-child,
+                                        &:nth-child(3) {
+                                            >img {
                                                 filter: contrast(0) brightness(1);
                                             }
                                         }
@@ -493,7 +527,7 @@
 
                         }
 
-                       
+
                     }
 
                     &.edu {
@@ -526,22 +560,35 @@
                                     }
                                 }
 
-                                @include responsive(md){
+                                @include responsive(md) {
                                     display: flex;
                                     align-items: flex-start;
                                     gap: $num-24;
                                 }
 
+
                             }
                         }
+
+                        @include responsive(lg) {
+                            flex-direction: column;
+                            justify-content: unset;
+                            gap: $num-24;
+                        }
                     }
+                }
+            }
+
+            @each $bp in xs,sm,md,lg {
+                @include responsive(#{$bp}) {
+                    height: unset;
                 }
             }
 
         }
     }
 
-    @each $bp in xs, sm{
+    @each $bp in xs, sm {
         @include responsive(#{$bp}) {
             overflow-y: auto !important;
 
@@ -549,134 +596,135 @@
                 height: auto;
                 max-width: unset;
                 width: 100%;
-    
+
                 >.resume {
                     padding: 0;
-    
+
                     .grid-container {
                         display: flex;
                         flex-direction: column;
-    
+
                         >li {
                             padding: $num-30;
-    
+
                             &:last-child {
                                 padding: $num-30;
                             }
                         }
-    
+
                         li.center,
                         li.right {
                             >h6 {
                                 padding-bottom: $num-24;
                             }
                         }
-    
+
                         li.left {
                             >.introduce {
                                 >.img-box {
                                     height: 18rem;
-    
+
                                     >img {
                                         right: -4rem;
                                     }
                                 }
-    
+
                                 >span {
                                     font-size: $num-28;
                                 }
-    
+
                                 >p {
                                     padding: $num-28 0;
                                     word-break: keep-all;
                                 }
                             }
-    
+
                             .hashtag {
                                 >li {
                                     padding: 0 $num-12;
                                 }
                             }
                         }
-    
+
                         li.center {
                             >ul {
                                 >li {
-    
+                                    justify-content: unset;
+
                                     &:not(:last-child) {
                                         margin-bottom: $num-30;
                                     }
-    
+
                                     .company-info {
                                         flex-wrap: wrap-reverse;
                                         row-gap: 0.2rem;
                                         margin-bottom: $num-10;
-    
+
                                         >small {
                                             margin-left: unset;
                                             margin-right: 10rem;
                                         }
                                     }
-    
+
                                     .main-work {
                                         li {
                                             list-style: disc;
                                             list-style-position: inside;
                                         }
                                     }
-    
+
                                 }
                             }
                         }
-    
+
                         li.right {
                             &.skill {
                                 >.main-skill {
                                     justify-content: space-around;
-    
+
                                     >li {
                                         gap: $num-16;
-    
+
                                         >div {
                                             i {
                                                 width: $num-32;
-    
+
                                                 >img {
                                                     transform: translate(0.4rem, 0.2rem);
                                                 }
-    
+
                                             }
                                         }
                                     }
                                 }
-    
+
                                 >.etc-tool {
                                     gap: $num-16;
                                 }
                             }
-    
+
                             &.edu {
                                 flex-direction: column;
                                 gap: $num-20;
-    
+
                                 >div {
                                     >p {
                                         margin-bottom: $num-16;
                                     }
-    
+
                                     >ul {
                                         >li {
                                             margin-bottom: $num-8;
                                         }
                                     }
                                 }
-    
+
                             }
-    
+
                         }
                     }
                 }
             }
         }
-    }    
+    }
 }

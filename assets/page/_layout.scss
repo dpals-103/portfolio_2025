@@ -61,12 +61,19 @@ html{
         font-size: 55.5%;
 
         @media (max-height : 1000px) {
-            font-size: 50.5%;
+            font-size: 55.5%;
         }
     }
+
     @include responsive(xl){
-        font-size: 61.5%;
+        font-size: 54.5%;
+
+        @media (min-width : 1400px) and (max-width : 1601px){
+            font-size: 58.5%;
+        }
     }
+
+    
     @include responsive(xxl){
         font-size: 84.5%;
     }
