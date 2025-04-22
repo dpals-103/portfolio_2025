@@ -11,15 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="works.html" alt="작업물 페이지로 이동">Works</a>
                 <button class="contact-btn">Contact</button>
                 <button class="theme-btn" alt="어두운테마로 변경" title="Change Dark mode!"><i class="fa-solid fa-moon"></i></button>
-                <button class="m-menu">
-                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d_411_529)">
-                        <path d="M5.6001 7H26.4001V9H5.6001V7Z" fill="currentColor"/>
-                        <path d="M5.6001 15H26.4001V17H5.6001V15Z" fill="currentColor"/>
-                        <path d="M5.6001 23H26.4001V25H5.6001V23Z" fill="currentColor"/>
-                    </g>
-                </svg>
-                </button>
+                              
 
                 <div class="contact-popup">
                     <ul>
@@ -46,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="m-header">
             <a href="/"><strong class="logo">©LEE HYO JU</strong></a>
             <button class="m-menu">
-                <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="26" height="18" viewBox="0 0 26 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0H26V2H0V0Z" fill="currentColor"/>
                     <path d="M0 8H26V10H0V8Z" fill="currentColor"/>
                     <path d="M0 16H26V18H0V16Z" fill="currentColor"/>
