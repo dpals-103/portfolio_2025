@@ -832,7 +832,7 @@ html body .wrap section {
   }
   .home > main .body .img-group {
     pointer-events: none;
-    top: 30vh;
+    top: 35vh;
   }
 }
 @media (min-width: 360px) and (max-width: 399px) and (min-width: 360px) and (max-width: 399px) {
@@ -882,7 +882,7 @@ html body .wrap section {
   }
   .home > main .body .img-group {
     pointer-events: none;
-    top: 30vh;
+    top: 35vh;
   }
 }
 @media (min-width: 400px) and (max-width: 640px) and (min-width: 360px) and (max-width: 399px) {
@@ -932,7 +932,7 @@ html body .wrap section {
   }
   .home > main .body .img-group {
     pointer-events: none;
-    top: 30vh;
+    top: 35vh;
   }
 }
 @media (min-width: 641px) and (max-width: 1024px) and (min-width: 360px) and (max-width: 399px) {

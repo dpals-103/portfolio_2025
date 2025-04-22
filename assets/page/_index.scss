@@ -342,7 +342,7 @@
                     }
                     .img-group{
                         pointer-events: none;
-                        top: 30vh;
+                        top: 35vh;
 
                         @include responsive(xs){
                             transform: translateX(-50%) scale(0.85);
