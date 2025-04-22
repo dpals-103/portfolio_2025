@@ -229,13 +229,17 @@ custom-header nav .contact-popup ul li {
   align-items: center;
   gap: 1.6rem;
 }
+custom-header nav .contact-popup ul li:first-child {
+  margin-bottom: 0.8rem;
+}
 custom-header nav .contact-popup ul li small, custom-header nav .contact-popup ul li a, custom-header nav .contact-popup ul li span {
   font-size: 1.4rem;
   display: block;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 custom-header nav .contact-popup ul li small {
   color: var(--text-color-caption);
+  min-width: 5rem;
 }
 custom-header nav .contact-popup ul li a, custom-header nav .contact-popup ul li span {
   color: var(--text-color-bolder);
@@ -435,13 +439,13 @@ html body .wrap {
 @media (min-width: 360px) and (max-width: 399px) {
   html body .wrap {
     min-width: 36rem;
-    padding: 4rem 2.4rem;
+    padding: 4rem 3.2rem;
   }
 }
 @media (min-width: 400px) and (max-width: 640px) {
   html body .wrap {
     min-width: 36rem;
-    padding: 4rem 2.4rem;
+    padding: 4rem 4rem;
   }
 }
 @media (min-width: 641px) and (max-width: 1024px) {
@@ -1068,7 +1072,7 @@ html body .wrap section {
   gap: 2.4rem;
 }
 .about main .resume .grid-container li.left > .profile > .img-box {
-  width: 8rem;
+  width: 10rem;
   aspect-ratio: 1/1;
   border-radius: 10rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -1116,7 +1120,7 @@ html body .wrap section {
 }
 .about main .resume .grid-container li.left > .introduce > span {
   font-size: 3rem;
-  line-height: 1.5;
+  line-height: 1.4;
   display: block;
   font-weight: 500;
   color: var(--text-color-bolder);
@@ -1379,7 +1383,7 @@ html body .wrap section {
 .about main .resume .grid-container li.right.edu > div > p {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.4rem;
   color: var(--text-color-bolder);
 }
 .about main .resume .grid-container li.right.edu > div > ul > li {
@@ -1795,13 +1799,13 @@ html body .wrap section {
 .works main > .grid .blank {
   width: 100%;
   height: 6rem;
+  pointer-events: none;
 }
 .works .btn-page-up {
   background-color: transparent;
   border-radius: 10rem;
   border: 0.2rem solid var(--box-border);
-  background-color: var(--bg-secondary);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;
@@ -2011,8 +2015,7 @@ html body .wrap section {
   background-color: transparent;
   border-radius: 10rem;
   border: 0.2rem solid var(--box-border);
-  background-color: var(--bg-secondary);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
   width: 4rem;
   aspect-ratio: 1/1;

@@ -14,15 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="m-menu">
                 <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_411_529)">
-                        <path d="M5.6001 7H26.4001V9H5.6001V7Z" fill="none"/>
-                        <path d="M5.6001 15H26.4001V17H5.6001V15Z" fill="none"/>
-                        <path d="M5.6001 23H26.4001V25H5.6001V23Z" fill="none"/>
+                        <path d="M5.6001 7H26.4001V9H5.6001V7Z" fill="currentColor"/>
+                        <path d="M5.6001 15H26.4001V17H5.6001V15Z" fill="currentColor"/>
+                        <path d="M5.6001 23H26.4001V25H5.6001V23Z" fill="currentColor"/>
                     </g>
                 </svg>
                 </button>
 
                 <div class="contact-popup">
                     <ul>
+                        <li>
+                            <small>함께 성장할 수 있는 팀을 기다리고 있습니다 :)</small>
+                        </li>
                         <li>
                             <small>Phone</small>
                             <span>010-9259-7333</span>
@@ -31,6 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             <small>E-mail</small>
                              <a href="mailto:dpals103@gmail.com">dpals103@gmail.com</a>
                         </li>
+                        <li>
+                            <small>Github</small>
+                            <a href="https://github.com/dpals-103/portfolio_2025">portfolio_2025.git</a>
+                        </li>
+                        
                     </ul>
                 </div>
             </nav>

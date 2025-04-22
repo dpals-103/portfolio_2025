@@ -97,14 +97,19 @@ custom-header {
                     align-items: center;
                     gap: $num-16;
 
+                    &:first-child{
+                        margin-bottom: $num-8;
+                    }
+
                     small,a,span{
                         font-size: $num-14;
                         display: block;
-                        line-height: 1.5;
+                        line-height: 1.8;
                     }
 
                     small{
                         color: var(--text-color-caption);
+                        min-width: 5rem;
                     }
                    
                     a,span{

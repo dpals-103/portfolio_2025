@@ -117,7 +117,7 @@
                         gap: $num-24;
 
                         >.img-box {
-                            width: 8rem;
+                            width: 10rem;
                             aspect-ratio: 1 / 1;
                             border-radius: 10rem;
                             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -127,8 +127,8 @@
 
                         >.txt-box {
                             h6 {
-                                color: var(--text-color-bolder);
-                                line-height: 1;
+                                color: var(--text-color-bolder); 
+                                line-height: 1;                               
                             }
 
                             span {
@@ -136,7 +136,7 @@
                                 padding-top: $num-8;
                                 font-size: $num-16;
                                 color: var(--text-color-caption);
-                                line-height: 1;
+                                line-height: 1; 
                             }
                         }
 
@@ -177,7 +177,7 @@
 
                         >span {
                             font-size: $num-30;
-                            line-height: 1.5;
+                            line-height: 1.4;
                             display: block;
                             font-weight: 500;
                             color: var(--text-color-bolder);
@@ -506,7 +506,7 @@
                             >p {
                                 font-size: $num-15;
                                 font-weight: 600;
-                                margin-bottom: $num-24;
+                                margin-bottom: $num-14;
                                 color: var(--text-color-bolder);
                             }
 
