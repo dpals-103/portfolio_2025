@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="works.html" alt="작업물 페이지로 이동">Works</a>
                 <button class="contact-btn">Contact</button>
                 <button class="theme-btn" alt="어두운테마로 변경" title="Change Dark mode!"><i class="fa-solid fa-moon"></i></button>
-                              
+
 
                 <div class="contact-popup">
                     <ul>
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </li>
                         <li>
                             <small>Github</small>
-                            <a href="https://github.com/dpals-103/portfolio_2025">portfolio_2025.git</a>
+                            <a href="https://github.com/dpals-103/portfolio_2025" target="_blank">portfolio_2025.git</a>
                         </li>
                         
                     </ul>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </li>
                 <li>
                     <span>Github</span>
-                    <a href="https://github.com/dpals-103/portfolio_2025">portfolio_2025.git</a>
+                    <a href="https://github.com/dpals-103/portfolio_2025" target="_blank">portfolio_2025.git</a>
                 </li>
                 <li>
                     <span><br>함께 성장할 수 있는 팀을 기다리고 있습니다 :)</span>

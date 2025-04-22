@@ -1618,7 +1618,7 @@ html body .wrap section {
 @media (min-width: 641px) and (max-width: 1024px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
-    width: calc((100% - 2rem) / 2);
+    width: calc((100% - 4rem) / 2);
   }
 }
 @media (min-width: 1025px) and (max-width: 1199px) {
