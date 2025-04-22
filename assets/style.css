@@ -175,6 +175,7 @@ custom-header button {
   font-weight: 500;
   color: var(--text-color-bolder);
   cursor: pointer;
+  text-align: center;
 }
 custom-header nav {
   display: flex;
@@ -196,6 +197,7 @@ custom-header nav button {
   background: none;
   border: 0;
   cursor: pointer;
+  width: auto;
 }
 custom-header nav button i {
   font-size: 1.6rem;
@@ -221,6 +223,7 @@ custom-header nav .contact-popup {
   right: -10%;
   z-index: 9;
   opacity: 0;
+  pointer-events: none;
   box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.1);
   transition: opacity 1s ease-out, right 1s ease-out;
 }
@@ -253,6 +256,7 @@ custom-header nav .contact-popup ul li a:hover {
 custom-header nav .contact-popup.visible {
   opacity: 1;
   right: 7%;
+  pointer-events: all;
 }
 custom-header .m-header {
   display: none;
@@ -325,7 +329,7 @@ custom-header .m-header > .m-menu svg path {
     padding: 6rem 8rem 2rem 8rem;
   }
 }
-@media (min-width: 1025px) and (max-width: 1199px) {
+@media (min-width: 1200px) and (max-width: 1601px) {
   custom-header.fixed {
     padding: 6rem 8rem 2rem 8rem;
   }
@@ -550,6 +554,7 @@ html body .wrap section {
   position: absolute;
   left: 50%;
   top: 50%;
+  z-index: -1;
   transform: translate(-50%, -50%) scale(0.9);
   width: 30rem;
   aspect-ratio: 1/1;
@@ -1573,11 +1578,6 @@ html body .wrap section {
     margin-bottom: 0.8rem;
   }
 }
-@media (min-width: 1025px) and (max-width: 1199px) {
-  .about main {
-    max-width: 120rem;
-  }
-}
 
 .works main {
   padding-top: 8rem;
@@ -1837,6 +1837,16 @@ html body .wrap section {
     right: 2rem;
   }
 }
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .works .btn-page-up {
+    right: 1rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1601px) {
+  .works .btn-page-up {
+    right: 1rem;
+  }
+}
 @media (min-width: 360px) and (max-width: 399px) {
   .works main > .grid .grid-item a .title-box {
     padding: 0 2.4rem 2.4rem 2.4rem;
@@ -2045,6 +2055,16 @@ html body .wrap section {
 @media (min-width: 641px) and (max-width: 1024px) {
   .work-detail .btn-page-up {
     right: 2rem;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .work-detail .btn-page-up {
+    right: 1rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1601px) {
+  .work-detail .btn-page-up {
+    right: 1rem;
   }
 }
 @media (min-width: 360px) and (max-width: 399px) {

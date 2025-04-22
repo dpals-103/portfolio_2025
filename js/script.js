@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="m-menu">
                 <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_411_529)">
-                        <path d="M5.6001 7H26.4001V9H5.6001V7Z" fill="none" />
-                        <path d="M5.6001 15H26.4001V17H5.6001V15Z" fill="none" />
-                        <path d="M5.6001 23H26.4001V25H5.6001V23Z" fill="none" />
+                        <path d="M5.6001 7H26.4001V9H5.6001V7Z" fill="currentColor" />
+                        <path d="M5.6001 15H26.4001V17H5.6001V15Z" fill="currentColor" />
+                        <path d="M5.6001 23H26.4001V25H5.6001V23Z" fill="currentColor" />
                     </g>
                 </svg>
             </button>

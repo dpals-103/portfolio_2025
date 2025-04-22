@@ -87,4 +87,12 @@
     @include responsive(md) {
         right: 2rem;
     }
+
+    @include responsive(lg) {
+        right: 1rem;
+    }
+
+    @include responsive(xl) {
+        right: 1rem;
+    }
 }

@@ -678,11 +678,5 @@
                 }
             }
         }
-    }
-
-    @include responsive(lg) {
-        main {
-            max-width: 120rem;
-        }
-    }
+    }    
 }
