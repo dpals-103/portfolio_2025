@@ -1676,6 +1676,7 @@ html body .wrap section {
 .works main > .grid {
   width: 100%;
   height: unset !important;
+  direction: ltr;
 }
 .works main > .grid .grid-sizer,
 .works main > .grid .grid-item {
@@ -1699,7 +1700,19 @@ html body .wrap section {
     width: calc((100% - 4rem) / 2);
   }
 }
+@media (min-width: 641px) and (max-width: 1024px) and (max-width: 800px) {
+  .works main > .grid .grid-sizer,
+  .works main > .grid .grid-item {
+    width: 100%;
+  }
+}
 @media (min-width: 1025px) and (max-width: 1199px) {
+  .works main > .grid .grid-sizer,
+  .works main > .grid .grid-item {
+    width: calc((100% - 6rem) / 2);
+  }
+}
+@media (min-width: 1200px) and (max-width: 1601px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
     width: calc((100% - 6rem) / 2);

@@ -18,6 +18,7 @@
         >.grid {
             width: 100%;
             height: unset !important;
+            direction: ltr;
 
              .grid-sizer,
             .grid-item{
@@ -32,11 +33,20 @@
 
                 @include responsive(md){
                     width: calc((100% - 4rem) / 2);
+                    @media (max-width : 800px) {
+                        width: 100%;
+                    }
                 }
 
                 @include responsive(lg){
                     width: calc((100% - 6rem) / 2);
                 }
+
+                @include responsive(xl){
+                    width: calc((100% - 6rem) / 2);
+                }
+
+                
             }
             
             .grid-item {               
