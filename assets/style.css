@@ -1681,7 +1681,7 @@ html body .wrap section {
 }
 .works main > .grid .grid-sizer,
 .works main > .grid .grid-item {
-  width: calc((100% - 4rem) / 2);
+  width: calc((100% - 4rem) / 3);
 }
 @media (min-width: 360px) and (max-width: 399px) {
   .works main > .grid .grid-sizer,
@@ -1698,7 +1698,7 @@ html body .wrap section {
 @media (min-width: 641px) and (max-width: 1024px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
-    width: calc((100% - 4rem) / 2);
+    width: calc((100% - 2rem) / 2);
   }
 }
 @media (min-width: 641px) and (max-width: 1024px) and (max-width: 800px) {
@@ -1710,34 +1710,34 @@ html body .wrap section {
 @media (min-width: 1025px) and (max-width: 1199px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
-    width: calc((100% - 6rem) / 2);
+    width: calc((100% - 4rem) / 3);
   }
 }
 @media (min-width: 1200px) and (max-width: 1601px) {
   .works main > .grid .grid-sizer,
   .works main > .grid .grid-item {
-    width: calc((100% - 6rem) / 2);
+    width: calc((100% - 4rem) / 3);
   }
 }
 .works main > .grid .grid-item {
-  margin-bottom: 4rem;
-  border-radius: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.4rem;
   overflow: hidden;
   transition: ease-in 0.2s;
 }
 @media (min-width: 360px) and (max-width: 399px) {
   .works main > .grid .grid-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 400px) and (max-width: 640px) {
   .works main > .grid .grid-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 641px) and (max-width: 1024px) {
   .works main > .grid .grid-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 .works main > .grid .grid-item a {
@@ -1757,7 +1757,7 @@ html body .wrap section {
   position: absolute;
   left: 0;
   bottom: 0;
-  padding: 0 4rem 4.8rem 4rem;
+  padding: 0 2rem 2.8rem 2rem;
 }
 .works main > .grid .grid-item a .title-box .badge {
   display: flex;
@@ -1765,14 +1765,15 @@ html body .wrap section {
   gap: 1rem;
 }
 .works main > .grid .grid-item a .title-box .badge > li {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: "pretendard";
   font-weight: 500;
-  line-height: 2.7rem;
+  line-height: 2.52rem;
   padding: 0 1.2rem;
   border-radius: 0.4rem;
   color: var(--text-color-bolder);
   background-color: rgba(255, 255, 255, 0.5);
+  border: 0.1rem solid rgba(255, 255, 255, 0);
 }
 .works main > .grid .grid-item a .title-box .badge > li.year {
   border: 0.1rem solid #fff;
@@ -1780,17 +1781,17 @@ html body .wrap section {
   background-color: transparent;
 }
 .works main > .grid .grid-item a .title-box .title {
-  margin-bottom: 2.4rem;
+  margin-bottom: 2rem;
 }
 .works main > .grid .grid-item a .title-box .title > * {
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1;
   font-family: "pretendard";
   color: #fff;
 }
 .works main > .grid .grid-item a .title-box .title > p {
   font-weight: 500;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
 }
 .works main > .grid .grid-item a .title-box .title > b {
   font-weight: 700;

@@ -22,7 +22,7 @@
 
              .grid-sizer,
             .grid-item{
-                width: calc((100% - 4rem) / 2);
+                width: calc((100% - 4rem) / 3);
 
 
                 @each $bp in xs, sm{
@@ -32,32 +32,32 @@
                 }
 
                 @include responsive(md){
-                    width: calc((100% - 4rem) / 2);
+                    width: calc((100% - 2rem) / 2);
                     @media (max-width : 800px) {
                         width: 100%;
                     }
                 }
 
                 @include responsive(lg){
-                    width: calc((100% - 6rem) / 2);
+                    width: calc((100% - 4rem) / 3);
                 }
 
                 @include responsive(xl){
-                    width: calc((100% - 6rem) / 2);
+                    width: calc((100% - 4rem) / 3);
                 }
 
                 
             }
             
             .grid-item {               
-                margin-bottom: $num-40;
-                border-radius: $num-10;
+                margin-bottom: $num-20;
+                border-radius: $num-4;
                 overflow: hidden;
                 transition: ease-in 0.2s;
 
                 @each $bp in xs, sm, md{
                     @include responsive(#{$bp}){
-                        margin-bottom: $num-20;
+                        margin-bottom: $num-10;
                     }
                 }
 
@@ -79,7 +79,7 @@
                         position: absolute;
                         left: 0;
                         bottom: 0;
-                        padding: 0 $num-40 $num-48 $num-40;
+                        padding: 0 $num-20 $num-28 $num-20;
 
                         .badge {
                             display: flex;
@@ -88,14 +88,15 @@
 
 
                             >li {
-                                font-size: $num-16;
+                                font-size: $num-14;
                                 font-family: 'pretendard';
                                 font-weight: 500;
-                                line-height: 2.7rem;
+                                line-height: calc($num-14 * 1.8);
                                 padding: 0 $num-12;
                                 border-radius: $num-4;
                                 color: var(--text-color-bolder);
                                 background-color: rgba(255, 255, 255, 0.5);
+                                border: 0.1rem solid rgba(255,255,255,0);
 
                                 &.year {
                                     border: 0.1rem solid $white;
@@ -106,10 +107,10 @@
                         }
 
                         .title {
-                            margin-bottom: $num-24;
+                            margin-bottom: $num-20;
 
                             >* {
-                                font-size: $num-24;
+                                font-size: $num-20;
                                 line-height: 1;
                                 font-family: 'pretendard';
                                 color: $white;
@@ -117,7 +118,7 @@
 
                             >p {
                                 font-weight: 500;
-                                margin-bottom: $num-12;
+                                margin-bottom: $num-8;
                             }
 
                             >b {
